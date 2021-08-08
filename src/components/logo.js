@@ -8,8 +8,8 @@ const StyledLogo = styled.div`
   position: relative;
   z-index: 13;
 
-  font-size: ${({ size }) => (size ? size : "1.75rem")};
-  font-weight: 900;
+  font-size: ${({ size }) => (size ? size : "1.5rem")};
+  font-weight: 700;
   color: ${({ theme, color }) => theme.colors[color] || color};
 
   /* Disable effects when sidebar is open */

@@ -1,15 +1,14 @@
 module.exports = {
   //-- SITE SETTINGS -----
-  author: "@konstantinmuenster",
-  siteTitle: "Gatsby Starter Portfolio Minimal",
-  siteShortTitle: "Gatsby", // Used as logo text in header, footer, and splash screen
-  siteDescription:
-    "A modern one-page portfolio with a clean yet expressive design.",
-  siteUrl: "https://gatsby-starter-portfolio-minimal.netlify.app/",
+  author: "@jzbonner",
+  siteTitle: "Jzbonner",
+  siteShortTitle: "Think Broadly.", // Used as logo text in header, footer, and splash screen
+  siteDescription: "Portfolio site for Jarrett Bonner",
+  siteUrl: "https://jzbonner.me",
   siteLanguage: "en_US",
-  siteIcon: "content/favicon.png", // Relative to gatsby-config file
-  seoTitleSuffix: "Portfolio Minimal", // SEO title syntax will be e.g. "Imprint - {seoTitleSuffix}"
-  useCookieBar: false, // If you use Google Analytics and want to be GDPR-compliant, set it to true
+  siteIcon: "content/brain.png", // Relative to gatsby-config file
+  seoTitleSuffix: "", // SEO title syntax will be e.g. "Imprint - {seoTitleSuffix}"
+  useCookieBar: true, // If you use Google Analytics and want to be GDPR-compliant, set it to true
   googleAnalyticsTrackingId: "", // e.g. UA-XXXXXX-X
 
   // -- THEME SETTINGS -----
@@ -58,20 +57,19 @@ module.exports = {
   socialMedia: [
     {
       name: "Linkedin",
-      url: "https://www.linkedin.com/in/konstantin-muenster/",
+      url: "https://www.linkedin.com/in/jarrett-bonner/",
     },
     {
-      name: "Medium",
-      url: "https://konstantinmuenster.medium.com/",
+      name: "Blog",
+      url: "https://jzb-lib.xyz/",
     },
     {
       name: "Github",
-      url:
-        "https://github.com/konstantinmuenster/gatsby-starter-portfolio-minimal",
+      url: "https://github.com/Jzbonner",
     },
     {
-      name: "Behance",
-      url: "https://www.behance.net/konstanmnster",
+      name: "Spotlight",
+      url: "#",
     },
     // {
     //   name: "Mail",
@@ -83,11 +81,23 @@ module.exports = {
   navLinks: {
     menu: [
       {
-        name: "About Me",
+        name: "About",
         url: "/#about",
       },
       {
-        name: "Features",
+        name: "Blog",
+        url: "/#articles",
+      },
+      {
+        name: "Skillset",
+        url: "/#skillset",
+      },
+      {
+        name: "Experience",
+        url: "/#experience",
+      },
+      {
+        name: "Projects",
         url: "/#projects",
       },
       {

@@ -150,7 +150,7 @@ const Interests = ({ content }) => {
   const showMoreItems = () => setShownInterests(shownInterests + 4)
 
   return (
-    <StyledSection id="interests">
+    <StyledSection id="skillset">
       <StyledContentWrapper>
         <h3 className="section-title">{frontmatter.title}</h3>
         <StyledInterests itemCount={interests.length} ref={ref}>
