@@ -15,7 +15,7 @@ const StyledFooter = styled.footer`
     darkMode ? theme.colors.background : theme.colors.primary};
   border-top: ${({ theme, darkMode }) =>
     darkMode ? `3px solid ${theme.colors.boxShadowHover}` : null};
-  margin-top: 10rem;
+  margin-top: 5rem;
 `
 
 const StyledContentWrapper = styled(ContentWrapper)`
@@ -38,12 +38,12 @@ const StyledContentWrapper = styled(ContentWrapper)`
 `
 
 const StyledLink = styled(Link)`
-  font-size: 0.875rem;
-  font-weight: 700;
+  font-size: 0.75rem;
+  font-weight: 500;
   text-transform: uppercase;
   color: ${({ theme, $darkMode }) =>
     $darkMode ? theme.colors.primary : theme.colors.background};
-  letter-spacing: 1px;
+  letter-spacing: 0.4px;
 `
 
 const Footer = () => {
@@ -53,7 +53,7 @@ const Footer = () => {
       <StyledContentWrapper>
         <Link to="/" aria-label="home">
           <Logo
-            size="1.5rem"
+            size="1.25rem"
             color={
               darkMode ? darkTheme.colors.primary : lightTheme.colors.background
             }

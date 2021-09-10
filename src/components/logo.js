@@ -1,15 +1,24 @@
 import React from "react"
 import PropTypes from "prop-types"
 import styled from "styled-components"
+import { siteMainTitle } from "../../config/index"
 
-import { siteShortTitle } from "../../config"
+// import google fonts from webfontloader module
+const WebFont = require("webfontloader")
+
+WebFont.load({
+  google: {
+    families: ["Caveat", "Khand"],
+  },
+})
 
 const StyledLogo = styled.div`
   position: relative;
   z-index: 13;
 
+  font-family: "Caveat";
   font-size: ${({ size }) => (size ? size : "1.5rem")};
-  font-weight: 700;
+  font-weight: 600;
   color: ${({ theme, color }) => theme.colors[color] || color};
 
   /* Disable effects when sidebar is open */
@@ -20,7 +29,7 @@ const StyledLogo = styled.div`
 
 const Logo = ({ size, color }) => (
   <StyledLogo color={color} size={size}>
-    {siteShortTitle}
+    {siteMainTitle}
   </StyledLogo>
 )
 

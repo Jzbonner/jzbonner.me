@@ -24,8 +24,8 @@ const StyledSplashScreen = styled(motion.div)`
     display: flex;
     justify-content: center;
     align-items: center;
-    width: auto;
-    height: 4rem;
+    width: 110%; // adjust to fit logo size, hides logo on intial splash screen load
+    height: 6rem;
   }
   .backdrop {
     position: absolute;
@@ -47,9 +47,9 @@ const SplashScreen = () => {
 
   useEffect(() => {
     const sequence = async () => {
-      await backgroundControls.start({ opacity: 1 })
-      await backdropControls.start({ height: "0%", transition: { delay: 0.8 } })
-      await backgroundControls.start({ opacity: 0, transition: { delay: 0.6 } })
+      await backgroundControls.start({ opacity: 0.75 })
+      await backdropControls.start({ height: "0%", transition: { delay: 0.7 } })
+      await backgroundControls.start({ opacity: 0, transition: { delay: 0.1 } })
       setState({ ...state, isIntroDone: true })
     }
     sequence()
@@ -57,7 +57,7 @@ const SplashScreen = () => {
 
   return (
     <StyledSplashScreen
-      initial={{ opacity: 0 }}
+      initial={{ opacity: 0.75 }}
       animate={backgroundControls}
       darkMode={state.darkMode}
     >
@@ -72,7 +72,7 @@ const SplashScreen = () => {
           animate={backdropControls}
         />
         <Logo
-          size="3rem"
+          size="4.5rem"
           color={
             state.darkMode
               ? darkTheme.colors.primary

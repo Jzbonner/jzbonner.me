@@ -58,11 +58,11 @@ const StyledContentWrapper = styled(ContentWrapper)`
         }
 
         &::-webkit-scrollbar:horizontal {
-          height: 0.8rem;
+          height: 0.6rem;
         }
 
         &::-webkit-scrollbar-thumb {
-          border-radius: 8px;
+          border-radius: 4px;
           border: 0.2rem solid ${({ theme }) => theme.colors.background};
           background-color: ${({ theme }) => theme.colors.scrollBar};
         }
@@ -150,7 +150,7 @@ const Articles = () => {
       animate={articlesControls}
     >
       <StyledContentWrapper>
-        <h3 className="section-title">Blog Articles.</h3>
+        <h3 className="section-title">Articles.</h3>
         <div className="articles">
           {articles
             ? articles.map(item => (

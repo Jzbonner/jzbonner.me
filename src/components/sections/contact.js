@@ -43,16 +43,16 @@ const StyledContentWrapper = styled(ContentWrapper)`
       }
       .avatar {
         width: 100%;
-        max-width: 8.75rem;
-        border-radius: 50%;
-        margin-right: 4rem;
-        margin-bottom: 2rem;
+        max-width: 6.75rem;
+        border-radius: 5%;
+        margin-right: 1rem;
+        margin-bottom: 1rem;
         @media (min-width: ${({ theme }) => theme.breakpoints.sm}) {
           margin-bottom: 0;
         }
       }
       .details {
-        font-size: 1.125rem;
+        font-size: 1.25rem;
         line-height: 2rem;
       }
     }
