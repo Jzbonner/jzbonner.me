@@ -58,7 +58,7 @@ const StyledContentWrapper = styled(ContentWrapper)`
         }
 
         &::-webkit-scrollbar:horizontal {
-          height: 0.6rem;
+          height: 0.8rem;
         }
 
         &::-webkit-scrollbar-thumb {

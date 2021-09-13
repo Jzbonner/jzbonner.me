@@ -26,6 +26,10 @@ const StyledSection = styled.section`
     @media (min-width: ${({ theme }) => theme.breakpoints.md}) {
       margin: 0 auto;
     }
+    transition: all 0.2s ease-in-out;
+  }
+  // is this a comment
+  .cta-btn:hover {
   }
 `
 
@@ -349,6 +353,7 @@ const Projects = ({ content }) => {
           })}
         </div>
       </StyledContentWrapper>
+      {/*TODO: need to add hover animation to button element but only cta-btn class is accessible */}
       {sectionDetails.frontmatter.buttonVisible && (
         <motion.a
           ref={bRef}
@@ -356,9 +361,9 @@ const Projects = ({ content }) => {
           animate={bOnScreen ? "visible" : "hidden"}
           className="cta-btn"
           href={sectionDetails.frontmatter.buttonUrl}
-          target="_blank"
+          target="_self"
           rel="nofollow noopener noreferrer"
-          aria-label="External Link"
+          aria-label="Internal Link"
         >
           <Button type="button" textAlign="center" center>
             {sectionDetails.frontmatter.buttonText}

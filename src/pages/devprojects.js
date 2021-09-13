@@ -3,7 +3,6 @@ import PropTypes from "prop-types"
 import { graphql } from "gatsby"
 import styled from "styled-components"
 import { MDXRenderer } from "gatsby-plugin-mdx"
-
 import GlobalStateProvider from "../context/provider"
 import ContentWrapper from "../styles/contentWrapper"
 import Layout from "../components/layout"
