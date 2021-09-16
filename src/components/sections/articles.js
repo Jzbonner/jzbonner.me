@@ -55,6 +55,7 @@ const StyledContentWrapper = styled(ContentWrapper)`
         &::-webkit-scrollbar {
           display: block;
           -webkit-appearance: none;
+          max-width: 4px; 
         }
 
         &::-webkit-scrollbar:horizontal {

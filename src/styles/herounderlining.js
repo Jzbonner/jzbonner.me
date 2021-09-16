@@ -1,6 +1,6 @@
 import styled from "styled-components"
 
-const Underlining = styled.span`
+const heroUnderlining = styled.span`
   box-shadow: inset 0 ${({ big }) => (big ? "-.25rem" : "-.5rem")} 0
     ${({ theme, highlight }) =>
       highlight ? theme.colors.secondary : theme.colors.tertiary};
@@ -10,5 +10,4 @@ const Underlining = styled.span`
       ${({ theme }) => theme.colors.secondary};
   }
 `
-
-export default Underlining
+export default heroUnderlining

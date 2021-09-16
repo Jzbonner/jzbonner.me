@@ -14,6 +14,9 @@ import CookieBar from "../components/cookieBar"
 import SplashScreen from "../components/splashScreen"
 import { useCookieBar } from "../../config"
 
+import { MDXProvider } from "@mdx-js/react"
+import Underlining from "../styles/underlining"
+
 // https://medium.com/@chrisfitkin/how-to-smooth-scroll-links-in-gatsby-3dc445299558
 if (typeof window !== "undefined") {
   require("smooth-scroll")('a[href*="#"]')
@@ -27,6 +30,7 @@ const StyledLayoutWrapper = styled.div`
   grid-template-rows: auto 1fr auto;
   grid-template-columns: 100%;
 `
+const shortcodes = { Underlining }
 
 const Layout = ({ children }) => {
   const { isIntroDone } = useContext(Context).state
@@ -41,7 +45,8 @@ const Layout = ({ children }) => {
         {isIntroDone ? (
           <>
             <Header />
-            <main id="main-content">{children}</main>
+            <MDXProvider components={shortcodes}>{children}</MDXProvider>
+            {/*using MDXProvider to incorporate shortcodes in child elements otherwise use: <main id="main-content">{children}</main>*/}
             <Footer />
           </>
         ) : (

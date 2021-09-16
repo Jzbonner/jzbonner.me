@@ -2,8 +2,8 @@ module.exports = {
   //-- SITE SETTINGS -----
   author: "@jzbonner",
   siteTitle: "Jzbonner",
-  siteMainTitle: "Jarrett Bonner",
-  siteShortTitle: "Think Broadly.", // Used as logo text in header, footer, and splash screen
+  siteMainTitle: "Jarrett Bonner", // used as logo in splash screen and header
+  siteShortTitle: "Think Broadly.", // site alternative title
   siteDescription: "Portfolio site for Jarrett Bonner",
   siteUrl: "https://jzbonner.me",
   siteLanguage: "en_US",
@@ -51,7 +51,7 @@ module.exports = {
     "https://api.rss2json.com/v1/api.json?rss_url=https%3A%2F%2Fmedium.com%2Ffeed%2Ftopic%2Ftechnology",
   // rssFeed: "https://api.rss2json.com/v1/api.json?rss_url=https%3A%2F%2Fwww.theguardian.com%2Finternational%2Frss",
 
-  shownArticles: 6,
+  shownArticles: 5,
 
   //-- SOCIAL MEDIA SETTINGS -----
   // There are icons available for the following platforms:
@@ -69,10 +69,10 @@ module.exports = {
       name: "Blog",
       url: "https://jzb-lib.xyz/",
     },
-    // {
-    //   name: "Mail",
-    //   url: "mailto:mail@konstantin.digital",
-    // },
+    {
+      name: "Mail",
+      url: "mailto:jarrett.bonner@gmail.com",
+    },
   ],
 
   //-- NAVIGATION SETTINGS -----
@@ -117,8 +117,8 @@ module.exports = {
       url: "/privacy",
     },
     {
-      name: "Imprint",
-      url: "/imprint",
+      name: "Contributions",
+      url: "/contributions",
     },
     {
       name: "Github",

@@ -39,8 +39,8 @@ const StyledContentWrapper = styled(ContentWrapper)`
   }
 `
 
-const Imprint = ({ data }) => {
-  const { body, frontmatter } = data.imprint.edges[0].node
+const Contributions = ({ data }) => {
+  const { body, frontmatter } = data.contributions.edges[0].node
   const { title, seoTitle, useSeoTitleSuffix, useSplashScreen } = frontmatter
 
   const globalState = {
@@ -70,9 +70,9 @@ const Imprint = ({ data }) => {
   )
 }
 
-Imprint.propTypes = {
+Contributions.propTypes = {
   data: PropTypes.shape({
-    imprint: PropTypes.shape({
+    contributions: PropTypes.shape({
       edges: PropTypes.arrayOf(
         PropTypes.shape({
           node: PropTypes.shape({
@@ -85,11 +85,13 @@ Imprint.propTypes = {
   }).isRequired,
 }
 
-export default Imprint
+export default Contributions
 
 export const pageQuery = graphql`
   {
-    imprint: allMdx(filter: { fileAbsolutePath: { regex: "/imprint/" } }) {
+    contributions: allMdx(
+      filter: { fileAbsolutePath: { regex: "/contributions/" } }
+    ) {
       edges {
         node {
           body

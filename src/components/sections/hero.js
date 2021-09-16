@@ -8,6 +8,7 @@ import { motion, useAnimation } from "framer-motion"
 import Context from "../../context/"
 import ContentWrapper from "../../styles/contentWrapper"
 import Underlining from "../../styles/underlining"
+import heroUnderlining from "../../styles/herounderlining"
 import Social from "../social"
 import { lightTheme, darkTheme } from "../../styles/theme"
 
@@ -54,6 +55,8 @@ const StyledContentWrapper = styled(ContentWrapper)`
       margin-top: -0.45rem;
       font-weight: 300;
     }
+    .subtitle:hover {
+    }
     .description {
       font-size: 1.125rem;
       margin-bottom: 2rem;
@@ -61,19 +64,31 @@ const StyledContentWrapper = styled(ContentWrapper)`
   }
 `
 
-const AnimatedUnderlining = motion.custom(Underlining)
+// using local styled component to handle substring animation of subtitle section
+const AnimatedUnderlining = motion.custom(heroUnderlining)
+
+// using framer motion to control hover functionality of subtitle section
+const subtitleVariants = {
+  initial: {
+    opacity: 0.5,
+  },
+  hover: {
+    opacity: 1,
+    transform: "translateY(10px)",
+  },
+}
 
 const Hero = ({ content }) => {
   const { frontmatter, body } = content[0].node
   const { isIntroDone, darkMode } = useContext(Context).state
 
-  // Controls to orchestrate animations of greetings, emoji, social profiles, underlining
+  // controls to orchestrate animations of greetings, emoji, social profiles, underlining using framer-motion module
   const gControls = useAnimation()
   const eControls = useAnimation()
   const sControls = useAnimation()
   const uControls = useAnimation()
 
-  // Start Animations after the splashScreen sequence is done
+  // start animations after the splashScreen sequence is done
   useEffect(() => {
     const pageLoadSequence = async () => {
       if (isIntroDone) {
@@ -92,10 +107,10 @@ const Hero = ({ content }) => {
         })
         // Animate underlining to hover state
         await uControls.start({
-          boxShadow: `inset 0 -2rem 0 ${
+          boxShadow: `inset 0 -.25rem 0 ${
             darkMode ? darkTheme.colors.secondary : lightTheme.colors.secondary
           }`,
-          transition: { delay: 0.4, ease: "circOut" },
+          transition: { delay: 0.3 },
         })
       }
     }
@@ -125,12 +140,18 @@ const Hero = ({ content }) => {
             </div>
             {frontmatter.title}
           </h1>
-          <h2 className="subtitle">
-            {frontmatter.subtitlePrefix}{" "}
-            <AnimatedUnderlining animate={uControls} big>
-              {frontmatter.subtitle}
-            </AnimatedUnderlining>
-          </h2>
+          {/**using a nested framer motion component to handle subtitle animations */}
+          <motion.div initial="initial" whileHover="hover">
+            <motion.div variants={subtitleVariants}>
+              <h2 className="subtitle">
+                {frontmatter.subtitlePrefix}{" "}
+                {/**local styled component to handle substring animation of subtitle */}
+                <AnimatedUnderlining animate={uControls} big>
+                  {frontmatter.subtitle}
+                </AnimatedUnderlining>
+              </h2>
+            </motion.div>
+          </motion.div>
           <div className="description">
             <MDXRenderer>{body}</MDXRenderer>
           </div>

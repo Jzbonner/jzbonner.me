@@ -22,7 +22,7 @@ const StyledButton = styled.button`
     cursor: pointer;
     outline: none;
   }
-  svg {
+  = svg {
     height: 1rem;
     width: 1rem;
     margin-right: 0.3rem;
