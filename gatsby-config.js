@@ -43,7 +43,7 @@ module.exports = {
         name: siteTitle,
         short_name: siteShortTitle,
         start_url: `/`,
-        background_color: colors.lightTheme.background,
+        //background_color: colors.lightTheme.background,
         theme_color: colors.lightTheme.primary,
         display: `minimal-ui`,
         icon: siteIcon, // This path is relative to the root of the site. 

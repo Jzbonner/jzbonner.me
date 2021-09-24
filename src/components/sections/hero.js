@@ -7,10 +7,17 @@ import { motion, useAnimation } from "framer-motion"
 
 import Context from "../../context/"
 import ContentWrapper from "../../styles/contentWrapper"
-import Underlining from "../../styles/underlining"
 import heroUnderlining from "../../styles/herounderlining"
 import Social from "../social"
-import { lightTheme, darkTheme } from "../../styles/theme"
+
+// import google fonts from webfontloader module
+const WebFont = require("webfontloader")
+
+WebFont.load({
+  google: {
+    families: ["Caveat", "Khand", "Roboto Condensed:400"],
+  },
+})
 
 const StyledSection = styled.section`
   width: 100%;
@@ -20,6 +27,7 @@ const StyledSection = styled.section`
 
 const StyledContentWrapper = styled(ContentWrapper)`
   && {
+    cursor: pointer;
     width: 100%;
     height: 100%;
     min-height: 60vh;
@@ -31,7 +39,12 @@ const StyledContentWrapper = styled(ContentWrapper)`
       margin-bottom: 4rem;
     }
     .greetings {
+      font-family: "Roboto Condensed";
+      letter-spacing: 0.2rem;
+      text-shadow: 4px 4px 0px #d5d5d5, 9px 9px 0px rgba(0, 0, 0, 0.2);
+      color: ${({ theme }) => theme.colors.primary};
       display: flex;
+      opacity: 0.85;
       justify-content: flex-start;
       align-items: center;
     }
@@ -52,10 +65,13 @@ const StyledContentWrapper = styled(ContentWrapper)`
       }
     }
     .subtitle {
-      margin-top: -0.45rem;
-      font-weight: 300;
-    }
-    .subtitle:hover {
+      border-radius: inherit;
+      color: ${({ theme }) => theme.colors.subtitleText};
+      margin-top: -1rem;
+      padding: 0.5rem !important;
+      font-size: 1.75rem;
+      font-weight: 600;
+      text-align: center;
     }
     .description {
       font-size: 1.125rem;
@@ -70,11 +86,20 @@ const AnimatedUnderlining = motion.custom(heroUnderlining)
 // using framer motion to control hover functionality of subtitle section
 const subtitleVariants = {
   initial: {
-    opacity: 0.5,
+    opacity: 0.3,
+    backgroundColor: "inherit",
+    borderRadius: "50%",
+    boxShadow: "inherit",
+    transform: "translateY(0px)",
+    transition:
+      "transform 300ms, backgroundColor 300ms, boxShadow 300ms, borderRadius 300ms",
   },
   hover: {
     opacity: 1,
-    transform: "translateY(10px)",
+    boxShadow: "2px 1px 8px 2px rgba(66,66,66, 0.4)",
+    borderRadius: "3%",
+    backgroundColor: "rgba(193,189,180, 0.45)",
+    transform: "translateY(13px)",
   },
 }
 
@@ -107,9 +132,7 @@ const Hero = ({ content }) => {
         })
         // Animate underlining to hover state
         await uControls.start({
-          boxShadow: `inset 0 -.25rem 0 ${
-            darkMode ? darkTheme.colors.secondary : lightTheme.colors.secondary
-          }`,
+          color: "rgba(247,247,247, 0.85)",
           transition: { delay: 0.3 },
         })
       }
@@ -125,29 +148,29 @@ const Hero = ({ content }) => {
           animate={gControls}
           data-testid="animated-heading"
         >
-          <h1 className="title">
-            <div className="greetings">
-              {frontmatter.greetings}
-              <motion.div
-                animate={eControls}
-                style={{ originX: 0.7, originY: 0.7 }}
-              >
-                <Img
-                  className="emoji"
-                  fluid={frontmatter.icon.childImageSharp.fluid}
-                />
-              </motion.div>
-            </div>
-            {frontmatter.title}
-          </h1>
           {/**using a nested framer motion component to handle subtitle animations */}
-          <motion.div initial="initial" whileHover="hover">
+          <motion.div initial="initial" whileHover="hover" whileTap="hover">
+            <h1 className="title">
+              <div className="greetings">
+                {frontmatter.greetings}
+                <motion.div
+                  animate={eControls}
+                  style={{ originX: 0.7, originY: 0.7 }}
+                >
+                  <Img
+                    className="emoji"
+                    fluid={frontmatter.icon.childImageSharp.fluid}
+                  />
+                </motion.div>
+              </div>
+              {frontmatter.title}
+            </h1>
             <motion.div variants={subtitleVariants}>
               <h2 className="subtitle">
                 {frontmatter.subtitlePrefix}{" "}
                 {/**local styled component to handle substring animation of subtitle */}
-                <AnimatedUnderlining animate={uControls} big>
-                  {frontmatter.subtitle}
+                <AnimatedUnderlining animate={uControls}>
+                  <span>{frontmatter.subtitle}</span>
                 </AnimatedUnderlining>
               </h2>
             </motion.div>

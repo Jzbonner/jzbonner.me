@@ -15,13 +15,16 @@ module.exports = {
   // -- THEME SETTINGS -----
   colors: {
     lightTheme: {
-      primary: "#161616",
-      //old secondary: "#FFF4D9",
+      // old primary: "#161616", - cleanup
+      primary: "#1F2021",
+      //old secondary: "#FFF4D9", - cleanup
       secondary: "#C1BDB4",
       tertiary: "#F2F2F2",
-      text: "#000000",
+      text: "#1F2021",
       subtext: "#555555",
-      background: "#DCDCDC",
+      //background: "#DCDCDC" - cleanup
+      backgroundText: "#DCDCDC",
+      subtitleText: "#605E5A",
       card: "#F6F9F8",
       scrollBar: "rgba(193, 189, 180, 0.8)",
       boxShadow: "rgba(0, 0, 0, 0.16)",
@@ -33,7 +36,7 @@ module.exports = {
       tertiary: "#252525",
       text: "rgba(255, 255, 255, 0.87)",
       subtext: "#AAAAAA",
-      background: "#121212",
+      backgroundText: "#121212",
       card: "#1C1C1C",
       scrollBar: "rgba(255, 255, 255, 0.5)",
       boxShadow: "rgba(0, 0, 0, 0.16)",
@@ -41,6 +44,7 @@ module.exports = {
     },
   },
   fonts: {
+    // defaul font family
     primary: "Roboto, Arial, sans-serif",
   },
 
@@ -119,10 +123,6 @@ module.exports = {
     {
       name: "Contributions",
       url: "/contributions",
-    },
-    {
-      name: "Github",
-      url: "https://github.com/Jzbonner",
     },
   ],
 }

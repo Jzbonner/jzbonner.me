@@ -57,7 +57,7 @@ const SplashScreen = () => {
 
   return (
     <StyledSplashScreen
-      initial={{ opacity: 0.75 }}
+      initial={{ opacity: 0.95 }}
       animate={backgroundControls}
       darkMode={state.darkMode}
     >
@@ -76,7 +76,7 @@ const SplashScreen = () => {
           color={
             state.darkMode
               ? darkTheme.colors.primary
-              : lightTheme.colors.background
+              : lightTheme.colors.backgroundText
           }
         />
       </div>

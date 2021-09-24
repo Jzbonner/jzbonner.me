@@ -55,7 +55,7 @@ const StyledContentWrapper = styled(ContentWrapper)`
         &::-webkit-scrollbar {
           display: block;
           -webkit-appearance: none;
-          max-width: 4px; 
+          max-width: 4px;
         }
 
         &::-webkit-scrollbar:horizontal {
@@ -74,7 +74,7 @@ const StyledContentWrapper = styled(ContentWrapper)`
         }
       }
     }
-    .card {
+    .card-details {
       width: 16.25rem;
       height: 12rem;
       display: flex;
@@ -113,6 +113,8 @@ const StyledContentWrapper = styled(ContentWrapper)`
     }
   }
 `
+
+const StyledCardWrapper = styled.div``
 
 const Articles = () => {
   const MAX_ARTICLES = shownArticles
@@ -163,9 +165,9 @@ const Articles = () => {
                   aria-label={item.link}
                   key={item.link}
                 >
-                  <div className="card">
+                  <div className="card-details">
                     <span className="category">
-                      <Underlining color="tertiary" hoverColor="secondary">
+                      <Underlining color="secondary" hoverColor="secondary">
                         {item.categories[2]}
                       </Underlining>
                     </span>
@@ -175,22 +177,22 @@ const Articles = () => {
                 </a>
               ))
             : [...Array(MAX_ARTICLES <= 3 ? MAX_ARTICLES : 3)].map((i, key) => (
-                <div className="card" key={key}>
+                <div className="card-details" key={key}>
                   <SkeletonLoader
                     height="1.5rem"
                     style={{ marginBottom: ".5rem" }}
                     background={
                       darkMode
-                        ? darkTheme.colors.tertiary
-                        : lightTheme.colors.tertiary
+                        ? darkTheme.colors.secondary
+                        : lightTheme.colors.secondary
                     }
                   />
                   <SkeletonLoader
                     height="4rem"
                     background={
                       darkMode
-                        ? darkTheme.colors.tertiary
-                        : lightTheme.colors.tertiary
+                        ? darkTheme.colors.secondary
+                        : lightTheme.colors.secondary
                     }
                   />
                   <SkeletonLoader
@@ -199,8 +201,8 @@ const Articles = () => {
                     style={{ marginTop: ".5rem" }}
                     background={
                       darkMode
-                        ? darkTheme.colors.tertiary
-                        : lightTheme.colors.tertiary
+                        ? darkTheme.colors.secondary
+                        : lightTheme.colors.secondary
                     }
                   />
                 </div>

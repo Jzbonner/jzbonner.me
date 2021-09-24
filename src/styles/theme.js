@@ -11,7 +11,7 @@ export const sharedPreferences = {
   borderRadius: "0.2rem",
   pageWidth: "62.5rem",
   headerHeight: "6.25rem",
-  footerHeight: "5rem",
+  footerHeight: "3.25rem",
 }
 
 export const lightTheme = {

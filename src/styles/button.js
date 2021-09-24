@@ -6,7 +6,7 @@ const StyledButton = styled.button`
   width: 15.625rem;
   height: 3rem;
   background-color: ${({ theme }) => theme.colors.primary};
-  color: ${({ theme }) => theme.colors.background};
+  color: ${({ theme }) => theme.colors.backgroundText};
   padding: 1rem;
   margin: 0 ${({ center }) => (center ? "auto" : "0")};
   font-size: 0.875rem;

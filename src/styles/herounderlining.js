@@ -1,13 +1,20 @@
 import styled from "styled-components"
 
 const heroUnderlining = styled.span`
-  box-shadow: inset 0 ${({ big }) => (big ? "-.25rem" : "-.5rem")} 0
-    ${({ theme, highlight }) =>
-      highlight ? theme.colors.secondary : theme.colors.tertiary};
-  transition: box-shadow 0.15s ease-out;
-  &:hover {
-    box-shadow: inset 0 ${({ big }) => (big ? "-3rem" : "-1.5rem")} 0
-      ${({ theme }) => theme.colors.secondary};
+  @property --offset {
+    syntax: "<length>";
+    inherits: false;
+    initial-value: 0;
+  }
+  text-underline-offset: var(--offset, 0em);
+  color: inherit;
+  text-decoration: underline 0.15em #f2f2f2;
+  transition: --offset 500ms, text-decoration-color 300ms;
+  &:hover,
+  &:focus {
+    --offset: 0.3em;
+    text-decoration-color: #605e5a;
   }
 `
+
 export default heroUnderlining

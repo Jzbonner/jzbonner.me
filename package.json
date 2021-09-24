@@ -25,6 +25,7 @@
     "gatsby-source-filesystem": "^2.7.0",
     "gatsby-transformer-sharp": "^2.8.0",
     "intersection-observer": "^0.11.0",
+    "npm": "^7.24.0",
     "prop-types": "^15.7.2",
     "react": "^16.14.0",
     "react-cookie-consent": "^6.2.3",
@@ -35,6 +36,7 @@
     "styled-components": "^5.2.1",
     "styled-modern-normalize": "^0.2.0",
     "tiny-skeleton-loader-react": "^1.1.4",
+    "url-loader": "^4.1.1",
     "webfontloader": "^1.6.28"
   },
   "devDependencies": {
@@ -50,7 +52,7 @@
     "eslint-config-prettier": "^7.0.0",
     "eslint-loader": "^4.0.2",
     "eslint-plugin-cypress": "^2.11.2",
-    "eslint-plugin-mdx": "^1.8.2",
+    "eslint-plugin-mdx": "^1.15.1",
     "eslint-plugin-prettier": "^3.2.0",
     "eslint-plugin-react": "^7.21.5",
     "eslint-plugin-react-hooks": "^4.2.0",

@@ -11,10 +11,16 @@ import { footerLinks } from "../../config"
 const StyledFooter = styled.footer`
   width: 100%;
   height: ${({ theme }) => theme.footerHeight};
-  background: ${({ theme, darkMode }) =>
-    darkMode ? theme.colors.background : theme.colors.primary};
-  border-top: ${({ theme, darkMode }) =>
-    darkMode ? `3px solid ${theme.colors.boxShadowHover}` : null};
+  background: linear-gradient(
+    132deg,
+    rgba(31, 32, 33, 0.8) 0%,
+    rgba(216, 216, 216, 0.8) 100%,
+    rgba(181, 181, 181, 0.8) 100%
+  );
+  box-shadow: 0.5rem 0.5rem black, -0.5rem -0.5rem rgba(97, 97, 97, 0.3),
+    -1rem -1rem rgba(163, 163, 163, 0.4),
+    -1.5rem -1.5rem rgba(204, 204, 204, 0.9);
+  border-top: 1px solid rgba(143, 143, 144, 0.5);
   margin-top: 5rem;
 `
 
@@ -29,7 +35,7 @@ const StyledContentWrapper = styled(ContentWrapper)`
       /* Adjust width of links wrapper accordingly */
       width: 10rem;
       display: flex;
-      justify-content: space-between;
+      justify-content: space-evenly;
       @media (min-width: ${({ theme }) => theme.breakpoints.sm}) {
         width: 15rem;
       }
@@ -39,10 +45,10 @@ const StyledContentWrapper = styled(ContentWrapper)`
 
 const StyledLink = styled(Link)`
   font-size: 0.75rem;
-  font-weight: 500;
+  font-weight: 700;
   text-transform: uppercase;
   color: ${({ theme, $darkMode }) =>
-    $darkMode ? theme.colors.primary : theme.colors.background};
+    $darkMode ? theme.colors.primary : theme.colors.primary};
   letter-spacing: 0.4px;
 `
 
@@ -55,7 +61,9 @@ const Footer = () => {
           <Logo
             size="1.25rem"
             color={
-              darkMode ? darkTheme.colors.primary : lightTheme.colors.background
+              darkMode
+                ? darkTheme.colors.primary
+                : lightTheme.colors.backgroundText
             }
           />
         </Link>

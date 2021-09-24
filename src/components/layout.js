@@ -22,7 +22,11 @@ if (typeof window !== "undefined") {
   require("smooth-scroll")('a[href*="#"]')
 }
 
+// you can set site background image here or default to background color specified in .config/index theme settings
 const StyledLayoutWrapper = styled.div`
+  background: linear-gradient(to bottom, transparent, #dcdcdc),
+    url(https://res.cloudinary.com/dzmc7doja/image/upload/v1632253025/portfolio-site/main-bg.png);
+  background-size: contain;
   width: 100%;
   min-height: 100vh;
   margin: 0 auto;
@@ -45,8 +49,8 @@ const Layout = ({ children }) => {
         {isIntroDone ? (
           <>
             <Header />
-            <MDXProvider components={shortcodes}>{children}</MDXProvider>
             {/*using MDXProvider to incorporate shortcodes in child elements otherwise use: <main id="main-content">{children}</main>*/}
+            <MDXProvider components={shortcodes}>{children}</MDXProvider>
             <Footer />
           </>
         ) : (

@@ -46,9 +46,10 @@ const StyledNav = styled.nav`
     font-size: 1rem;
     padding: 0.5rem 1.5rem;
     margin: 0;
+    transition: all 0.2s ease-in-out;
     &:hover {
       background: ${({ theme }) => theme.colors.primary};
-      color: ${({ theme }) => theme.colors.background};
+      color: ${({ theme }) => theme.colors.backgroundText};
     }
   }
 `

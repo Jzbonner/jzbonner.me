@@ -75,7 +75,7 @@ const StyledSocialProfile = styled.a`
   background: linear-gradient(
     to right,
     ${({ theme }) => theme.colors.primary} 50%,
-    ${({ theme }) => theme.colors.background} 50%
+    ${({ theme }) => theme.colors.backgroundText} 50%
   );
   background-size: 205% 100%;
   background-position: right bottom;
@@ -88,7 +88,7 @@ const StyledSocialProfile = styled.a`
   color: ${({ theme }) => theme.colors.primary};
   &:hover {
     background-position: left bottom;
-    color: ${({ theme }) => theme.colors.background};
+    color: ${({ theme }) => theme.colors.backgroundText};
   }
   &:hover svg {
     filter: invert(1);
