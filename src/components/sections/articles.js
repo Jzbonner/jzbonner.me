@@ -74,7 +74,16 @@ const StyledContentWrapper = styled(ContentWrapper)`
         }
       }
     }
+    .card-decal {
+      display: block;
+      position: relative;
+      top: 3rem;
+      left: 0.5rem;
+      z-index: 2;
+      width: 2rem;
+    }
     .card-details {
+      border-left: 3px solid ${({ theme }) => theme.colors.primary};
       width: 16.25rem;
       height: 12rem;
       display: flex;
@@ -82,10 +91,11 @@ const StyledContentWrapper = styled(ContentWrapper)`
       justify-content: center;
       padding: 1rem;
       margin: 2rem 1rem;
-      box-shadow: 0 5px 15px ${({ theme }) => theme.colors.boxShadow};
+      box-shadow: 0 7px 15px ${({ theme }) => theme.colors.boxShadow};
       border-radius: ${({ theme }) => theme.borderRadius};
       background: ${({ theme }) => theme.colors.card};
       transition: box-shadow 0.3s ease-out;
+      z-index: 0;
       &:hover {
         box-shadow: 0 5px 15px ${({ theme }) => theme.colors.boxShadowHover};
       }
@@ -113,8 +123,6 @@ const StyledContentWrapper = styled(ContentWrapper)`
     }
   }
 `
-
-const StyledCardWrapper = styled.div``
 
 const Articles = () => {
   const MAX_ARTICLES = shownArticles
@@ -165,6 +173,10 @@ const Articles = () => {
                   aria-label={item.link}
                   key={item.link}
                 >
+                  <img
+                    className="card-decal"
+                    src="https://res.cloudinary.com/dzmc7doja/image/upload/v1632550761/design-assets/design-icon-assets/website.png"
+                  />
                   <div className="card-details">
                     <span className="category">
                       <Underlining color="secondary" hoverColor="secondary">

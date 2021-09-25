@@ -49,13 +49,15 @@ const StyledContentWrapper = styled(ContentWrapper)`
       }
     }
     .about-author {
-      border-radius: ${({ theme }) => theme.borderRadius};
-      box-shadow: 0 0 2.5rem rgba(0, 0, 0, 0.16);
+      border-radius: 50% 30% / 10% 40%;
+      box-shadow: rgba(180, 180, 180, 0.6) -5px 5px,
+        rgba(180, 180, 180, 0.5) -10px 10px, rgba(180, 180, 180, 0.4) -15px 15px,
+        rgba(180, 180, 180, 0.3) -20px 20px, rgba(180, 180, 180, 0.2) -25px 25px;
       filter: grayscale(20%) contrast(1) brightness(90%);
       transition: all 0.3s ease-out;
       &:hover {
         filter: grayscale(50%) contrast(1) brightness(90%);
-        transform: translate3d(0px, -0.125rem, 0px);
+        transform: translate3d(0px, -0.25rem, 0px);
         box-shadow: 0 0 2.5rem rgba(0, 0, 0, 0.32);
       }
     }

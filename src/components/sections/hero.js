@@ -54,8 +54,8 @@ const StyledContentWrapper = styled(ContentWrapper)`
       height: 2.2rem;
       @media (min-width: ${({ theme }) => theme.breakpoints.sm}) {
         margin-left: 1rem;
-        width: 3rem;
-        height: 3rem;
+        width: 4rem;
+        height: 4rem;
       }
     }
     .title {
@@ -72,6 +72,9 @@ const StyledContentWrapper = styled(ContentWrapper)`
       font-size: 1.75rem;
       font-weight: 600;
       text-align: center;
+      @media (min-width: ${({ theme }) => theme.breakpoints.lg}) {
+        font-size: 1.75rem;
+      }
     }
     .description {
       font-size: 1.125rem;
@@ -99,7 +102,7 @@ const subtitleVariants = {
     boxShadow: "2px 1px 8px 2px rgba(66,66,66, 0.4)",
     borderRadius: "3%",
     backgroundColor: "rgba(193,189,180, 0.45)",
-    transform: "translateY(13px)",
+    transform: "translateY(17px)",
   },
 }
 
