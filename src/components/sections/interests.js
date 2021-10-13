@@ -9,6 +9,20 @@ import { useOnScreen } from "../../hooks/"
 import ContentWrapper from "../../styles/contentWrapper"
 import Button from "../../styles/button"
 
+// import google fonts from webfontloader module
+const WebFont = require("webfontloader")
+
+WebFont.load({
+  google: {
+    families: [
+      "Caveat",
+      "Khand",
+      "Roboto Condensed:400",
+      "Barlow Semi Condensed",
+    ],
+  },
+})
+
 const StyledSection = styled.section`
   width: 100%;
   height: auto;
@@ -93,20 +107,28 @@ const StyledInterests = styled.div`
       border-radius: 8px;
     }
   }
-
   .interest {
     width: 15.625rem;
     height: 3rem;
     display: flex;
-    justify-content: flex-start;
+    justify-content: space-between;
     align-items: center;
-    padding: 1rem;
-    border: 0.05rem solid ${({ theme }) => theme.colors.primary};
-    border-radius: ${({ theme }) => theme.borderRadius};
-    background: ${({ theme }) => theme.colors.card};
+    padding: 2rem;
+    border-radius: 4%;
+    background: rgba(246, 249, 248, 0.5);
     .icon {
-      margin-right: 0.5rem;
+      margin-right: 1rem;
     }
+    font-family: "Barlow Semi Condensed";
+  }
+  .card-decal {
+    position: relative;
+    left: 1.8rem;
+    top: 2rem;
+    z-index: 2;
+    width: 2rem;
+    --webkit-filter: invert(30%);
+    filter: invert(30%);
   }
 `
 
@@ -162,7 +184,12 @@ const Interests = ({ content }) => {
               initial={{ opacity: 0, scaleY: 0 }}
               animate={iControls}
             >
-              <Img className="icon" fixed={icon.childImageSharp.fixed} /> {name}
+              <Img className="icon" fixed={icon.childImageSharp.fixed} />
+              {name}
+              <img
+                className="card-decal"
+                src="https://res.cloudinary.com/dzmc7doja/image/upload/v1634103191/design-assets/design-icon-assets/grey-dots.png"
+              />
             </motion.div>
           ))}
           {shownInterests < interests.length && (
@@ -172,7 +199,7 @@ const Interests = ({ content }) => {
                 type="button"
                 textAlign="left"
               >
-                + load more
+                + view all
               </Button>
             </motion.div>
           )}
