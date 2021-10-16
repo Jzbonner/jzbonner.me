@@ -15,6 +15,7 @@ const StyledSection = styled.section`
   max-width: 62.5rem;
   margin: 0 auto;
   padding: 0 2.5rem;
+  // border: 1px solid black;
   height: auto;
   background: ${({ theme }) => theme.colors.background};
   h1 {
@@ -22,6 +23,7 @@ const StyledSection = styled.section`
   }
   h2 {
     font-size: 1.25rem;
+    text-align: center;
   }
   h3 {
     font-size: 1rem;
@@ -32,16 +34,26 @@ const StyledSection = styled.section`
 const StyledContentWrapper = styled(ContentWrapper)`
   && {
     width: 100%;
-    max-width: 36rem;
     margin: 0;
     padding: 0;
     height: 100%;
+  }
+  .built-with {
+    display: block;
+    margin: 0 auto;
+    width: 90%;
   }
 `
 
 const Contributions = ({ data }) => {
   const { body, frontmatter } = data.contributions.edges[0].node
-  const { title, seoTitle, useSeoTitleSuffix, useSplashScreen } = frontmatter
+  const {
+    title,
+    seoTitle,
+    useSeoTitleSuffix,
+    useSplashScreen,
+    subtitleSection,
+  } = frontmatter
 
   const globalState = {
     isIntroDone: useSplashScreen ? false : true,
@@ -62,6 +74,11 @@ const Contributions = ({ data }) => {
         <StyledSection id={title}>
           <StyledContentWrapper>
             <h1 data-testid="heading">{title}</h1>
+            <img
+              className="built-with"
+              src="https://res.cloudinary.com/dzmc7doja/image/upload/v1634359847/portfolio-site/built-with.png"
+              alt="built-with-design"
+            />
             <MDXRenderer>{body}</MDXRenderer>
           </StyledContentWrapper>
         </StyledSection>
@@ -100,6 +117,7 @@ export const pageQuery = graphql`
             seoTitle
             useSeoTitleSuffix
             useSplashScreen
+            subtitleSection
           }
         }
       }

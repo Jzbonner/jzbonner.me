@@ -11,7 +11,7 @@ const StyledButton = styled.button`
   margin: 0 ${({ center }) => (center ? "auto" : "0")};
   font-size: 0.875rem;
   font-weight: 700;
-  text-transform: uppercase;
+  // text-transform: uppercase;
   border: none;
   border-radius: ${({ theme }) => theme.borderRadius};
   text-decoration: none;
