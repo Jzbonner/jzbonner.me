@@ -46,6 +46,7 @@ const StyledContentWrapper = styled(ContentWrapper)`
     .section-title {
       padding-right: 2.5rem;
       padding-left: 2.5rem;
+      font-family: "Khand";
       @media (min-width: ${({ theme }) => theme.breakpoints.md}) {
         padding-right: 0;
         padding-left: 0;

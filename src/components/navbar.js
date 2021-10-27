@@ -4,6 +4,20 @@ import { Link } from "gatsby"
 
 import { navLinks } from "../../config"
 
+// import google fonts from webfontloader module
+const WebFont = require("webfontloader")
+
+WebFont.load({
+  google: {
+    families: [
+      "Caveat",
+      "Khand",
+      "Roboto Condensed:400",
+      "Barlow Semi Condensed",
+    ],
+  },
+})
+
 const StyledNav = styled.nav`
   display: none;
   @media (min-width: ${({ theme }) => theme.breakpoints.lg}) {
@@ -17,8 +31,10 @@ const StyledNav = styled.nav`
     }
   }
   .nav-link {
-    font-size: 0.75rem;
+    font-family: "Barlow Semi Condensed";
+    font-size: 0.8rem;
     font-weight: 700;
+    letter-spacing: 1px;
     text-align: center;
     position: relative;
     padding: 0;
@@ -38,6 +54,7 @@ const StyledNav = styled.nav`
   .cta-btn {
     width: auto;
     height: auto;
+    font-family: "Barlow Semi Condensed";
     font-weight: 700;
     border-radius: ${({ theme }) => theme.borderRadius};
     border: 0.125rem solid ${({ theme }) => theme.colors.primary};

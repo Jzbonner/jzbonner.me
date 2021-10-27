@@ -2,6 +2,20 @@ import React from "react"
 import PropTypes from "prop-types"
 import styled from "styled-components"
 
+// import google fonts from webfontloader module
+const WebFont = require("webfontloader")
+
+WebFont.load({
+  google: {
+    families: [
+      "Caveat",
+      "Khand",
+      "Roboto Condensed:400",
+      "Barlow Semi Condensed",
+    ],
+  },
+})
+
 const StyledButton = styled.button`
   width: 15.625rem;
   height: 3rem;
@@ -9,8 +23,9 @@ const StyledButton = styled.button`
   color: ${({ theme }) => theme.colors.backgroundText};
   padding: 1rem;
   margin: 0 ${({ center }) => (center ? "auto" : "0")};
-  font-size: 0.875rem;
+  font-size: 0.95rem;
   font-weight: 700;
+  font-family: "Barlow Semi Condensed";
   // text-transform: uppercase;
   border: none;
   border-radius: ${({ theme }) => theme.borderRadius};

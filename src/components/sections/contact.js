@@ -10,6 +10,20 @@ import ContentWrapper from "../../styles/contentWrapper"
 import Underlining from "../../styles/underlining"
 import Social from "../social"
 
+// import google fonts from webfontloader module
+const WebFont = require("webfontloader")
+
+WebFont.load({
+  google: {
+    families: [
+      "Caveat",
+      "Khand",
+      "Roboto Condensed:400",
+      "Barlow Semi Condensed",
+    ],
+  },
+})
+
 const StyledSection = styled(motion.section)`
   width: 100%;
   height: auto;
@@ -30,6 +44,13 @@ const StyledContentWrapper = styled(ContentWrapper)`
       margin-top: 0;
       margin-bottom: 0;
     }
+    .section-title {
+      font-family: "Khand";
+    }
+    .section-subtitle {
+      font-size: 1.2rem;
+      font-family: "Barlow Semi Condensed";
+    }
     .profile {
       display: flex;
       flex-direction: column;
@@ -42,7 +63,7 @@ const StyledContentWrapper = styled(ContentWrapper)`
         margin-bottom: 3rem;
       }
       .avatar {
-        width: 100%;
+        width: 80%;
         max-width: 6.75rem;
         border-radius: 5%;
         margin-right: 1rem;
@@ -52,6 +73,7 @@ const StyledContentWrapper = styled(ContentWrapper)`
         }
       }
       .details {
+        font-family: "Barlow Semi Condensed";
         font-size: 1.25rem;
         line-height: 2rem;
       }
@@ -78,8 +100,10 @@ const Contact = ({ content }) => {
       animate={onScreen ? "visible" : "hidden"}
     >
       <StyledContentWrapper>
-        <h3>{frontmatter.title}</h3>
-        <MDXRenderer>{body}</MDXRenderer>
+        <h3 className="section-title">{frontmatter.title}</h3>
+        <p className="section-subtitle">
+          <MDXRenderer>{body}</MDXRenderer>
+        </p>
         <div className="profile">
           <Img
             className="avatar"

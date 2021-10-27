@@ -9,6 +9,20 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import { seoTitleSuffix } from "../../config"
 
+// import google fonts from webfontloader module
+const WebFont = require("webfontloader")
+
+WebFont.load({
+  google: {
+    families: [
+      "Caveat",
+      "Khand",
+      "Roboto Condensed:400",
+      "Barlow Semi Condensed",
+    ],
+  },
+})
+
 const StyledSection = styled.section`
   width: 100%;
   max-width: 62.5rem;
@@ -36,6 +50,9 @@ const StyledContentWrapper = styled(ContentWrapper)`
     padding: 0;
     height: 100%;
   }
+  .section-title {
+    font-family: "Khand";
+  }
 `
 
 const DevProjects = ({ data }) => {
@@ -60,7 +77,9 @@ const DevProjects = ({ data }) => {
         />
         <StyledSection id={title}>
           <StyledContentWrapper>
-            <h1 data-testid="heading">{title}</h1>
+            <h1 className="section-title" data-testid="heading">
+              {title}
+            </h1>
             <MDXRenderer>{body}</MDXRenderer>
           </StyledContentWrapper>
         </StyledSection>

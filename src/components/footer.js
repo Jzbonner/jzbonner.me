@@ -8,6 +8,20 @@ import Logo from "./logo"
 import { lightTheme, darkTheme } from "../styles/theme"
 import { footerLinks } from "../../config"
 
+// import google fonts from webfontloader module
+const WebFont = require("webfontloader")
+
+WebFont.load({
+  google: {
+    families: [
+      "Caveat",
+      "Khand",
+      "Roboto Condensed:400",
+      "Barlow Semi Condensed",
+    ],
+  },
+})
+
 const StyledFooter = styled.footer`
   width: 100%;
   height: ${({ theme }) => theme.footerHeight};
@@ -44,7 +58,8 @@ const StyledContentWrapper = styled(ContentWrapper)`
 `
 
 const StyledLink = styled(Link)`
-  font-size: 0.75rem;
+  font-family: "Khand";
+  font-size: 0.9rem;
   font-weight: 700;
   text-transform: uppercase;
   color: ${({ theme, $darkMode }) =>

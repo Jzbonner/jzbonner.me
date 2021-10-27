@@ -14,6 +14,20 @@ import Button from "../../styles/button"
 import Icon from "../../components/icons"
 import { lightTheme, darkTheme } from "../../styles/theme"
 
+// import google fonts from webfontloader module
+const WebFont = require("webfontloader")
+
+WebFont.load({
+  google: {
+    families: [
+      "Caveat",
+      "Khand",
+      "Roboto Condensed:400",
+      "Barlow Semi Condensed",
+    ],
+  },
+})
+
 const StyledSection = styled.section`
   width: 100%;
   height: auto;
@@ -49,6 +63,7 @@ const StyledContentWrapper = styled(ContentWrapper)`
     .section-title {
       padding-right: 2.5rem;
       padding-left: 2.5rem;
+      font-family: "Khand";
       @media (min-width: ${({ theme }) => theme.breakpoints.md}) {
         padding-right: 0;
         padding-left: 0;
@@ -143,10 +158,11 @@ const StyledProject = styled(motion.div)`
       margin-top: 0;
     }
     .category {
-      font-size: 0.875rem;
+      font-size: 1.2rem;
       line-height: 1rem;
       text-transform: uppercase;
       letter-spacing: +1px;
+      font-family: "Khand";
     }
     .title {
       margin-top: 0.625rem;
@@ -154,16 +170,21 @@ const StyledProject = styled(motion.div)`
       font-size: 1.375rem;
       line-height: 1.625rem;
       font-weight: 700;
+      font-family: "Barlow Semi Condensed";
     }
     .tags {
       display: flex;
       flex-wrap: wrap;
       margin-top: 1.5rem;
       line-height: 1.2rem;
+      font-family: "Barlow Semi Condensed";
       span {
         margin-right: 1rem;
         margin-bottom: 1rem;
       }
+    }
+    .description {
+      font-family: "Barlow Semi Condensed";
     }
     .links {
       display: flex;
@@ -189,12 +210,14 @@ const StyledProject = styled(motion.div)`
     width: 100%;
     max-width: 25rem;
     height: 15rem;
-    border-radius: ${({ theme }) => theme.borderRadius};
+    // border-radius: ${({ theme }) => theme.borderRadius};
+    border-radius: 2rem; 
     box-shadow: 0 0 2.5rem rgba(0, 0, 0, 0.16);
     transition: all 0.3s ease-out;
     &:hover {
       transform: translate3d(0px, -0.125rem, 0px);
       box-shadow: 0 0 2.5rem rgba(0, 0, 0, 0.32);
+      border-radius: 1rem; 
     }
     @media (min-width: ${({ theme }) => theme.breakpoints.md}) {
       height: 18.75rem;
@@ -292,7 +315,9 @@ const Projects = ({ content }) => {
                       {frontmatter.emoji} {frontmatter.category}
                     </div>
                     <div className="title">{frontmatter.title}</div>
-                    <MDXRenderer>{body}</MDXRenderer>
+                    <div className="description">
+                      <MDXRenderer>{body}</MDXRenderer>
+                    </div>
                     <div className="tags">
                       {frontmatter.tags.map(tag => (
                         <Underlining key={tag} highlight>

@@ -10,6 +10,20 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import { seoTitleSuffix } from "../../config"
 
+// import google fonts from webfontloader module
+const WebFont = require("webfontloader")
+
+WebFont.load({
+  google: {
+    families: [
+      "Caveat",
+      "Khand",
+      "Roboto Condensed:400",
+      "Barlow Semi Condensed",
+    ],
+  },
+})
+
 const StyledSection = styled.section`
   width: 100%;
   max-width: 62.5rem;
@@ -19,6 +33,7 @@ const StyledSection = styled.section`
   background: ${({ theme }) => theme.colors.background};
   h1 {
     font-size: 1.5rem;
+    font-family: "Khand";
   }
   h2 {
     font-size: 1.25rem;
@@ -36,6 +51,10 @@ const StyledContentWrapper = styled(ContentWrapper)`
     margin: 0;
     padding: 0;
     height: 100%;
+  }
+  .text-description {
+    font-family: "Barlow Semi Condensed";
+    font-size: 1.1rem;
   }
 `
 
@@ -62,7 +81,9 @@ const Privacy = ({ data }) => {
         <StyledSection id={title}>
           <StyledContentWrapper>
             <h1 data-testid="heading">{title}</h1>
-            <MDXRenderer>{body}</MDXRenderer>
+            <p className="text-description">
+              <MDXRenderer>{body}</MDXRenderer>
+            </p>
           </StyledContentWrapper>
         </StyledSection>
       </Layout>

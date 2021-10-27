@@ -7,6 +7,20 @@ import Icon from "./icons"
 import { lightTheme, darkTheme } from "../styles/theme"
 import { socialMedia } from "../../config"
 
+// import google fonts from webfontloader module
+const WebFont = require("webfontloader")
+
+WebFont.load({
+  google: {
+    families: [
+      "Caveat",
+      "Khand",
+      "Roboto Condensed:400",
+      "Barlow Semi Condensed",
+    ],
+  },
+})
+
 const StyledSocialWrapper = styled.div`
   display: grid;
   /* Calculate columns, depending on how many profiles there are */
@@ -84,6 +98,7 @@ const StyledSocialProfile = styled.a`
   padding: ${({ padding }) => (padding ? padding : ".3rem 1.25rem")};
   transition: all 0.1s ease-out;
   font-size: ${({ fontSize }) => (fontSize ? fontSize : "1rem")};
+  font-family: "Barlow Semi Condensed";
   font-weight: 500;
   color: ${({ theme }) => theme.colors.primary};
   &:hover {

@@ -11,6 +11,20 @@ import { mediumRssFeed, shownArticles } from "../../../config"
 // import { rssFeed, shownArticles } from "../../../config"
 import { lightTheme, darkTheme } from "../../styles/theme"
 
+// import google fonts from webfontloader module
+const WebFont = require("webfontloader")
+
+WebFont.load({
+  google: {
+    families: [
+      "Caveat",
+      "Khand",
+      "Roboto Condensed:400",
+      "Barlow Semi Condensed",
+    ],
+  },
+})
+
 const StyledSection = motion.custom(styled.section`
   width: 100%;
   height: auto;
@@ -30,6 +44,7 @@ const StyledContentWrapper = styled(ContentWrapper)`
     .section-title {
       padding-right: 2.5rem;
       padding-left: 2.5rem;
+      font-family: "Khand";
       @media (min-width: ${({ theme }) => theme.breakpoints.lg}) {
         padding-right: 0;
         padding-left: 0;
@@ -110,15 +125,18 @@ const StyledContentWrapper = styled(ContentWrapper)`
         text-transform: uppercase;
         letter-spacing: +1px;
         font-weight: 700;
+        font-family: "Barlow Semi Condensed";
       }
       .title {
         margin-top: 0.25rem;
         margin-bottom: 0.25rem;
+        font-family: "Khand";
       }
       .date {
         font-size: 0.75rem;
         color: ${({ theme }) => theme.colors.subtext};
-        letter-spacing: +0.5px;
+        letter-spacing: 1px;
+        font-family: "Khand";
       }
     }
   }

@@ -15,7 +15,12 @@ const WebFont = require("webfontloader")
 
 WebFont.load({
   google: {
-    families: ["Caveat", "Khand", "Roboto Condensed:400"],
+    families: [
+      "Caveat",
+      "Khand",
+      "Roboto Condensed:400",
+      "Barlow Semi Condensed",
+    ],
   },
 })
 
@@ -69,6 +74,8 @@ const StyledContentWrapper = styled(ContentWrapper)`
       color: ${({ theme }) => theme.colors.subtitleText};
       margin-top: -1rem;
       padding: 0.5rem !important;
+      font-family: "Khand";
+      letter-spacing: 1px;
       font-size: 1.75rem;
       font-weight: 600;
       text-align: center;

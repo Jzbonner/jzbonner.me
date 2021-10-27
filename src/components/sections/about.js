@@ -9,6 +9,20 @@ import { useOnScreen } from "../../hooks/"
 import Context from "../../context/"
 import ContentWrapper from "../../styles/contentWrapper"
 
+// import google fonts from webfontloader module
+const WebFont = require("webfontloader")
+
+WebFont.load({
+  google: {
+    families: [
+      "Caveat",
+      "Khand",
+      "Roboto Condensed:400",
+      "Barlow Semi Condensed",
+    ],
+  },
+})
+
 const StyledSection = styled.section`
   width: 100%;
   height: auto;
@@ -29,6 +43,7 @@ const StyledContentWrapper = styled(ContentWrapper)`
     }
     .section-title {
       margin-bottom: 2rem;
+      font-family: "Khand";
     }
     .inner-wrapper {
       display: flex;
@@ -38,6 +53,8 @@ const StyledContentWrapper = styled(ContentWrapper)`
     .text-content {
       width: 100%;
       max-width: 31.25rem;
+      font-family: "Barlow Semi Condensed";
+      font-size: 1.1rem;
     }
     .image-content {
       width: 100%;
