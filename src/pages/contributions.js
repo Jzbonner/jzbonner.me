@@ -69,7 +69,7 @@ const StyledContentWrapper = styled(ContentWrapper)`
   }
   .section-title {
     font-family: "Khand";
-    font-size: 1.3rem;
+    font-size: 1.1rem;
     margin-top: 2.5rem;
   }
   .text-description {
