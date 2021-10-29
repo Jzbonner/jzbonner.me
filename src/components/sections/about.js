@@ -66,6 +66,7 @@ const StyledContentWrapper = styled(ContentWrapper)`
       }
     }
     .about-author {
+      // border: 3px solid #A5A5A5;
       border-radius: 50% 30% / 10% 40%;
       box-shadow: rgba(180, 180, 180, 0.6) -5px 5px,
         rgba(180, 180, 180, 0.5) -10px 10px, rgba(180, 180, 180, 0.4) -15px 15px,

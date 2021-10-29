@@ -141,6 +141,13 @@ export const pageQuery = graphql`
             title
             category
             emoji
+            decal {
+              childImageSharp {
+                fluid(maxWidth: 400, quality: 100) {
+                  ...GatsbyImageSharpFluid
+                }
+              }
+            }
             external
             github
             screenshot {

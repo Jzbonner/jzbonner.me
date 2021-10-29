@@ -33,10 +33,11 @@ const StyledSection = styled.section`
   height: auto;
   background: ${({ theme }) => theme.colors.background};
   margin-top: 6rem;
+  margin-bottom: 3rem;
   .cta-btn {
     display: block;
     text-align: center;
-    margin: 2rem auto;
+    margin: 0rem auto;
     @media (min-width: ${({ theme }) => theme.breakpoints.md}) {
       margin: 0 auto;
     }
@@ -112,10 +113,11 @@ const StyledContentWrapper = styled(ContentWrapper)`
     }
     .counter {
       position: absolute;
-      top: 2.2rem;
+      top: 3.4rem;
       right: 2.5rem;
       font-size: 1.125rem;
-      font-weight: 500;
+      font-weight: 600;
+      font-family: "Barlow Semi Condensed";
       @media (min-width: ${({ theme }) => theme.breakpoints.sm}) {
         display: none;
       }
@@ -157,12 +159,24 @@ const StyledProject = styled(motion.div)`
     @media (min-width: ${({ theme }) => theme.breakpoints.md}) {
       margin-top: 0;
     }
+    .decal {
+      //border: 1px solid black;  
+      width: 14%; 
+    }
     .category {
+      // border: 1px solid black; 
+      display: flex; 
+      flex: row; 
       font-size: 1.2rem;
-      line-height: 1rem;
+      //line-height: 1rem;
       text-transform: uppercase;
       letter-spacing: +1px;
       font-family: "Khand";
+    }
+    .category-text {
+      // border: 1px solid black; 
+      margin-top: 1rem; 
+      margin-left: 0.5rem; 
     }
     .title {
       margin-top: 0.625rem;
@@ -312,7 +326,11 @@ const Projects = ({ content }) => {
                 >
                   <div className="details">
                     <div className="category">
-                      {frontmatter.emoji} {frontmatter.category}
+                      <Img
+                        className="decal"
+                        fluid={frontmatter.decal.childImageSharp.fluid}
+                      />
+                      <p className="category-text">{frontmatter.category}</p>
                     </div>
                     <div className="title">{frontmatter.title}</div>
                     <div className="description">
