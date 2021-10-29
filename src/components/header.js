@@ -37,11 +37,16 @@ const StyledBurger = styled.button`
   height: 2rem;
   background: transparent;
   border: none;
+  border-radius: 0.3rem;
   cursor: pointer;
-  padding: 0;
+  padding: 0.25rem;
 
   &:focus {
     outline: none;
+    background: ${({ theme }) => theme.colors.secondary};
+  }
+  &:after {
+    background: ${({ theme }) => theme.colors.secondary};
   }
 
   @media (min-width: ${({ theme }) => theme.breakpoints.lg}) {

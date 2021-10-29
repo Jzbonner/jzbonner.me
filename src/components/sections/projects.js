@@ -115,6 +115,10 @@ const StyledContentWrapper = styled(ContentWrapper)`
       position: absolute;
       top: 3.4rem;
       right: 2.5rem;
+      border: 0.05rem solid black;
+      border-radius: 0.5rem;
+      box-shadow: 0 0 2.5rem rgba(0, 0, 0, 0.16);
+      padding: 0.2rem;
       font-size: 1.125rem;
       font-weight: 600;
       font-family: "Barlow Semi Condensed";
@@ -161,7 +165,7 @@ const StyledProject = styled(motion.div)`
     }
     .decal {
       //border: 1px solid black;  
-      width: 14%; 
+      width: 20%; 
     }
     .category {
       // border: 1px solid black; 
@@ -220,17 +224,26 @@ const StyledProject = styled(motion.div)`
       }
     }
   }
+  .screenshot-container {
+    width: 100%; 
+    overflow: hidden; 
+    max-width: 25rem; 
+    height: 15rem; 
+    @media (min-width: ${({ theme }) => theme.breakpoints.md}) {
+      height: 18.75rem; 
+    }
+  }
   .screenshot {
     width: 100%;
     max-width: 25rem;
     height: 15rem;
     // border-radius: ${({ theme }) => theme.borderRadius};
     border-radius: 2rem; 
-    box-shadow: 0 0 2.5rem rgba(0, 0, 0, 0.16);
+    // box-shadow: 0 0 2.5rem rgba(0, 0, 0, 0.16);
     transition: all 0.3s ease-out;
     &:hover {
       transform: translate3d(0px, -0.125rem, 0px);
-      box-shadow: 0 0 2.5rem rgba(0, 0, 0, 0.32);
+      // box-shadow: 0 0 2.5rem rgba(0, 0, 0, 0.32);
       border-radius: 1rem; 
     }
     @media (min-width: ${({ theme }) => theme.breakpoints.md}) {
@@ -384,10 +397,12 @@ const Projects = ({ content }) => {
                   <VisibilitySensor
                     onChange={() => setVisibleProject(frontmatter.position)}
                   >
-                    <Img
-                      className="screenshot"
-                      fluid={frontmatter.screenshot.childImageSharp.fluid}
-                    />
+                    <div className="screenshot-container">
+                      <Img
+                        className="screenshot"
+                        fluid={frontmatter.screenshot.childImageSharp.fluid}
+                      />
+                    </div>
                   </VisibilitySensor>
                 </StyledProject>
               </VisibilitySensor>
