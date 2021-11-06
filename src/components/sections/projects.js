@@ -164,8 +164,10 @@ const StyledProject = styled(motion.div)`
       margin-top: 0;
     }
     .decal {
+      display: block; 
       //border: 1px solid black;  
       width: 20%; 
+      height: 70%;
     }
     .category {
       // border: 1px solid black; 
@@ -179,7 +181,7 @@ const StyledProject = styled(motion.div)`
     }
     .category-text {
       // border: 1px solid black; 
-      margin-top: 1rem; 
+      margin-top: 2rem; 
       margin-left: 0.5rem; 
     }
     .title {
