@@ -14,7 +14,10 @@ import Button from "../../styles/button"
 import Icon from "../../components/icons"
 import { lightTheme, darkTheme } from "../../styles/theme"
 
-// import google fonts from webfontloader module
+/**
+ * @param  {} "webfontloader"
+ * imports Google Fonts from webfontloader module
+ */
 const WebFont = require("webfontloader")
 
 WebFont.load({

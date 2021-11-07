@@ -48,10 +48,32 @@ const StyledContentWrapper = styled(ContentWrapper)`
     max-width: 36rem;
     margin: 0;
     padding: 0;
-    height: 100%;
+    height: 10%;
   }
   .section-title {
     font-family: "Khand";
+  }
+`
+
+const StyledGridLayout = styled(ContentWrapper)`
+  && {
+    // border: 1px solid black;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    font-family: "Barlow Semi Condensed";
+  }
+  .column {
+    // border: 1px solid black;
+    display: flex;
+    flex-direction: column;
+    flex-basis: 100%;
+    flex: auto;
   }
 `
 
@@ -80,8 +102,15 @@ const DevProjects = ({ data }) => {
             <h1 className="section-title" data-testid="heading">
               {title}
             </h1>
-            <MDXRenderer>{body}</MDXRenderer>
           </StyledContentWrapper>
+          <StyledGridLayout>
+            <div className="column">
+              <p>This will have the figma design element</p>
+            </div>
+            <div className="column">
+              <MDXRenderer>{body}</MDXRenderer>
+            </div>
+          </StyledGridLayout>
         </StyledSection>
       </Layout>
     </GlobalStateProvider>

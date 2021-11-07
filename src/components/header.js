@@ -41,7 +41,7 @@ const StyledBurger = styled.button`
   cursor: pointer;
   padding: 0.25rem;
 
-  &:focus {
+  &:focus-within {
     outline: none;
     background: ${({ theme }) => theme.colors.secondary};
   }
