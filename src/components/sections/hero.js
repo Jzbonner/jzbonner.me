@@ -55,8 +55,8 @@ const StyledContentWrapper = styled(ContentWrapper)`
     }
     .emoji {
       margin-left: 0.75rem;
-      width: 2.2rem;
-      height: 2.2rem;
+      width: 5rem;
+      height: 5rem;
       @media (min-width: ${({ theme }) => theme.breakpoints.sm}) {
         margin-left: 1rem;
         width: 4rem;

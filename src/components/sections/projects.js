@@ -188,9 +188,9 @@ const StyledProject = styled(motion.div)`
       margin-left: 0.5rem; 
     }
     .title {
-      margin-top: 0.625rem;
+      margin-top: 1rem;
       margin-bottom: 0.625rem;
-      font-size: 1.375rem;
+      font-size: 1.1rem;
       line-height: 1.625rem;
       font-weight: 700;
       font-family: "Barlow Semi Condensed";
