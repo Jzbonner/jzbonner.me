@@ -230,7 +230,10 @@ const StyledProject = styled(motion.div)`
     }
   }
   .screenshot-container {
+    // border: 1px solid black; 
     width: 100%; 
+    // margin: 0 auto; 
+    padding: 0px; 
     overflow: hidden; 
     max-width: 25rem; 
     height: 15rem; 
@@ -239,20 +242,26 @@ const StyledProject = styled(motion.div)`
     }
   }
   .screenshot {
-    width: 100%;
-    max-width: 25rem;
-    height: 15rem;
+    // border: 1px solid black; 
+    width: 17rem;
+    height: 17rem;
+    margin-left: 0.25rem; 
+    margin-top: 0rem; 
+    // max-width: 25rem;
     // border-radius: ${({ theme }) => theme.borderRadius};
-    border-radius: 2rem; 
+    border-radius: 1rem; 
     // box-shadow: 0 0 2.5rem rgba(0, 0, 0, 0.16);
     transition: all 0.3s ease-out;
     &:hover {
-      transform: translate3d(0px, -0.125rem, 0px);
+      transform: translate3d(0px, -0.8rem, 0px);
       // box-shadow: 0 0 2.5rem rgba(0, 0, 0, 0.32);
-      border-radius: 1rem; 
+      // border-radius: 1rem; 
     }
     @media (min-width: ${({ theme }) => theme.breakpoints.md}) {
-      height: 18.75rem;
+      // border: 1px solid black; 
+      margin-top: -3rem; 
+      width: 25rem; 
+      height: 25rem;
     }
   }
 `
