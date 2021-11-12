@@ -236,9 +236,9 @@ const StyledProject = styled(motion.div)`
     padding: 0px; 
     overflow: hidden; 
     max-width: 25rem; 
-    height: 15rem; 
+    height: 18rem; 
     @media (min-width: ${({ theme }) => theme.breakpoints.md}) {
-      height: 18.75rem; 
+      height: 20rem; 
     }
   }
   .screenshot {
@@ -246,7 +246,7 @@ const StyledProject = styled(motion.div)`
     width: 17rem;
     height: 17rem;
     margin-left: 0.25rem; 
-    margin-top: 0rem; 
+    margin-top: 1rem; 
     // max-width: 25rem;
     // border-radius: ${({ theme }) => theme.borderRadius};
     border-radius: 1rem; 
