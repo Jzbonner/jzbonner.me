@@ -232,13 +232,15 @@ const StyledProject = styled(motion.div)`
   .screenshot-container {
     // border: 1px solid black; 
     width: 100%; 
-    // margin: 0 auto; 
     padding: 0px; 
-    overflow: hidden; 
+    // overflow: hidden; 
     max-width: 25rem; 
     height: 18rem; 
     @media (min-width: ${({ theme }) => theme.breakpoints.md}) {
       height: 20rem; 
+    }
+    &:hover .screenshot-branding {
+      transform: translate3d(0px, 1rem, 0px); 
     }
   }
   .screenshot {
@@ -247,22 +249,27 @@ const StyledProject = styled(motion.div)`
     height: 17rem;
     margin-left: 0.25rem; 
     margin-top: 1rem; 
-    // max-width: 25rem;
-    // border-radius: ${({ theme }) => theme.borderRadius};
     border-radius: 1rem; 
-    // box-shadow: 0 0 2.5rem rgba(0, 0, 0, 0.16);
+    box-shadow: 0 0 2.5rem rgba(0, 0, 0, 0.16);
     transition: all 0.3s ease-out;
     &:hover {
       transform: translate3d(0px, -0.8rem, 0px);
-      // box-shadow: 0 0 2.5rem rgba(0, 0, 0, 0.32);
-      // border-radius: 1rem; 
     }
     @media (min-width: ${({ theme }) => theme.breakpoints.md}) {
       // border: 1px solid black; 
-      margin-top: -3rem; 
-      width: 25rem; 
-      height: 25rem;
+      margin-top: -0.8rem; 
+      width: 24rem; 
+      height: 24;rem;
     }
+  }
+  .screenshot-branding {
+    height: 5rem; 
+    width: 5rem; 
+    margin-top: -3rem; 
+    position: relative; 
+    left: 1rem; 
+    z-index: 1; 
+    transition: all 0.2s ease-in-out; 
   }
 `
 
@@ -415,6 +422,10 @@ const Projects = ({ content }) => {
                       <Img
                         className="screenshot"
                         fluid={frontmatter.screenshot.childImageSharp.fluid}
+                      />
+                      <img
+                        className="screenshot-branding"
+                        src="https://res.cloudinary.com/dzmc7doja/image/upload/v1634103191/design-assets/design-icon-assets/line-graphic.png"
                       />
                     </div>
                   </VisibilitySensor>

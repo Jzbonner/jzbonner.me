@@ -45,7 +45,7 @@ const StyledSection = styled.section`
 const StyledContentWrapper = styled(ContentWrapper)`
   && {
     width: 100%;
-    max-width: 36rem;
+    max-width: 40rem;
     margin: 0;
     padding: 0;
     height: 10%;
@@ -65,7 +65,7 @@ const StyledGridLayout = styled(ContentWrapper)`
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    gap: 0.5rem;
+    gap: 1rem;
     font-family: "Barlow Semi Condensed";
   }
   .column {
@@ -74,6 +74,15 @@ const StyledGridLayout = styled(ContentWrapper)`
     flex-direction: column;
     flex-basis: 100%;
     flex: auto;
+  }
+  .dev-experience {
+    background: rgba(66, 66, 66, 0.14);
+    border-radius: 0.4rem;
+    margin: 0 auto;
+    box-shadow: 0 0 2.5rem rgba(0, 0, 0, 0.16);
+    // border: 1px solid black;
+    display: flex;
+    width: 35.5rem;
   }
 `
 
@@ -105,10 +114,13 @@ const DevProjects = ({ data }) => {
           </StyledContentWrapper>
           <StyledGridLayout>
             <div className="column">
-              <p>This will have the figma design element</p>
+              <MDXRenderer>{body}</MDXRenderer>
             </div>
             <div className="column">
-              <MDXRenderer>{body}</MDXRenderer>
+              <img
+                className="dev-experience"
+                src="https://res.cloudinary.com/dzmc7doja/image/upload/v1636663172/portfolio-site/dev-projects-experience.png"
+              />
             </div>
           </StyledGridLayout>
         </StyledSection>
