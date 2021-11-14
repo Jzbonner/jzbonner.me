@@ -403,7 +403,7 @@ const Projects = ({ content }) => {
                           aria-label="External Link"
                         >
                           <Icon
-                            name="external"
+                            name="blog"
                             color={
                               darkMode
                                 ? darkTheme.colors.subtext
