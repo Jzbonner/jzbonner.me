@@ -54,7 +54,7 @@ const StyledContentWrapper = styled(ContentWrapper)`
     padding: 0;
   }
   .column {
-    //border: 1px solid black;
+    border: 1px solid black;
     display: flex;
     flex-direction: column;
     flex-basis: 100%;

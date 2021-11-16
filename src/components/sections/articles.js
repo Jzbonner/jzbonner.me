@@ -92,10 +92,13 @@ const StyledContentWrapper = styled(ContentWrapper)`
     .card-decal {
       display: block;
       position: relative;
-      top: 3rem;
-      left: 0.5rem;
+      top: 3.5rem;
+      left: 2rem;
       z-index: 2;
       width: 2rem;
+      @media (min-width: ${({ theme }) => theme.breakpoints.md}) {
+        left: 0.5rem;
+      }
     }
     .card-details {
       border-left: 3px solid ${({ theme }) => theme.colors.primary};

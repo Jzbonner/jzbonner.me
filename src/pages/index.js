@@ -143,7 +143,7 @@ export const pageQuery = graphql`
             emoji
             decal {
               childImageSharp {
-                fluid(maxWidth: 400, quality: 100) {
+                fluid(maxWidth: 1000, quality: 100) {
                   ...GatsbyImageSharpFluid
                 }
               }
@@ -151,6 +151,13 @@ export const pageQuery = graphql`
             external
             github
             screenshot {
+              childImageSharp {
+                fluid(maxWidth: 400, quality: 100) {
+                  ...GatsbyImageSharpFluid
+                }
+              }
+            }
+            screenshotBranding {
               childImageSharp {
                 fluid(maxWidth: 400, quality: 100) {
                   ...GatsbyImageSharpFluid

@@ -167,10 +167,17 @@ const StyledProject = styled(motion.div)`
       margin-top: 0;
     }
     .decal {
-      display: block; 
+      dispaly: flex; 
+      // display: block; 
       //border: 1px solid black;  
-      width: 20%; 
-      height: 70%;
+      // margin: 0 auto; 
+      margin-top: 1rem; 
+      width: 3rem; 
+      height: 3rem; 
+      @media (min-width: ${({ theme }) => theme.breakpoints.md}) { 
+        height: 5rem; 
+        width: 5rem;
+      }
     }
     .category {
       // border: 1px solid black; 
@@ -185,7 +192,11 @@ const StyledProject = styled(motion.div)`
     .category-text {
       // border: 1px solid black; 
       margin-top: 2rem; 
+      margin-bottom: 3rem; 
       margin-left: 0.5rem; 
+      @media (min-width: ${({ theme }) => theme.breakpoints.md}) {
+        margin-top: 2rem; 
+      }
     }
     .title {
       margin-top: 1rem;
@@ -239,6 +250,9 @@ const StyledProject = styled(motion.div)`
     @media (min-width: ${({ theme }) => theme.breakpoints.md}) {
       height: 20rem; 
     }
+    &:hover .screenshot {
+      transform: translate3d(0px, -0.8rem, 0px);
+    }
     &:hover .screenshot-branding {
       transform: translate3d(0px, 1rem, 0px); 
     }
@@ -252,9 +266,6 @@ const StyledProject = styled(motion.div)`
     border-radius: 1rem; 
     box-shadow: 0 0 2.5rem rgba(0, 0, 0, 0.16);
     transition: all 0.3s ease-out;
-    &:hover {
-      transform: translate3d(0px, -0.8rem, 0px);
-    }
     @media (min-width: ${({ theme }) => theme.breakpoints.md}) {
       // border: 1px solid black; 
       margin-top: -0.8rem; 
@@ -263,13 +274,18 @@ const StyledProject = styled(motion.div)`
     }
   }
   .screenshot-branding {
-    height: 5rem; 
-    width: 5rem; 
+    height: 4rem; 
+    width: 4rem; 
     margin-top: -3rem; 
     position: relative; 
-    left: 1rem; 
+    left: 12rem; 
     z-index: 1; 
     transition: all 0.2s ease-in-out; 
+    @media (min-width: ${({ theme }) => theme.breakpoints.md}) {
+      height: 6rem; 
+      width: 6rem; 
+      left: 1rem; 
+    }
   }
 `
 
@@ -423,9 +439,11 @@ const Projects = ({ content }) => {
                         className="screenshot"
                         fluid={frontmatter.screenshot.childImageSharp.fluid}
                       />
-                      <img
+                      <Img
                         className="screenshot-branding"
-                        src="https://res.cloudinary.com/dzmc7doja/image/upload/v1634103191/design-assets/design-icon-assets/line-graphic.png"
+                        fluid={
+                          frontmatter.screenshotBranding.childImageSharp.fluid
+                        }
                       />
                     </div>
                   </VisibilitySensor>
