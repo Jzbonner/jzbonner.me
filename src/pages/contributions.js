@@ -61,13 +61,39 @@ const StyledContentWrapper = styled(ContentWrapper)`
   .column {
     border-radius: 0.8rem;
     box-shadow: 0 0 2.5rem rgba(0, 0, 0, 0.16);
-    background: rgba(212, 203, 184, 0.4);
+    background: rgba(212, 203, 184, 0.5);
     display: flex;
     flex-direction: column;
     flex-basis: 100%;
     flex: auto;
+    transition: all 0.2s ease-in-out;
+    &:hover {
+      background: rgba(212, 203, 184, 0);
+    }
+    &:hover h3 {
+      transform: scale(1.1);
+    }
     @media (min-width: ${({ theme }) => theme.breakpoints.md}) {
       flex: 1;
+      margin-bottom: 4rem;
+    }
+  }
+  .column-contribution {
+    // border: 1px solid black;
+    border-radius: 0.8rem;
+    box-shadow: 0 0 2.5rem rgba(0, 0, 0, 0.16);
+    background: rgba(212, 203, 184, 0.4);
+    display: flex;
+    margin: 0 auto;
+    margin-bottom: -8rem;
+    flex-direction: column;
+    flex-basis: 100%;
+    // width: 50%;
+    // flex: auto;
+    @media (min-width: ${({ theme }) => theme.breakpoints.md}) {
+      flex-basis: 50%;
+      // flex: auto;
+      margin-bottom: -4rem;
     }
   }
   .built-with {
@@ -87,9 +113,11 @@ const StyledContentWrapper = styled(ContentWrapper)`
     margin-top: 2.5rem;
     margin-left: 1rem;
     padding-left: 1rem;
+    transition: all 0.2s ease-in-out;
   }
   .text-description {
     font-family: "Barlow Semi Condensed";
+    font-weight: 600;
     font-size: 1rem;
     text-align: center;
     text-transform: uppercase;
@@ -104,12 +132,12 @@ const StyledContentWrapper = styled(ContentWrapper)`
   }
   .branding {
     position: relative;
-    top: -3rem;
+    top: 5rem;
     height: 5rem;
     width: 5rem;
     @media (min-width: ${({ theme }) => theme.breakpoints.md}) {
       top: 6rem;
-      left: -3rem;
+      left: -15rem;
     }
   }
 `
@@ -169,7 +197,7 @@ const Contributions = ({ data }) => {
             </div>
           </StyledContentWrapper>
           <StyledContentWrapper>
-            <div className="column">
+            <div className="column-contribution">
               <p className="text-description">
                 <MDXRenderer>{body}</MDXRenderer>
               </p>
