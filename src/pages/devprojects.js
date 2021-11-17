@@ -27,7 +27,7 @@ const StyledSection = styled.section`
   width: 100%;
   max-width: 62.5rem;
   margin: 0 auto;
-  padding: 0 2.5rem;
+  // padding: 0 2.5rem;
   height: auto;
   background: ${({ theme }) => theme.colors.background};
   h1 {
@@ -59,8 +59,8 @@ const StyledGridLayout = styled(ContentWrapper)`
   && {
     // border: 1px solid black;
     width: 100%;
-    margin: 0;
-    padding: 0;
+    margin-top: -3rem;
+    // padding: 0;
     height: auto;
     display: flex;
     flex-direction: row;
@@ -74,15 +74,15 @@ const StyledGridLayout = styled(ContentWrapper)`
     flex-direction: column;
     flex-basis: 100%;
     flex: auto;
+    margin-bottom: 4rem;
   }
   .dev-experience {
-    background: rgba(66, 66, 66, 0.14);
-    border-radius: 0.4rem;
+    background: rgba(213, 213, 213, 0.9);
+    border-radius: 2rem;
     margin: 0 auto;
     box-shadow: 0 0 2.5rem rgba(0, 0, 0, 0.16);
-    // border: 1px solid black;
     display: flex;
-    width: 35.5rem;
+    width: 60rem;
   }
 `
 
@@ -114,13 +114,13 @@ const DevProjects = ({ data }) => {
           </StyledContentWrapper>
           <StyledGridLayout>
             <div className="column">
-              <MDXRenderer>{body}</MDXRenderer>
-            </div>
-            <div className="column">
               <img
                 className="dev-experience"
                 src="https://res.cloudinary.com/dzmc7doja/image/upload/v1636663172/portfolio-site/dev-projects-experience.png"
               />
+            </div>
+            <div className="column">
+              <MDXRenderer>{body}</MDXRenderer>
             </div>
           </StyledGridLayout>
         </StyledSection>

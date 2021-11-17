@@ -53,8 +53,15 @@ const StyledContentWrapper = styled(ContentWrapper)`
     margin-bottom: 6rem;
     padding: 0;
   }
+  .column-offset {
+    display: flex;
+    flex-direction: column;
+    flex-basis: 25rem;
+  }
   .column {
-    border: 1px solid black;
+    border-radius: 0.8rem;
+    box-shadow: 0 0 2.5rem rgba(0, 0, 0, 0.16);
+    background: rgba(212, 203, 184, 0.4);
     display: flex;
     flex-direction: column;
     flex-basis: 100%;
@@ -65,20 +72,45 @@ const StyledContentWrapper = styled(ContentWrapper)`
   }
   .built-with {
     display: block;
-    width: 85%;
+    width: 17rem;
+    margin: 0 auto;
+    @media (min-width: ${({ theme }) => theme.breakpoints.md}) {
+      width: 30rem;
+    }
   }
   .section-title {
+    border-radius: 0.4rem 0rem 0rem 0.4rem;
+    background: rgba(154, 167, 173, 0.4);
+    box-shadow: 0 0 1.5rem rgba(0, 0, 0, 0.25);
     font-family: "Khand";
     font-size: 1.1rem;
     margin-top: 2.5rem;
+    margin-left: 1rem;
+    padding-left: 1rem;
   }
   .text-description {
     font-family: "Barlow Semi Condensed";
-    font-size: 1.2rem;
+    font-size: 1rem;
+    text-align: center;
+    text-transform: uppercase;
   }
   .profile-card {
     display: block;
-    width: 75%;
+    width: 19rem;
+    margin: 0 auto;
+    @media (min-width: ${({ theme }) => theme.breakpoints.md}) {
+      width: 30rem;
+    }
+  }
+  .branding {
+    position: relative;
+    top: -3rem;
+    height: 5rem;
+    width: 5rem;
+    @media (min-width: ${({ theme }) => theme.breakpoints.md}) {
+      top: 6rem;
+      left: -3rem;
+    }
   }
 `
 
@@ -115,40 +147,37 @@ const Contributions = ({ data }) => {
               <h3 className="section-title" data-testid="heading">
                 {title}
               </h3>
-            </div>
-            <div className="column">
               <img
                 className="built-with"
-                src="https://res.cloudinary.com/dzmc7doja/image/upload/v1634359847/portfolio-site/built-with.png"
+                src="https://res.cloudinary.com/dzmc7doja/image/upload/v1637104957/portfolio-site/built-with.png"
                 alt="built-with-design"
               />
             </div>
+            <div className="column-offset"></div>
           </StyledContentWrapper>
           <StyledContentWrapper>
+            <div className="column-offset"></div>
             <div className="column">
               <h3 className="section-title" data-testid="heading">
                 {subTitleDesign}
               </h3>
-            </div>
-            <div className="column">
               <img
                 className="profile-card"
-                src="https://res.cloudinary.com/dzmc7doja/image/upload/v1634669959/portfolio-site/jzb_profile_card.png"
+                src="https://res.cloudinary.com/dzmc7doja/image/upload/v1637104966/portfolio-site/jzb-card.png"
                 alt="profile-card"
               />
             </div>
           </StyledContentWrapper>
           <StyledContentWrapper>
             <div className="column">
-              <h3 className="section-title" data-testid="heading">
-                {subTitleDevelop}
-              </h3>
-            </div>
-            <div className="column">
               <p className="text-description">
                 <MDXRenderer>{body}</MDXRenderer>
               </p>
             </div>
+            <img
+              className="branding"
+              src="https://res.cloudinary.com/dzmc7doja/image/upload/v1634103191/design-assets/design-icon-assets/line-graphic.png"
+            />
           </StyledContentWrapper>
         </StyledSection>
       </Layout>
