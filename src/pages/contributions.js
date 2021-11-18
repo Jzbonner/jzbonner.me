@@ -73,14 +73,16 @@ const StyledContentWrapper = styled(ContentWrapper)`
     &:hover h3 {
       transform: scale(1.1);
     }
+    &:hover img {
+      transform: translate3d(0px, -1rem, 0px);
+    }
     @media (min-width: ${({ theme }) => theme.breakpoints.md}) {
       flex: 1;
       margin-bottom: 4rem;
     }
   }
   .column-contribution {
-    // border: 1px solid black;
-    border-radius: 0.8rem;
+    border-radius: 0.5rem;
     box-shadow: 0 0 2.5rem rgba(0, 0, 0, 0.16);
     background: rgba(212, 203, 184, 0.4);
     display: flex;
@@ -88,11 +90,12 @@ const StyledContentWrapper = styled(ContentWrapper)`
     margin-bottom: -8rem;
     flex-direction: column;
     flex-basis: 100%;
-    // width: 50%;
-    // flex: auto;
+    transition: all 0.2s ease-in-out;
+    &:hover {
+      background: rgba(212, 203, 184, 1);
+    }
     @media (min-width: ${({ theme }) => theme.breakpoints.md}) {
       flex-basis: 50%;
-      // flex: auto;
       margin-bottom: -4rem;
     }
   }
@@ -100,6 +103,7 @@ const StyledContentWrapper = styled(ContentWrapper)`
     display: block;
     width: 17rem;
     margin: 0 auto;
+    transition: all 0.2s ease-in-out;
     @media (min-width: ${({ theme }) => theme.breakpoints.md}) {
       width: 30rem;
     }
@@ -118,14 +122,18 @@ const StyledContentWrapper = styled(ContentWrapper)`
   .text-description {
     font-family: "Barlow Semi Condensed";
     font-weight: 600;
-    font-size: 1rem;
+    font-size: 0.85rem;
     text-align: center;
     text-transform: uppercase;
+    @media (min-width: ${({ theme }) => theme.breakpoints.md}) {
+      font-size: 1rem;
+    }
   }
   .profile-card {
     display: block;
     width: 19rem;
     margin: 0 auto;
+    transition: all 0.2s ease-in-out;
     @media (min-width: ${({ theme }) => theme.breakpoints.md}) {
       width: 30rem;
     }
