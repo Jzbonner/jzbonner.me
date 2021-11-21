@@ -82,9 +82,8 @@ const StyledContentWrapper = styled(ContentWrapper)`
     }
   }
   .column-contribution {
-    border-radius: 0.5rem;
-    box-shadow: 0 0 2.5rem rgba(0, 0, 0, 0.16);
-    background: rgba(212, 203, 184, 0.4);
+    border-radius: 1rem;
+    background: rgba(212, 203, 184, 0.2);
     display: flex;
     margin: 0 auto;
     margin-bottom: -8rem;
@@ -92,6 +91,7 @@ const StyledContentWrapper = styled(ContentWrapper)`
     flex-basis: 100%;
     transition: all 0.2s ease-in-out;
     &:hover {
+      box-shadow: 0 0 2.5rem rgba(0, 0, 0, 0.16);
       background: rgba(212, 203, 184, 1);
     }
     @media (min-width: ${({ theme }) => theme.breakpoints.md}) {
@@ -126,7 +126,7 @@ const StyledContentWrapper = styled(ContentWrapper)`
     text-align: center;
     text-transform: uppercase;
     @media (min-width: ${({ theme }) => theme.breakpoints.md}) {
-      font-size: 1rem;
+      font-size: 0.8rem;
     }
   }
   .profile-card {
@@ -145,7 +145,7 @@ const StyledContentWrapper = styled(ContentWrapper)`
     width: 5rem;
     @media (min-width: ${({ theme }) => theme.breakpoints.md}) {
       top: 6rem;
-      left: -15rem;
+      left: -20rem;
     }
   }
 `

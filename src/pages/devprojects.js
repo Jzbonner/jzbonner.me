@@ -27,7 +27,6 @@ const StyledSection = styled.section`
   width: 100%;
   max-width: 62.5rem;
   margin: 0 auto;
-  // padding: 0 2.5rem;
   height: auto;
   background: ${({ theme }) => theme.colors.background};
   h1 {
@@ -44,23 +43,24 @@ const StyledSection = styled.section`
 
 const StyledContentWrapper = styled(ContentWrapper)`
   && {
+    // border: 1px solid black;
     width: 100%;
-    max-width: 40rem;
+    max-width: 36rem;
     margin: 0;
     padding: 0;
     height: 10%;
   }
   .section-title {
     font-family: "Khand";
+    margin-left: 2rem;
   }
 `
 
 const StyledGridLayout = styled(ContentWrapper)`
   && {
-    // border: 1px solid black;
+    margin-bottom: 2rem;
     width: 100%;
     margin-top: -3rem;
-    // padding: 0;
     height: auto;
     display: flex;
     flex-direction: row;
@@ -69,20 +69,57 @@ const StyledGridLayout = styled(ContentWrapper)`
     font-family: "Barlow Semi Condensed";
   }
   .column {
-    // border: 1px solid black;
+    background: rgba(213, 213, 213, 0.4);
+    box-shadow: 0 0 2.5rem rgba(0, 0, 0, 0.16);
+    border: 1px solid rgba(213, 213, 213, 0.9);
+    border-radius: 1rem;
     display: flex;
     flex-direction: column;
     flex-basis: 100%;
     flex: auto;
+    margin-top: -5rem;
     margin-bottom: 4rem;
+    margin-left: -2rem;
+    // overflow: hidden;
+    transition: all 0.2s ease-in-out;
+    @media (min-width: ${({ theme }) => theme.breakpoints.md}) {
+      margin-top: -6rem;
+      margin-bottom: 7rem;
+      margin-left: -2rem;
+    }
+    &:hover {
+      background: rgba(213, 213, 213, 0.9);
+    }
+  }
+  .column-modal {
+    // border: 1px solid blue;
+    border-radius: 1rem;
+    display: flex;
+    flex-direction: column;
+    flex-basis: 100%;
+    flex: auto;
+    margin-top: -1rem;
+    margin-bottom: 4rem;
+    margin-left: -6rem;
+    // overflow: hidden;
+    @media (min-width: ${({ theme }) => theme.breakpoints.md}) {
+      margin-top: -4rem;
+      margin-bottom: 10rem;
+      margin-left: -5rem;
+    }
   }
   .dev-experience {
-    background: rgba(213, 213, 213, 0.9);
-    border-radius: 2rem;
-    margin: 0 auto;
-    box-shadow: 0 0 2.5rem rgba(0, 0, 0, 0.16);
+    padding: 1rem;
     display: flex;
-    width: 60rem;
+    width: 24rem;
+    @media (min-width: ${({ theme }) => theme.breakpoints.md}) {
+      width: 67rem;
+      padding: 1rem;
+    }
+  }
+  .text-description {
+    padding: 2rem;
+    margin-top: -2rem;
   }
 `
 
@@ -114,13 +151,15 @@ const DevProjects = ({ data }) => {
           </StyledContentWrapper>
           <StyledGridLayout>
             <div className="column">
+              <p className="text-description">
+                <MDXRenderer>{body}</MDXRenderer>
+              </p>
+            </div>
+            <div className="column-modal">
               <img
                 className="dev-experience"
-                src="https://res.cloudinary.com/dzmc7doja/image/upload/v1636663172/portfolio-site/dev-projects-experience.png"
+                src="https://res.cloudinary.com/dzmc7doja/image/upload/v1637433075/portfolio-site/devprojects-graphic.png"
               />
-            </div>
-            <div className="column">
-              <MDXRenderer>{body}</MDXRenderer>
             </div>
           </StyledGridLayout>
         </StyledSection>
