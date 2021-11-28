@@ -60,8 +60,8 @@ const StyledContentWrapper = styled(ContentWrapper)`
   }
   .column {
     border-radius: 0.8rem;
-    box-shadow: 0 0 2.5rem rgba(0, 0, 0, 0.16);
-    background: rgba(212, 203, 184, 0.5);
+    // box-shadow: 0 0 2.5rem rgba(0, 0, 0, 0.16);
+    // background: rgba(212, 203, 184, 0.5);
     display: flex;
     flex-direction: column;
     flex-basis: 100%;
@@ -69,6 +69,7 @@ const StyledContentWrapper = styled(ContentWrapper)`
     transition: all 0.2s ease-in-out;
     &:hover {
       background: rgba(212, 203, 184, 0);
+      box-shadow: 0 0 2.5rem rgba(0, 0, 0, 0.16);
     }
     &:hover h3 {
       transform: scale(1.1);
