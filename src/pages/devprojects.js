@@ -77,9 +77,8 @@ const StyledGridLayout = styled(ContentWrapper)`
     flex-direction: column;
     flex-basis: 100%;
     flex: auto;
-    margin-top: -5rem;
+    margin-top: -3rem;
     margin-bottom: 4rem;
-    margin-left: -2rem;
     // overflow: hidden;
     transition: all 0.2s ease-in-out;
     @media (min-width: ${({ theme }) => theme.breakpoints.md}) {
@@ -98,14 +97,14 @@ const StyledGridLayout = styled(ContentWrapper)`
     flex-direction: column;
     flex-basis: 100%;
     flex: auto;
-    margin-top: -1rem;
+    margin-top: -5rem;
     margin-bottom: 4rem;
-    margin-left: -6rem;
+    margin-left: -1rem;
     // overflow: hidden;
     @media (min-width: ${({ theme }) => theme.breakpoints.md}) {
-      margin-top: -4rem;
+      margin-top: -8rem;
       margin-bottom: 10rem;
-      margin-left: -5rem;
+      margin-left: 0rem;
     }
   }
   .dev-experience {
@@ -113,7 +112,7 @@ const StyledGridLayout = styled(ContentWrapper)`
     display: flex;
     width: 24rem;
     @media (min-width: ${({ theme }) => theme.breakpoints.md}) {
-      width: 67rem;
+      width: 68rem;
       padding: 1rem;
     }
   }
@@ -150,16 +149,16 @@ const DevProjects = ({ data }) => {
             </h1>
           </StyledContentWrapper>
           <StyledGridLayout>
-            <div className="column">
-              <p className="text-description">
-                <MDXRenderer>{body}</MDXRenderer>
-              </p>
-            </div>
             <div className="column-modal">
               <img
                 className="dev-experience"
                 src="https://res.cloudinary.com/dzmc7doja/image/upload/v1637433075/portfolio-site/devprojects-graphic.png"
               />
+            </div>
+            <div className="column">
+              <p className="text-description">
+                <MDXRenderer>{body}</MDXRenderer>
+              </p>
             </div>
           </StyledGridLayout>
         </StyledSection>
