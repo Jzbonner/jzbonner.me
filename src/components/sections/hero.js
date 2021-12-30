@@ -44,12 +44,13 @@ const StyledContentWrapper = styled(ContentWrapper)`
       margin-bottom: 4rem;
     }
     .greetings {
-      font-family: "Roboto Condensed";
+      // font-family: "Barlow Semi Condensed";
+      font-family: "Khand";
       letter-spacing: 0.2rem;
       text-shadow: 4px 4px 0px #d5d5d5, 9px 9px 0px rgba(0, 0, 0, 0.2);
       color: ${({ theme }) => theme.colors.primary};
       display: flex;
-      opacity: 0.85;
+      opacity: 0.95;
       justify-content: flex-start;
       align-items: center;
     }
@@ -73,10 +74,10 @@ const StyledContentWrapper = styled(ContentWrapper)`
       border-radius: inherit;
       color: ${({ theme }) => theme.colors.subtitleText};
       margin-top: -1rem;
-      padding: 0.5rem !important;
+      padding: 0.8rem !important;
       font-family: "Khand";
       letter-spacing: 1px;
-      font-size: 1.75rem;
+      font-size: 1.5rem;
       font-weight: 600;
       text-align: center;
       @media (min-width: ${({ theme }) => theme.breakpoints.lg}) {
