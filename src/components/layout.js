@@ -11,8 +11,9 @@ import GlobalStyle from "../styles/globalStyle"
 import Header from "./header"
 import Footer from "./footer"
 import CookieBar from "../components/cookieBar"
+import FloatingButton from "../components/floatingButton"
 import SplashScreen from "../components/splashScreen"
-import { useCookieBar } from "../../config"
+import { useCookieBar, useFloatingButton } from "../../config"
 
 import { MDXProvider } from "@mdx-js/react"
 import Underlining from "../styles/underlining"
@@ -57,6 +58,7 @@ const Layout = ({ children }) => {
           <SplashScreen />
         )}
         {useCookieBar && <CookieBar />}
+        {useFloatingButton && <FloatingButton />}
       </ThemeProvider>
     </StyledLayoutWrapper>
   )

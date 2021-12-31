@@ -55,15 +55,12 @@ const StyledSplashScreen = styled(motion.div)`
       height: 9rem;
     }
   }
+
+  // Animations Section
   .bounce-in-top {
-    -webkit-animation: bounce-in-top 2.1s both;
-    animation: bounce-in-top 2.1s both;
+    -webkit-animation: bounce-in-top 1.8s both;
+    animation: bounce-in-top 1.8s both;
   }
-  /**
- * ----------------------------------------
- * animation bounce-in-top
- * ----------------------------------------
- */
   @-webkit-keyframes bounce-in-top {
     0% {
       -webkit-transform: translateY(-500px);
@@ -168,6 +165,76 @@ const StyledSplashScreen = styled(motion.div)`
       animation-timing-function: ease-out;
     }
   }
+
+  .exit-animation {
+    -webkit-animation: slide-out-top 0.5s cubic-bezier(0.55, 0.085, 0.68, 0.53)
+      both;
+    animation: slide-out-top 0.5s cubic-bezier(0.55, 0.085, 0.68, 0.53) both;
+    animation-delay: 3.5s;
+  }
+  @-webkit-keyframes slide-out-top {
+    0% {
+      -webkit-transform: translateY(0);
+      transform: translateY(0);
+      opacity: 1;
+    }
+    100% {
+      -webkit-transform: translateY(-1000px);
+      transform: translateY(-1000px);
+      opacity: 0;
+    }
+  }
+  @keyframes slide-out-top {
+    0% {
+      -webkit-transform: translateY(0);
+      transform: translateY(0);
+      opacity: 1;
+    }
+    100% {
+      -webkit-transform: translateY(-1000px);
+      transform: translateY(-1000px);
+      opacity: 0;
+    }
+  }
+
+  .logo-exit-animation {
+    -webkit-animation: puff-out-center 0.4s cubic-bezier(0.165, 0.84, 0.44, 1)
+      both;
+    animation: puff-out-center 0.4s cubic-bezier(0.165, 0.84, 0.44, 1) both;
+    animation-delay: 3.3s;
+  }
+  @-webkit-keyframes puff-out-center {
+    0% {
+      -webkit-transform: scale(1);
+      transform: scale(1);
+      -webkit-filter: blur(0px);
+      filter: blur(0px);
+      opacity: 1;
+    }
+    100% {
+      -webkit-transform: scale(2);
+      transform: scale(2);
+      -webkit-filter: blur(4px);
+      filter: blur(4px);
+      opacity: 0;
+    }
+  }
+  @keyframes puff-out-center {
+    0% {
+      -webkit-transform: scale(1);
+      transform: scale(1);
+      -webkit-filter: blur(0px);
+      filter: blur(0px);
+      opacity: 1;
+    }
+    100% {
+      -webkit-transform: scale(2);
+      transform: scale(2);
+      -webkit-filter: blur(4px);
+      filter: blur(4px);
+      opacity: 0;
+    }
+  }
 `
 
 const SplashScreen = () => {
@@ -182,13 +249,13 @@ const SplashScreen = () => {
       await backgroundControls.start({ opacity: 0.7 })
       await decalControls.start({
         opacity: 1,
-        transition: { delay: 0.6 },
+        transition: { delay: 0.3 },
       })
       await backdropControls.start({
         height: "0%",
-        transition: { delay: 0.7, type: "spring", stiffness: 80 },
+        transition: { delay: 0.2, type: "spring", stiffness: 30 },
       })
-      await backgroundControls.start({ opacity: 0, transition: { delay: 2.3 } })
+      await backgroundControls.start({ opacity: 0, transition: { delay: 0 } })
       setState({ ...state, isIntroDone: true })
     }
     sequence()
@@ -205,14 +272,18 @@ const SplashScreen = () => {
         bodyAttributes={{ class: !state.isIntroDone ? "splashScreen" : "" }}
       />
       <div className="decal-wrapper">
-        <motion.div initial={{ opacity: 0 }} animate={decalControls}>
+        <motion.div
+          className="exit-animation"
+          initial={{ opacity: 0 }}
+          animate={decalControls}
+        >
           <img
             className="initials bounce-in-top"
             src="https://res.cloudinary.com/dzmc7doja/image/upload/v1640411837/portfolio-site/logo-initials.png"
           />
         </motion.div>
       </div>
-      <div className="logo-wrapper">
+      <div className="logo-wrapper logo-exit-animation">
         <motion.div
           className="backdrop"
           initial={{ height: "100%" }}

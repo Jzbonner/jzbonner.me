@@ -10,6 +10,7 @@ module.exports = {
   siteIcon: "content/brain.png", // Relative to gatsby-config file
   seoTitleSuffix: "", // SEO title syntax will be e.g. "Imprint - {seoTitleSuffix}"
   useCookieBar: false, // If you use Google Analytics and want to be GDPR-compliant, set it to true
+  useFloatingButton: true, //Set to true to enable floating button
   googleAnalyticsTrackingId: "", // e.g. UA-XXXXXX-X
 
   // -- THEME SETTINGS -----
@@ -23,7 +24,8 @@ module.exports = {
       text: "#1F2021",
       subtext: "#555555",
       //background: "#DCDCDC" - cleanup
-      backgroundText: "#DCDCDC",
+      // backgroundText: "#DCDCDC",
+      backgroundText: "#EAEAEA",
       subtitleText: "#605E5A",
       card: "rgba(246,249,248, 0.8)",
       //card: "rgba(198,198,198, 0.8)",

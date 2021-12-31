@@ -20,6 +20,7 @@ const StyledLogo = styled.div`
   font-size: ${({ size }) => (size ? size : "1.5rem")};
   font-weight: 600;
   color: ${({ theme, color }) => theme.colors[color] || color};
+  border-top: 5px groove rgba(237, 239, 238, 0.2);
 
   /* Disable effects when sidebar is open */
   filter: none !important;

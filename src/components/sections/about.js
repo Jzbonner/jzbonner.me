@@ -51,7 +51,12 @@ const StyledContentWrapper = styled(ContentWrapper)`
       justify-content: center;
     }
     .text-content {
+      border: 1.5px solid rgb(31, 32, 33);
+      border-radius: 2rem;
+      box-shadow: 0 0 2.5rem rgba(0, 0, 0, 0.16);
+      background-color: rgba(202, 202, 202, 0.8);
       width: 100%;
+      padding: 2rem;
       max-width: 31.25rem;
       font-family: "Barlow Semi Condensed";
       font-size: 1.1rem;
@@ -59,7 +64,7 @@ const StyledContentWrapper = styled(ContentWrapper)`
     .image-content {
       width: 100%;
       max-width: 18rem;
-      margin-top: 4rem;
+      margin-top: 6rem;
       margin-left: 0;
       @media (min-width: ${({ theme }) => theme.breakpoints.sm}) {
         margin-left: 2rem;
@@ -77,6 +82,38 @@ const StyledContentWrapper = styled(ContentWrapper)`
         filter: grayscale(50%) contrast(1) brightness(90%);
         transform: translate3d(0px, -0.25rem, 0px);
         box-shadow: 0 0 2.5rem rgba(0, 0, 0, 0.32);
+      }
+    }
+    .pulsate-fwd {
+      -webkit-animation: pulsate-fwd 2.5s ease-in-out infinite both;
+      animation: pulsate-fwd 2.5s ease-in-out infinite both;
+    }
+    @-webkit-keyframes pulsate-fwd {
+      0% {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+      }
+      50% {
+        -webkit-transform: scale(1.05);
+        transform: scale(1.05);
+      }
+      100% {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+      }
+    }
+    @keyframes pulsate-fwd {
+      0% {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+      }
+      50% {
+        -webkit-transform: scale(1.05);
+        transform: scale(1.05);
+      }
+      100% {
+        -webkit-transform: scale(1);
+        transform: scale(1);
       }
     }
   }
@@ -125,7 +162,7 @@ const About = ({ content }) => {
           animate={iControls}
         >
           <Img
-            className="about-author"
+            className="about-author pulsate-fwd"
             fluid={frontmatter.image.childImageSharp.fluid}
           />
         </motion.div>

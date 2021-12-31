@@ -158,53 +158,64 @@ const StyledProject = styled(motion.div)`
       position % 2 !== 0 ? "row" : "row-reverse"};
   }
   .details {
+    // border: 1.5px solid rgb(31, 32, 33); 
+    border-radius: 1rem; 
+    background: rgba(225,227,226, 0.5);
+    box-shadow: 0 0 2.5rem rgba(0, 0, 0, 0.16);
     width: 100%;
     max-width: 25rem;
     display: flex;
     flex-direction: column;
     margin-top: 3rem;
+    padding: 1rem; 
     @media (min-width: ${({ theme }) => theme.breakpoints.md}) {
       margin-top: 0;
     }
     .decal {
-      dispaly: flex; 
-      // display: block; 
+      // dispaly: flex; 
       //border: 1px solid black;  
       // margin: 0 auto; 
-      margin-top: 1rem; 
+      // margin-top: 1rem; 
       width: 3rem; 
       height: 3rem; 
       @media (min-width: ${({ theme }) => theme.breakpoints.md}) { 
-        height: 5rem; 
-        width: 5rem;
+        height: 4rem; 
+        width: 4rem;
       }
     }
     .category {
-      // border: 1px solid black; 
+      border-bottom: 2px solid rgba(178, 173, 168, 0.9); 
+      border-radius: 1rem; 
+      background: rgba(208, 208, 208, 0.2);
+      box-shadow: 0 0 2.5rem rgba(0, 0, 0, 0.16);
       display: flex; 
-      flex: row; 
-      font-size: 1.2rem;
-      //line-height: 1rem;
+      justify-content: center; 
+      align-items: center; 
       text-transform: uppercase;
       letter-spacing: +1px;
       font-family: "Khand";
     }
     .category-text {
       // border: 1px solid black; 
-      margin-top: 2rem; 
+      margin-top: 2.5rem; 
       margin-bottom: 3rem; 
       margin-left: 0.5rem; 
+      font-size: 1rem; 
+      font-weight: bold; 
       @media (min-width: ${({ theme }) => theme.breakpoints.md}) {
-        margin-top: 2rem; 
+        margin-top: 2rem;
+        font-size: 1.3rem;  
       }
     }
     .title {
       margin-top: 1rem;
+      margin-left: 1rem; 
       margin-bottom: 0.625rem;
       font-size: 1.1rem;
       line-height: 1.625rem;
-      font-weight: 700;
+      // font-weight: 700;
       font-family: "Barlow Semi Condensed";
+      font-style: italic; 
     }
     .tags {
       display: flex;
@@ -212,6 +223,7 @@ const StyledProject = styled(motion.div)`
       margin-top: 1.5rem;
       line-height: 1.2rem;
       font-family: "Barlow Semi Condensed";
+      font-weight: bold; 
       span {
         margin-right: 1rem;
         margin-bottom: 1rem;
@@ -221,10 +233,14 @@ const StyledProject = styled(motion.div)`
       font-family: "Barlow Semi Condensed";
     }
     .links {
+      // border: 1px solid white; 
+      border-radius: 1rem; 
+      background: rgba(226, 228, 227, 1); 
+      padding: 0.4rem; 
       display: flex;
       justify-content: flex-start;
       align-items: center;
-      width: 100%;
+      width: 25%;
       margin-top: 1rem;
       a {
         display: inline-block;
@@ -264,7 +280,7 @@ const StyledProject = styled(motion.div)`
     margin-left: 0.25rem; 
     margin-top: 1rem; 
     border-radius: 1rem; 
-    box-shadow: 0 0 2.5rem rgba(0, 0, 0, 0.16);
+    // box-shadow: 0 0 2.5rem rgba(0, 0, 0, 0.16);
     transition: all 0.3s ease-out;
     @media (min-width: ${({ theme }) => theme.breakpoints.md}) {
       // border: 1px solid black; 
@@ -282,8 +298,8 @@ const StyledProject = styled(motion.div)`
     z-index: 1; 
     transition: all 0.2s ease-in-out; 
     @media (min-width: ${({ theme }) => theme.breakpoints.md}) {
-      height: 6rem; 
-      width: 6rem; 
+      // height: 6rem; 
+      width: 4rem; 
       left: 1rem; 
     }
   }
