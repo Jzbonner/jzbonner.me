@@ -16,7 +16,7 @@ const StyledFloatingButton = motion.custom(styled.div`
     padding: 1rem;
     width: 5rem;
     @media (min-width: ${({ theme }) => theme.breakpoints.md}) {
-      width: 7rem;
+      width: 9rem;
     }
   }
 `)
