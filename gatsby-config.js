@@ -1,36 +1,95 @@
+const {
+  author,
+  siteTitle,
+  siteShortTitle,
+  siteDescription,
+  siteIcon,
+  siteUrl,
+  googleAnalyticsTrackingId,
+  colors,
+} = require(`./config`)
+
+const path = require("path")
+const gatsbyRequiredRules = path.join(
+  process.cwd(),
+  "node_modules",
+  "gatsby",
+  "dist",
+  "utils",
+  "eslint-rules"
+)
+
 module.exports = {
   siteMetadata: {
-    siteUrl: "https://www.yourdomain.tld",
-    title: "jzbonner",
+    author: author,
+    title: siteTitle,
+    description: siteDescription,
+    siteUrl: siteUrl,
   },
   plugins: [
-    "gatsby-plugin-styled-components",
-    "gatsby-plugin-image",
-    "gatsby-plugin-react-helmet",
+    `gatsby-plugin-react-helmet`,
+    `gatsby-plugin-sitemap`,
+    `gatsby-plugin-robots-txt`,
+    `gatsby-plugin-styled-components`,
+    `gatsby-plugin-sharp`,
+    `gatsby-plugin-image`,
+    `gatsby-transformer-sharp`,
+    `gatsby-plugin-offline`,
+    `gatsby-plugin-netlify`,
     {
-      resolve: "gatsby-plugin-manifest",
+      resolve: `gatsby-plugin-gdpr-cookies`,
       options: {
-        icon: "src/images/icon.png",
+        googleAnalytics: {
+          trackingId: googleAnalyticsTrackingId,
+          cookieName: "gatsby-gdpr-google-analytics",
+          anonymize: true,
+          allowAdFeatures: false,
+        },
+        environments: ["production"], // defines the environments where the tracking should be available
       },
     },
-    "gatsby-plugin-mdx",
-    "gatsby-plugin-sharp",
-    "gatsby-transformer-sharp",
     {
-      resolve: "gatsby-source-filesystem",
+      resolve: `gatsby-plugin-manifest`,
       options: {
-        name: "images",
-        path: "./src/images/",
+        name: siteTitle,
+        short_name: siteShortTitle,
+        start_url: `/`,
+        //background_color: colors.lightTheme.background,
+        theme_color: colors.lightTheme.primary,
+        display: `minimal-ui`,
+        icon: siteIcon, // This path is relative to the root of the site.
       },
-      __key: "images",
     },
     {
-      resolve: "gatsby-source-filesystem",
+      resolve: `gatsby-plugin-mdx`,
       options: {
-        name: "pages",
-        path: "./src/pages/",
+        extensions: [`.mdx`, `.md`],
+        gatsbyRemarkPlugins: [
+          {
+            resolve: `gatsby-remark-images`,
+            options: {
+              maxWidth: 1000,
+              quality: 80,
+            },
+          },
+        ],
       },
-      __key: "pages",
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `content`,
+        path: `${__dirname}/content`,
+      },
+    },
+    {
+      resolve: `gatsby-plugin-eslint`,
+      options: {
+        rulePaths: [gatsbyRequiredRules],
+        extensions: ["js", "jsx"],
+        exclude: ["node_modules", ".cache", "public"],
+        stages: ["develop"],
+      },
     },
   ],
-};
+}
