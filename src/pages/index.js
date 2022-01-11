@@ -55,7 +55,7 @@ export default IndexPage
 
 export const pageQuery = graphql`
   {
-    index: allMdx(filter: { fileAbsolutePath: { regex: "/index/index/" } }) {
+    index: allMdx(filter: { fileAbsolutePath: { regex: "index/index/" } }) {
       edges {
         node {
           frontmatter {
@@ -66,7 +66,7 @@ export const pageQuery = graphql`
         }
       }
     }
-    hero: allMdx(filter: { fileAbsolutePath: { regex: "/index/hero/" } }) {
+    hero: allMdx(filter: { fileAbsolutePath: { regex: "index/hero/" } }) {
       edges {
         node {
           body
@@ -84,7 +84,7 @@ export const pageQuery = graphql`
         }
       }
     }
-    about: allMdx(filter: { fileAbsolutePath: { regex: "/index/about/" } }) {
+    about: allMdx(filter: { fileAbsolutePath: { regex: "index/about/" } }) {
       edges {
         node {
           body
@@ -123,7 +123,7 @@ export const pageQuery = graphql`
     }
     projects: allMdx(
       filter: {
-        fileAbsolutePath: { regex: "/index/projects/" }
+        fileAbsolutePath: { regex: "index/projects/" }
         frontmatter: { visible: { eq: true } }
       }
       sort: { fields: [frontmatter___position], order: ASC }
@@ -162,7 +162,7 @@ export const pageQuery = graphql`
       }
     }
     contact: allMdx(
-      filter: { fileAbsolutePath: { regex: "/index/contact/" } }
+      filter: { fileAbsolutePath: { regex: "index/contact/" } }
     ) {
       edges {
         node {
