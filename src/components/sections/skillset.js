@@ -5,7 +5,7 @@ import { GatsbyImage } from "gatsby-plugin-image"
 import { motion, useAnimation } from "framer-motion"
 
 import { detectMobileAndTablet, isSSR } from "../../utils"
-import { useOnScreen } from "../../hooks/"
+import { useOnScreen } from "../../hooks"
 import ContentWrapper from "../../styles/contentWrapper"
 import Button from "../../styles/button"
 
@@ -55,7 +55,7 @@ const StyledContentWrapper = styled(ContentWrapper)`
   }
 `
 
-const StyledInterests = styled.div`
+const StyledSkills = styled.div`
   display: grid;
   /* Calculate how many columns are needed, depending on interests count */
   grid-template-columns: repeat(
@@ -108,7 +108,7 @@ const StyledInterests = styled.div`
       border-radius: 8px;
     }
   }
-  .interest {
+  .skills {
     width: 15.625rem;
     height: 3rem;
     display: flex;
@@ -133,12 +133,13 @@ const StyledInterests = styled.div`
   }
 `
 
-const Interests = ({ content }) => {
+const Skillset = ({ content }) => {
   const { exports, frontmatter } = content[0].node
-  // exports may need to be a node as well
-  const { shownItems, interests } = exports
 
-  const [shownInterests, setShownInterests] = useState(shownItems)
+  // we may need to update this to skillset and re run queries
+  const { shownItems, skills } = exports
+
+  const [shownSkills, setShownSkills] = useState(shownItems)
 
   const ref = useRef()
   const onScreen = useOnScreen(ref)
@@ -151,9 +152,9 @@ const Interests = ({ content }) => {
     // Otherwise interests.mdx will determine how many interests are shown
     // (isSSR) is used to prevent error during gatsby build
     if (!isSSR && detectMobileAndTablet(window.innerWidth)) {
-      setShownInterests(interests.length)
+      setShownSkills(skills.length)
     }
-  }, [interests])
+  }, [skills])
 
   useEffect(() => {
     const sequence = async () => {
@@ -169,25 +170,27 @@ const Interests = ({ content }) => {
       }
     }
     sequence()
-  }, [onScreen, shownInterests, iControls, bControls])
+  }, [onScreen, shownSkills, iControls, bControls])
 
-  const showMoreItems = () => setShownInterests(shownInterests + 6)
-  console.log(exports.interests.icon)
+  const showMoreItems = () => setShownSkills(shownSkills + 6)
 
   return (
     <StyledSection id="skillset">
       <StyledContentWrapper>
         <h3 className="section-title">{frontmatter.title}</h3>
-        <StyledInterests itemCount={interests.length} ref={ref}>
-          {interests.slice(0, shownInterests).map(({ name, icon }, key) => (
+        <StyledSkills itemCount={skills.length} ref={ref}>
+          {skills.slice(0, shownSkills).map(({ name, icon }, key) => (
             <motion.div
-              className="interest"
+              className="skills"
               key={key}
               custom={key}
               initial={{ opacity: 0, scaleY: 0 }}
               animate={iControls}
             >
-              <GatsbyImage className="icon" image={icon} />
+              <GatsbyImage
+                className="icon"
+                image={icon.childImageSharp.gatsbyImageData}
+              />
               {name}
               <img
                 className="card-decal"
@@ -195,7 +198,7 @@ const Interests = ({ content }) => {
               />
             </motion.div>
           ))}
-          {shownInterests < interests.length && (
+          {shownSkills < skills.length && (
             <motion.div initial={{ opacity: 0, scaleY: 0 }} animate={bControls}>
               <Button
                 onClick={() => showMoreItems()}
@@ -206,19 +209,19 @@ const Interests = ({ content }) => {
               </Button>
             </motion.div>
           )}
-        </StyledInterests>
+        </StyledSkills>
       </StyledContentWrapper>
     </StyledSection>
   )
 }
 
-Interests.propTypes = {
+Skillset.propTypes = {
   content: PropTypes.arrayOf(
     PropTypes.shape({
       node: PropTypes.shape({
         exports: PropTypes.shape({
-          interests: PropTypes.array.isRequired,
           shownItems: PropTypes.number.isRequired,
+          skills: PropTypes.array.isRequired,
         }).isRequired,
         frontmatter: PropTypes.object.isRequired,
       }).isRequired,
@@ -226,4 +229,4 @@ Interests.propTypes = {
   ).isRequired,
 }
 
-export default Interests
+export default Skillset
