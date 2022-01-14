@@ -161,9 +161,7 @@ export const pageQuery = graphql`
         }
       }
     }
-    contact: allMdx(
-      filter: { fileAbsolutePath: { regex: "index/contact/" } }
-    ) {
+    contact: allMdx(filter: { fileAbsolutePath: { regex: "index/contact/" } }) {
       edges {
         node {
           body
