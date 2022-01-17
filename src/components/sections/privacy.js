@@ -68,7 +68,6 @@ const Privacy = ({ content }) => {
   const textOnScreen = useOnScreen(textRef)
 
   const variants = {
-    // added a hidden variant in case initial property isn't used as entry point for the privacy section
     hidden: { opacity: 0, y: 20 },
     visible: { opacity: 1, y: 0, transition: { delay: 0.9 } },
   }
@@ -77,7 +76,7 @@ const Privacy = ({ content }) => {
     <StyledSection
       id={title}
       ref={textRef}
-      initial={{ opacity: 0, y: 20 }}
+      initial={variants.hidden}
       variants={variants}
       animate={textOnScreen ? "visible" : "visible"}
     >

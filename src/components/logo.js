@@ -15,12 +15,11 @@ WebFont.load({
 const StyledLogo = styled.div`
   position: relative;
   z-index: 13;
-
   font-family: "Caveat";
   font-size: ${({ size }) => (size ? size : "1.5rem")};
   font-weight: 600;
   color: ${({ theme, color }) => theme.colors[color] || color};
-  border-top: 5px groove rgba(237, 239, 238, 0.2);
+  /* border-top: 5px groove rgba(237, 239, 238, 0.2); */
 
   /* Disable effects when sidebar is open */
   filter: none !important;

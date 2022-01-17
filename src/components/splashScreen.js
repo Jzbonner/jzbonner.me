@@ -21,6 +21,7 @@ const StyledSplashScreen = styled(motion.div)`
     darkMode ? theme.colors.background : theme.colors.primary};
   .logo-wrapper {
     position: relative;
+    margin-left: 1rem;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -54,6 +55,8 @@ const StyledSplashScreen = styled(motion.div)`
       margin-left: 46vw;
       height: 9rem;
     }
+  }
+  .logo-splash {
   }
 
   // Animations Section
@@ -253,9 +256,9 @@ const SplashScreen = () => {
       })
       await backdropControls.start({
         height: "0%",
-        transition: { delay: 0.2, type: "spring", stiffness: 30 },
+        transition: { delay: 0.2, type: "spring", stiffness: 80 },
       })
-      await backgroundControls.start({ opacity: 0, transition: { delay: 0 } })
+      await backgroundControls.start({ opacity: 0, transition: { delay: 1.2 } })
       setState({ ...state, isIntroDone: true })
     }
     sequence()
@@ -289,14 +292,18 @@ const SplashScreen = () => {
           initial={{ height: "100%" }}
           animate={backdropControls}
         />
-        <Logo
+        <img
+          className="logo-splash"
+          src="https://res.cloudinary.com/dzmc7doja/image/upload/v1642306037/design-assets/design-icon-assets/Logo-Branding-Final-2.png"
+        />
+        {/* <Logo 
           size="4.5rem"
           color={
             state.darkMode
               ? darkTheme.colors.primary
               : lightTheme.colors.backgroundText
           }
-        />
+        />*/}
       </div>
     </StyledSplashScreen>
   )

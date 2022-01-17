@@ -73,14 +73,14 @@ const Footer = () => {
     <StyledFooter darkMode={darkMode}>
       <StyledContentWrapper>
         <Link to="/" aria-label="home">
-          <Logo
+          {/* <Logo 
             size="1.25rem"
             color={
               darkMode
                 ? darkTheme.colors.primary
                 : lightTheme.colors.backgroundText
             }
-          />
+          /> */}
         </Link>
         <div className="footer-links" data-testid="footer-links">
           {footerLinks.map(({ name, url }, key) => (

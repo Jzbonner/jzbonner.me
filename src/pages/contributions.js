@@ -1,9 +1,11 @@
-import React from "react"
+import React, { useRef } from "react"
 import PropTypes from "prop-types"
 import { graphql } from "gatsby"
 import styled from "styled-components"
 import { MDXRenderer } from "gatsby-plugin-mdx"
 
+import { motion } from "framer-motion"
+import { useOnScreen } from "../hooks/"
 import GlobalStateProvider from "../context/provider"
 import ContentWrapper from "../styles/contentWrapper"
 import Layout from "../components/layout"
@@ -24,7 +26,7 @@ WebFont.load({
   },
 })
 
-const StyledSection = styled.section`
+const StyledSection = styled(motion.section)`
   width: 100%;
   max-width: 62.5rem;
   margin: 0 auto;
@@ -83,8 +85,8 @@ const StyledContentWrapper = styled(ContentWrapper)`
     }
   }
   .column-contribution {
-    border-radius: 1rem;
-    background: rgba(212, 203, 184, 0.2);
+    border-radius: 1.5rem;
+    background: rgba(213, 213, 213, 0.8);
     display: flex;
     margin: 0 auto;
     margin-bottom: -8rem;
@@ -94,6 +96,9 @@ const StyledContentWrapper = styled(ContentWrapper)`
     &:hover {
       box-shadow: 0 0 2.5rem rgba(0, 0, 0, 0.16);
       background: rgba(212, 203, 184, 1);
+    }
+    &:hover + img.branding {
+      transform: scale(1.1);
     }
     @media (min-width: ${({ theme }) => theme.breakpoints.md}) {
       flex-basis: 50%;
@@ -144,6 +149,7 @@ const StyledContentWrapper = styled(ContentWrapper)`
     top: 5rem;
     height: 5rem;
     width: 5rem;
+    transition: all 0.2s ease-in-out;
     @media (min-width: ${({ theme }) => theme.breakpoints.md}) {
       top: 6rem;
       left: -20rem;
@@ -167,6 +173,14 @@ const Contributions = ({ data }) => {
     darkMode: false,
   }
 
+  const textRef = useRef()
+  const textOnScreen = useOnScreen(textRef)
+
+  const variants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { opacity: 1, y: 0, transition: { delay: 1 } },
+  }
+
   return (
     <GlobalStateProvider initialState={globalState}>
       <Layout>
@@ -178,7 +192,13 @@ const Contributions = ({ data }) => {
           }
           meta={[{ name: "robots", content: "noindex" }]}
         />
-        <StyledSection id={title}>
+        <StyledSection
+          id={title}
+          ref={textRef}
+          initial={variants.hidden}
+          variants={variants}
+          animate={textOnScreen ? "visible" : "visible"}
+        >
           <StyledContentWrapper>
             <div className="column">
               <h3 className="section-title" data-testid="heading">
