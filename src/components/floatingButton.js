@@ -5,13 +5,11 @@ import { motion, useAnimation } from "framer-motion"
 import Context from "../context/"
 
 const StyledFloatingButton = motion(styled.div`
-  /* border: 1px solid white; */
   position: fixed;
   right: 0;
   bottom: 2rem;
   width: 20%;
   margin: 0;
-  /* z-index: 999; */
   .decal-cta {
     float: right;
     padding: 1rem;

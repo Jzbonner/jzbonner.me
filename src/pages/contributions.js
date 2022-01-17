@@ -62,8 +62,6 @@ const StyledContentWrapper = styled(ContentWrapper)`
   }
   .column {
     border-radius: 0.8rem;
-    // box-shadow: 0 0 2.5rem rgba(0, 0, 0, 0.16);
-    // background: rgba(212, 203, 184, 0.5);
     display: flex;
     flex-direction: column;
     flex-basis: 100%;

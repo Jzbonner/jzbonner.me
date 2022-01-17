@@ -26,7 +26,6 @@ const StyledButton = styled.button`
   font-size: 0.95rem;
   font-weight: 700;
   font-family: "Barlow Semi Condensed";
-  // text-transform: uppercase;
   border: none;
   border-radius: ${({ theme }) => theme.borderRadius};
   text-decoration: none;

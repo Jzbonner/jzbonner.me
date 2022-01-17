@@ -1,0 +1,92 @@
+{
+  "status": "ok",
+  "feed": {
+    "url": "https://github.com/Jzbonner/blog-backup",
+    "title": "Technology Blog",
+    "link": "https://github.com/Jzbonner/blog-backup",
+    "author": "Jzbonner",
+    "description": "Recent Blog Post",
+    "image": "https://res.cloudinary.com/dzmc7doja/image/upload/v1642447469/blogsite-content/blog.png"
+  },
+  "items": [
+    {
+      "title": "Gatsby and MarkdownX",
+      "pubDate": "2022-01-17 09:06:35",
+      "link": "https://github.com/Jzbonner/blog-backup/blob/main/blog-articles/blogarticle1-gatsby.md",
+      "guid": "https://github.com/Jzbonner/blog-backup/blob/main/blog-articles/blogarticle1-gatsby.md",
+      "author": "Jzbonner",
+      "thumbnail": "",
+      "enclosure": {},
+      "categories": [
+        "web-development",
+        "technology",
+        "content-management",
+        "client-side-rendering",
+        "programming"
+      ]
+    },
+    {
+      "title": "JavaScript - ES6 Syntax and Core Functionality",
+      "pubDate": "2022-01-17 09:00:34",
+      "link": "https://github.com/Jzbonner/blog-backup/blob/main/blog-articles/blogarticle2-jses6.md",
+      "guid": "https://github.com/Jzbonner/blog-backup/blob/main/blog-articles/blogarticle2-jses6.md",
+      "author": "Jzbonner",
+      "thumbnail": "",
+      "enclosure": {},
+      "categories": [
+        "frontend-web-development",
+        "javascript",
+        "programming",
+        "scripting-language"
+      ]
+    },
+    {
+      "title": "Design Tools for Rapid Protoyping",
+      "pubDate": "2022-01-17 09:00:08",
+      "link": "https://github.com/Jzbonner/blog-backup/blob/main/blog-articles/blogarticle3-rapidprototyping.md",
+      "guid": "https://github.com/Jzbonner/blog-backup/blob/main/blog-articles/blogarticle3-rapidprototyping.md",
+      "author": "Jzbonner",
+      "thumbnail": "",
+      "enclosure": {},
+      "categories": [
+        "web-design",
+        "figma",
+        "design-driven-development",
+        "open-source",
+        "rapid-prototyping"
+      ]
+    },
+    {
+      "title": "Responsive Image and High Performance: gatsby-plugin-image",
+      "pubDate": "2022-01-17 08:53:01",
+      "link": "https://github.com/Jzbonner/blog-backup/blob/main/blog-articles/blogarticle4-gatsbyimages.md",
+      "guid": "https://medium.com/p/50252656bfb2",
+      "author": "Jzbonner",
+      "thumbnail": "",
+      "enclosure": {},
+      "categories": [
+        "gatsby.js",
+        "responsive-images",
+        "gatsby-plugin",
+        "web-technology",
+        "image-handling"
+      ]
+    },
+    {
+      "title": "Modern Animations with framer-motion",
+      "pubDate": "2022-01-17 08:37:45",
+      "link": "https://github.com/Jzbonner/blog-backup/blob/main/blog-articles/blogarticle5-framermotion.md",
+      "guid": "https://github.com/Jzbonner/blog-backup/blob/main/blog-articles/blogarticle5-framermotion.md",
+      "author": "Jzbonner",
+      "thumbnail": "",
+      "enclosure": {},
+      "categories": [
+        "animations",
+        "framer-motion",
+        "react-animations",
+        "styling",
+        "web-interactivity"
+      ]
+    }
+  ]
+}
