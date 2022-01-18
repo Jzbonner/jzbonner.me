@@ -1,6 +1,7 @@
 import React from "react"
 import PropTypes from "prop-types"
 import styled from "styled-components"
+import { motion } from "framer-motion"
 
 // import google fonts from webfontloader module
 const WebFont = require("webfontloader")
@@ -16,18 +17,19 @@ WebFont.load({
   },
 })
 
-const StyledButton = styled.button`
+const StyledButton = styled(motion.button)`
   width: 15.625rem;
   height: 3rem;
-  background-color: ${({ theme }) => theme.colors.primary};
+  /* background-color: ${({ theme }) => theme.colors.primary}; */
+  background-color: rgba(151, 151, 151, 0.4);
   color: ${({ theme }) => theme.colors.backgroundText};
-  padding: 1rem;
+  padding: 0.5rem;
   margin: 0 ${({ center }) => (center ? "auto" : "0")};
   font-size: 0.95rem;
   font-weight: 700;
   font-family: "Barlow Semi Condensed";
-  border: none;
-  border-radius: ${({ theme }) => theme.borderRadius};
+  box-shadow: 0 0 2.5rem rgba(0, 0, 0, 0.17);
+  border-radius: 0.85rem;
   text-decoration: none;
   text-align: ${({ textAlign }) => (textAlign ? textAlign : "left")};
   &:hover,
@@ -45,7 +47,14 @@ const StyledButton = styled.button`
 `
 
 const Button = ({ onClick, textAlign, center, children }) => (
-  <StyledButton onClick={onClick} textAlign={textAlign} center={center}>
+  <StyledButton
+    onClick={onClick}
+    whileHover={{
+      scale: 1.04,
+    }}
+    textAlign={textAlign}
+    center={center}
+  >
     {children}
   </StyledButton>
 )

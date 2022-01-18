@@ -205,7 +205,7 @@ const Skillset = ({ content }) => {
                 type="button"
                 textAlign="left"
               >
-                + view all
+                🔗 view all
               </Button>
             </motion.div>
           )}

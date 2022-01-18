@@ -51,7 +51,7 @@ const StyledContentWrapper = styled(ContentWrapper)`
       justify-content: center;
     }
     .text-content {
-      border: 1.5px solid rgb(31, 32, 33);
+      border: 1px solid white;
       border-radius: 2rem;
       box-shadow: 0 0 2.5rem rgba(0, 0, 0, 0.16);
       background-color: rgba(202, 202, 202, 0.8);
@@ -60,6 +60,12 @@ const StyledContentWrapper = styled(ContentWrapper)`
       max-width: 31.25rem;
       font-family: "Barlow Semi Condensed";
       font-size: 1.1rem;
+    }
+    .about-decal {
+      position: relative;
+      top: -3rem;
+      left: 24rem;
+      width: 18%;
     }
     .image-content {
       width: 100%;
@@ -154,6 +160,11 @@ const About = ({ content }) => {
           <div className="text-content">
             <MDXRenderer>{body}</MDXRenderer>
           </div>
+          <img
+            alt="about-decal"
+            className="about-decal"
+            src="https://res.cloudinary.com/dzmc7doja/image/upload/v1642490418/design-assets/design-icon-assets/contact.png"
+          />
         </motion.div>
         <motion.div
           className="image-content"

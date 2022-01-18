@@ -7,7 +7,6 @@ import { motion, useAnimation } from "framer-motion"
 import Context from "../context"
 import { detectMobileAndTablet, isSSR } from "../utils/"
 import ContentWrapper from "../styles/contentWrapper"
-import Logo from "./logo"
 import Sidebar from "./sidebar"
 import Navbar from "./navbar"
 
@@ -28,6 +27,9 @@ const StyledContentWrapper = styled(ContentWrapper)`
     display: flex;
     justify-content: space-between;
     align-items: center;
+  }
+  .logo-decal {
+    width: 70%;
   }
 `
 
@@ -132,7 +134,11 @@ const Header = () => {
       <Helmet bodyAttributes={{ class: open ? "blur" : "" }} />
       <StyledContentWrapper>
         <Link to="/" aria-label="home">
-          <Logo color="primary" size="2.5rem" />
+          <img
+            alt="logo-decal"
+            className="logo-decal"
+            src="https://res.cloudinary.com/dzmc7doja/image/upload/v1642490196/design-assets/design-icon-assets/logo-branding-dark-final.png"
+          />
         </Link>
         {navigation}
       </StyledContentWrapper>

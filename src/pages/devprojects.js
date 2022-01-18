@@ -73,7 +73,7 @@ const StyledRevealerLayout = styled(ContentWrapper)`
   }
 
   .content-container-secondary {
-    border: 1px solid black;
+    border: 1px solid white;
     background: rgba(213, 213, 213, 0.9);
     box-shadow: 0 0 2.5rem rgba(0, 0, 0, 0.16);
     border-radius: 1rem;

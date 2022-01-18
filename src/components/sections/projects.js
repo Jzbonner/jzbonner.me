@@ -42,8 +42,6 @@ const StyledSection = styled.section`
     }
     transition: all 0.2s ease-in-out;
   }
-  .cta-btn:hover {
-  }
 `
 
 const StyledContentWrapper = styled(ContentWrapper)`
