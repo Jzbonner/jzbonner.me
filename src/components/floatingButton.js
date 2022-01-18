@@ -1,7 +1,7 @@
 import React, { useContext, useState, useEffect } from "react"
 import styled from "styled-components"
 import { motion, useAnimation } from "framer-motion"
-
+import FormPopup from "../components/formpopup"
 import Context from "../context/"
 
 const StyledFloatingButton = motion(styled.div`
@@ -25,6 +25,12 @@ const FloatingButton = () => {
   const controls = useAnimation()
   const { isIntroDone } = useContext(Context).state
 
+  const [formOpen, setFormOpen] = useState(false)
+
+  const toggleForm = () => {
+    setFormOpen(!formOpen)
+  }
+
   useEffect(() => {
     if (isIntroDone) {
       controls.start({
@@ -40,10 +46,22 @@ const FloatingButton = () => {
       <motion.img
         whileHover={{ scale: 1.1, transition: { duration: 0.5 } }}
         whileTap={{ scale: 0.8, boxShadow: `0 0 5rem rgba(0,0,0, 0.16)` }}
+        onClick={() => toggleForm()}
         className="decal-cta"
         alt="floating-button"
         src="https://res.cloudinary.com/dzmc7doja/image/upload/v1640411837/portfolio-site/logo-initials.png"
       />
+      {formOpen && (
+        <FormPopup
+          content={
+            <>
+              {" "}
+              <p>This is a test form</p>
+            </>
+          }
+          handleClose={toggleForm}
+        />
+      )}
     </StyledFloatingButton>
   )
 }

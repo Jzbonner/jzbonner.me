@@ -16,7 +16,6 @@ import { useCookieBar, useFloatingButton } from "../../config"
 import { MDXProvider } from "@mdx-js/react"
 import Underlining from "../styles/underlining"
 
-// https://medium.com/@chrisfitkin/how-to-smooth-scroll-links-in-gatsby-3dc445299558
 if (typeof window !== "undefined") {
   require("smooth-scroll")('a[href*="#"]')
 }
