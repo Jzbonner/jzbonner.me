@@ -13,9 +13,10 @@ const StyledFloatingButton = motion(styled.div`
   .decal-cta {
     float: right;
     padding: 1rem;
+    border-radius: 6rem;
     width: 5rem;
     @media (min-width: ${({ theme }) => theme.breakpoints.md}) {
-      width: 9rem;
+      width: 6.5rem;
     }
   }
 `)
@@ -38,7 +39,7 @@ const FloatingButton = () => {
     <StyledFloatingButton initial={{ opacity: 0 }} animate={controls}>
       <motion.img
         whileHover={{ scale: 1.1, transition: { duration: 0.5 } }}
-        whileTap={{ scale: 0.8 }}
+        whileTap={{ scale: 0.8, boxShadow: `0 0 5rem rgba(0,0,0, 0.16)` }}
         className="decal-cta"
         alt="floating-button"
         src="https://res.cloudinary.com/dzmc7doja/image/upload/v1640411837/portfolio-site/logo-initials.png"

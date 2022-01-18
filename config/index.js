@@ -16,19 +16,14 @@ module.exports = {
   // -- THEME SETTINGS -----
   colors: {
     lightTheme: {
-      // old primary: "#161616", - cleanup
       primary: "#1F2021",
-      //old secondary: "#FFF4D9", - cleanup
       secondary: "#C1BDB4",
       tertiary: "#F2F2F2",
       text: "#1F2021",
       subtext: "#555555",
-      //background: "#DCDCDC" - cleanup
-      // backgroundText: "#DCDCDC",
       backgroundText: "#EAEAEA",
       subtitleText: "#605E5A",
       card: "rgba(246,249,248, 0.8)",
-      //card: "rgba(198,198,198, 0.8)",
       scrollBar: "rgba(193, 189, 180, 0.8)",
       boxShadow: "rgba(0, 0, 0, 0.16)",
       boxShadowHover: "rgba(0, 0, 0, 0.32)",
@@ -54,9 +49,11 @@ module.exports = {
   //-- ARTICLES SECTION SETTINGS -----
   // You can create your own Medium feed with this rss to json converter: https://rss2json.com/
   // To access your Medium RSS feed, just replace this url with your username: https://medium.com/feed/@{yourname}
-  mediumRssFeed:
-    "https://api.rss2json.com/v1/api.json?rss_url=https%3A%2F%2Fmedium.com%2Ffeed%2Ftopic%2Ftechnology",
-  // rssFeed: "https://api.rss2json.com/v1/api.json?rss_url=https%3A%2F%2Fwww.theguardian.com%2Finternational%2Frss",
+  // mediumRssFeed:
+  // "https://api.rss2json.com/v1/api.json?rss_url=https%3A%2F%2Fmedium.com%2Ffeed%2Ftopic%2Ftechnology",
+  rssFeed:
+    "https://https://raw.githubusercontent.com/Jzbonner/jzbonner.me/main-prod/feed/rss.json",
+  // "https://api.rss2json.com/v1/api.json?rss_url=https%3A%2F%2Fwww.theguardian.com%2Finternational%2Frss",
 
   shownArticles: 5,
 
@@ -119,11 +116,15 @@ module.exports = {
   },
   footerLinks: [
     {
-      name: "Privacy",
+      name: ".Home",
+      url: "/",
+    },
+    {
+      name: ".Privacy",
       url: "/privacy",
     },
     {
-      name: "Contributions",
+      name: ".Contributions",
       url: "/contributions",
     },
   ],

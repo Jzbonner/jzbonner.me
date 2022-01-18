@@ -10,6 +10,7 @@ import ContentWrapper from "../styles/contentWrapper"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import { seoTitleSuffix } from "../../config"
+import SimpleReactLightbox, { SRLWrapper } from "simple-react-lightbox"
 
 // import google fonts from webfontloader module
 const WebFont = require("webfontloader")
@@ -174,56 +175,61 @@ const DevProjects = ({ data }) => {
 
   return (
     <GlobalStateProvider initialState={globalState}>
-      <Layout>
-        <SEO
-          title={
-            useSeoTitleSuffix
-              ? `${seoTitle} - ${seoTitleSuffix}`
-              : `${seoTitle}`
-          }
-          meta={[{ name: "robots", content: "noindex" }]}
-        />
-        <StyledSection
-          id={title}
-          ref={contentRef}
-          initial={variants.hidden}
-          variants={variants}
-          animate={contentOnScreen ? "visible" : "visible"}
-        >
-          <StyledContentWrapper>
-            <h1 className="section-title" data-testid="heading">
-              {title}
-            </h1>
-          </StyledContentWrapper>
-          <StyledRevealerLayout>
-            <motion.img
-              className="toggle-button"
-              whileTap={{ scale: 3 }}
-              onClick={() => revealToggle()}
-              src="https://res.cloudinary.com/dzmc7doja/image/upload/v1639815152/design-assets/design-icon-assets/feather-pen.png"
-            />
-            <div className="content-container">
+      <SimpleReactLightbox>
+        <Layout>
+          <SEO
+            title={
+              useSeoTitleSuffix
+                ? `${seoTitle} - ${seoTitleSuffix}`
+                : `${seoTitle}`
+            }
+            meta={[{ name: "robots", content: "noindex" }]}
+          />
+          <StyledSection
+            id={title}
+            ref={contentRef}
+            initial={variants.hidden}
+            variants={variants}
+            animate={contentOnScreen ? "visible" : "visible"}
+          >
+            <StyledContentWrapper>
+              <h1 className="section-title" data-testid="heading">
+                {title}
+              </h1>
+            </StyledContentWrapper>
+            <StyledRevealerLayout>
               <motion.img
-                className="dev-experience"
-                initial={variants.blur}
-                variants={variants}
-                animate={imageToggle ? "unblur" : "blur"}
-                src="https://res.cloudinary.com/dzmc7doja/image/upload/v1637433075/portfolio-site/devprojects-graphic.png"
+                className="toggle-button"
+                whileTap={{ scale: 3 }}
+                onClick={() => revealToggle()}
+                src="https://res.cloudinary.com/dzmc7doja/image/upload/v1639815152/design-assets/design-icon-assets/feather-pen.png"
               />
-            </div>
-            <motion.div
-              className="content-container-secondary"
-              initial={variants.initial}
-              variants={variants}
-              animate={contentToggle ? "exit" : "initial"}
-            >
-              <p className="text-description">
-                <MDXRenderer>{body}</MDXRenderer>
-              </p>
-            </motion.div>
-          </StyledRevealerLayout>
-        </StyledSection>
-      </Layout>
+              <div className="content-container">
+                <SRLWrapper>
+                  <motion.img
+                    className="dev-experience"
+                    alt="dev-experience-graphic"
+                    initial={variants.blur}
+                    variants={variants}
+                    animate={imageToggle ? "unblur" : "blur"}
+                    src="https://res.cloudinary.com/dzmc7doja/image/upload/v1637433075/portfolio-site/devprojects-graphic.png"
+                  />
+                </SRLWrapper>
+              </div>
+              <motion.div
+                className="content-container-secondary"
+                initial={variants.initial}
+                variants={variants}
+                animate={contentToggle ? "exit" : "initial"}
+              >
+                <p className="text-description">
+                  <MDXRenderer>{body}</MDXRenderer>
+                </p>
+              </motion.div>
+            </StyledRevealerLayout>
+          </StyledSection>
+        </Layout>
+      </SimpleReactLightbox>
     </GlobalStateProvider>
   )
 }

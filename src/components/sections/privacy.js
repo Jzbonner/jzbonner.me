@@ -59,6 +59,14 @@ const StyledContentWrapper = styled(ContentWrapper)`
     box-shadow: 0 0 2.5rem rgba(0, 0, 0, 0.16);
     background: rgba(207, 207, 207, 0.8);
   }
+  .policy-decal {
+    position: relative;
+    border-radius: 1rem;
+    top: -4rem;
+    left: 30rem;
+    z-index: 2;
+    width: 15%;
+  }
 `
 
 const Privacy = ({ content }) => {
@@ -85,6 +93,11 @@ const Privacy = ({ content }) => {
         <p className="text-description">
           <MDXRenderer>{body}</MDXRenderer>
         </p>
+        <img
+          alt="policy-decal"
+          className="policy-decal"
+          src="https://res.cloudinary.com/dzmc7doja/image/upload/v1642056643/design-assets/design-icon-assets/privacy-policy.png"
+        />
       </StyledContentWrapper>
     </StyledSection>
   )
