@@ -3,6 +3,7 @@ import styled from "styled-components"
 import { motion, useAnimation } from "framer-motion"
 import FormPopup from "../components/formpopup"
 import Context from "../context/"
+import { FormspreeProvider } from "@formspree/react"
 
 const StyledFloatingButton = motion(styled.div`
   position: fixed;
@@ -10,6 +11,7 @@ const StyledFloatingButton = motion(styled.div`
   bottom: 2rem;
   width: 20%;
   margin: 0;
+  z-index: 2;
   .decal-cta {
     float: right;
     padding: 1rem;
@@ -42,27 +44,19 @@ const FloatingButton = () => {
   if (!isIntroDone) return null
 
   return (
-    <StyledFloatingButton initial={{ opacity: 0 }} animate={controls}>
-      <motion.img
-        whileHover={{ scale: 1.1, transition: { duration: 0.5 } }}
-        whileTap={{ scale: 0.8, boxShadow: `0 0 5rem rgba(0,0,0, 0.16)` }}
-        onClick={() => toggleForm()}
-        className="decal-cta"
-        alt="floating-button"
-        src="https://res.cloudinary.com/dzmc7doja/image/upload/v1640411837/portfolio-site/logo-initials.png"
-      />
-      {formOpen && (
-        <FormPopup
-          content={
-            <>
-              {" "}
-              <p>This is a test form</p>
-            </>
-          }
-          handleClose={toggleForm}
+    <FormspreeProvider project="{1858830325950446621}">
+      <StyledFloatingButton initial={{ opacity: 0 }} animate={controls}>
+        <motion.img
+          whileHover={{ scale: 1.1, transition: { duration: 0.5 } }}
+          whileTap={{ scale: 0.8, boxShadow: `0 0 5rem rgba(0,0,0, 0.16)` }}
+          onClick={() => toggleForm()}
+          className="decal-cta"
+          alt="floating-button"
+          src="https://res.cloudinary.com/dzmc7doja/image/upload/v1640411837/portfolio-site/logo-initials.png"
         />
-      )}
-    </StyledFloatingButton>
+        {formOpen && <FormPopup handleClose={toggleForm} />}
+      </StyledFloatingButton>
+    </FormspreeProvider>
   )
 }
 

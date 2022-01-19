@@ -126,7 +126,6 @@ const StyledSkills = styled.div`
     position: relative;
     left: 1.8rem;
     top: 2rem;
-    z-index: 2;
     width: 2rem;
     --webkit-filter: invert(30%);
     filter: invert(30%);

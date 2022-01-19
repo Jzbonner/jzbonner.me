@@ -167,10 +167,6 @@ const StyledProject = styled(motion.div)`
       margin-top: 0;
     }
     .decal {
-      // dispaly: flex; 
-      //border: 1px solid black;  
-      // margin: 0 auto; 
-      // margin-top: 1rem; 
       width: 3rem; 
       height: 3rem; 
       @media (min-width: ${({ theme }) => theme.breakpoints.md}) { 
@@ -191,7 +187,6 @@ const StyledProject = styled(motion.div)`
       font-family: "Khand";
     }
     .category-text {
-      // border: 1px solid black; 
       margin-top: 2.5rem; 
       margin-bottom: 3rem; 
       margin-left: 0.5rem; 
@@ -208,7 +203,6 @@ const StyledProject = styled(motion.div)`
       margin-bottom: 0.625rem;
       font-size: 1.1rem;
       line-height: 1.625rem;
-      // font-weight: 700;
       font-family: "Barlow Semi Condensed";
       font-style: italic; 
     }
@@ -228,7 +222,6 @@ const StyledProject = styled(motion.div)`
       font-family: "Barlow Semi Condensed";
     }
     .links {
-      // border: 1px solid white; 
       border-radius: 1rem; 
       background: rgba(226, 228, 227, 1); 
       padding: 0.4rem; 
@@ -252,10 +245,8 @@ const StyledProject = styled(motion.div)`
     }
   }
   .screenshot-container {
-    // border: 1px solid black; 
     width: 100%; 
     padding: 0px; 
-    // overflow: hidden; 
     max-width: 25rem; 
     height: 18rem; 
     @media (min-width: ${({ theme }) => theme.breakpoints.md}) {
@@ -269,16 +260,13 @@ const StyledProject = styled(motion.div)`
     }
   }
   .screenshot {
-    // border: 1px solid black; 
     width: 17rem;
     height: 17rem;
     margin-left: 0.25rem; 
     margin-top: 1rem; 
     border-radius: 1rem; 
-    // box-shadow: 0 0 2.5rem rgba(0, 0, 0, 0.16);
     transition: all 0.3s ease-out;
     @media (min-width: ${({ theme }) => theme.breakpoints.md}) {
-      // border: 1px solid black; 
       margin-top: -0.8rem; 
       width: 24rem; 
       height: 24;rem;
@@ -290,10 +278,8 @@ const StyledProject = styled(motion.div)`
     margin-top: -3rem; 
     position: relative; 
     left: 12rem; 
-    z-index: 1; 
     transition: all 0.2s ease-in-out; 
     @media (min-width: ${({ theme }) => theme.breakpoints.md}) {
-      // height: 6rem; 
       width: 4rem; 
       left: 1rem; 
     }

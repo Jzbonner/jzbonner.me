@@ -95,7 +95,6 @@ const StyledContentWrapper = styled(ContentWrapper)`
       position: relative;
       top: 3.5rem;
       left: 2rem;
-      z-index: 2;
       width: 2rem;
       @media (min-width: ${({ theme }) => theme.breakpoints.md}) {
         left: 0.5rem;
@@ -162,6 +161,10 @@ const Articles = () => {
           y: 0,
           transition: { delay: 1 },
         })
+        // if using the rssFeed or mediumRssFeed link uncomment the section below and remove the uncommented section where const newArticles and setArticles
+        // fetch(rssFeed or mediumRssFeed).then((res) => res.json()).then((data) => data.items.slice(0, MAX_ARTICLES))
+        // const newArticles = data
+        // setArticles(newArticles)
         const newArticles = rssJson.items.slice(0, MAX_ARTICLES)
         setArticles(newArticles)
       }

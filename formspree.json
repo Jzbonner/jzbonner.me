@@ -1,0 +1,23 @@
+{
+  "forms": {
+    "contactForm": {
+      "name": "Contact Form",
+      "fields": {
+        "email": {
+          "type": "email",
+          "required": true
+        },
+        "message": {
+          "type": "text",
+          "required": true
+        }
+      },
+      "actions": [
+        {
+          "type": "email",
+          "to": "arygroup@protonmail.com"
+        }
+      ]
+    }
+  }
+}

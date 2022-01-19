@@ -40,7 +40,7 @@ const StyledSplashScreen = styled(motion.div)`
     margin-left: 34vw;
     height: 8rem;
     @media (min-width: ${({ theme }) => theme.breakpoints.sm}) {
-      margin-top: 15rem;
+      margin-top: 20rem;
       margin-left: 46vw;
       height: 9rem;
     }
