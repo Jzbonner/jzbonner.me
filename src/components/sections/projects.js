@@ -152,59 +152,59 @@ const StyledProject = styled(motion.div)`
       position % 2 !== 0 ? "row" : "row-reverse"};
   }
   .details {
-    border-top: 9px solid rgba(225, 227, 226, 0.8);  
-    border-bottom-right-radius: 1rem; 
-    border-bottom-left-radius: 1rem; 
-    background: rgba(225,227,226, 0.5);
+    border-top: 9px solid rgba(225, 227, 226, 0.8);
+    border-bottom-right-radius: 1rem;
+    border-bottom-left-radius: 1rem;
+    background: rgba(225, 227, 226, 0.5);
     box-shadow: 0 0 2.5rem rgba(0, 0, 0, 0.16);
     width: 100%;
     max-width: 25rem;
     display: flex;
     flex-direction: column;
     margin-top: 3rem;
-    padding: 1rem; 
+    padding: 1rem;
     @media (min-width: ${({ theme }) => theme.breakpoints.md}) {
       margin-top: 0;
     }
     .decal {
-      width: 3rem; 
-      height: 3rem; 
-      @media (min-width: ${({ theme }) => theme.breakpoints.md}) { 
-        height: 4rem; 
+      width: 3rem;
+      height: 3rem;
+      @media (min-width: ${({ theme }) => theme.breakpoints.md}) {
+        height: 4rem;
         width: 4rem;
       }
     }
     .category {
-      border-bottom: 2px solid rgba(178, 173, 168, 0.9); 
-      border-radius: 1rem; 
+      border-bottom: 2px solid rgba(178, 173, 168, 0.9);
+      border-radius: 1rem;
       background: rgba(208, 208, 208, 0.2);
       box-shadow: 0 0 2.5rem rgba(0, 0, 0, 0.16);
-      display: flex; 
-      justify-content: center; 
-      align-items: center; 
+      display: flex;
+      justify-content: center;
+      align-items: center;
       text-transform: uppercase;
       letter-spacing: +1px;
       font-family: "Khand";
     }
     .category-text {
-      margin-top: 2.5rem; 
-      margin-bottom: 3rem; 
-      margin-left: 0.5rem; 
-      font-size: 1rem; 
-      font-weight: bold; 
+      margin-top: 2.5rem;
+      margin-bottom: 3rem;
+      margin-left: 0.5rem;
+      font-size: 1rem;
+      font-weight: bold;
       @media (min-width: ${({ theme }) => theme.breakpoints.md}) {
         margin-top: 2rem;
-        font-size: 1.3rem;  
+        font-size: 1.3rem;
       }
     }
     .title {
       margin-top: 1rem;
-      margin-left: 1rem; 
+      margin-left: 1rem;
       margin-bottom: 0.625rem;
       font-size: 1.1rem;
       line-height: 1.625rem;
       font-family: "Barlow Semi Condensed";
-      font-style: italic; 
+      font-style: italic;
     }
     .tags {
       display: flex;
@@ -212,7 +212,7 @@ const StyledProject = styled(motion.div)`
       margin-top: 1.5rem;
       line-height: 1.2rem;
       font-family: "Barlow Semi Condensed";
-      font-weight: bold; 
+      font-weight: bold;
       span {
         margin-right: 1rem;
         margin-bottom: 1rem;
@@ -222,9 +222,9 @@ const StyledProject = styled(motion.div)`
       font-family: "Barlow Semi Condensed";
     }
     .links {
-      border-radius: 1rem; 
-      background: rgba(226, 228, 227, 1); 
-      padding: 0.4rem; 
+      border-radius: 1rem;
+      background: rgba(226, 228, 227, 1);
+      padding: 0.4rem;
       display: flex;
       justify-content: flex-start;
       align-items: center;
@@ -245,43 +245,46 @@ const StyledProject = styled(motion.div)`
     }
   }
   .screenshot-container {
-    width: 100%; 
-    padding: 0px; 
-    max-width: 25rem; 
-    height: 18rem; 
+    /* border: 1px solid red; */
+    width: 100%;
+    padding: 0px;
+    max-width: 25rem;
+    height: 18rem;
     @media (min-width: ${({ theme }) => theme.breakpoints.md}) {
-      height: 20rem; 
+      height: 20rem;
     }
     &:hover .screenshot {
       transform: translate3d(0px, -0.8rem, 0px);
     }
     &:hover .screenshot-branding {
-      transform: translate3d(0px, 1rem, 0px); 
+      transform: translate3d(0px, 1rem, 0px);
     }
   }
   .screenshot {
-    width: 17rem;
-    height: 17rem;
-    margin-left: 0.25rem; 
-    margin-top: 1rem; 
-    border-radius: 1rem; 
+    /* width: 17rem; */
+    /* height: 17rem; */
+    /* margin-left: 0.25rem; */
+    /* margin-top: 1rem; */
+    border: 0.2rem solid #858484;
+    border-radius: 0.5rem;
+    /* border-radius: 1rem;  */
     transition: all 0.3s ease-out;
     @media (min-width: ${({ theme }) => theme.breakpoints.md}) {
-      margin-top: -0.8rem; 
-      width: 24rem; 
-      height: 24;rem;
+      /* margin-top: -0.8rem;  */
+      /* width: 24rem;  */
+      /* height: 24rem; */
     }
   }
   .screenshot-branding {
-    height: 4rem; 
-    width: 4rem; 
-    margin-top: -3rem; 
-    position: relative; 
-    left: 12rem; 
-    transition: all 0.2s ease-in-out; 
+    height: 4rem;
+    width: 4rem;
+    margin-top: -3rem;
+    position: relative;
+    left: 12rem;
+    transition: all 0.2s ease-in-out;
     @media (min-width: ${({ theme }) => theme.breakpoints.md}) {
-      width: 4rem; 
-      left: 1rem; 
+      width: 4rem;
+      left: 1rem;
     }
   }
 `

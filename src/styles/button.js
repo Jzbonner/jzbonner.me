@@ -50,7 +50,7 @@ const Button = ({ onClick, textAlign, center, children }) => (
   <StyledButton
     onClick={onClick}
     whileHover={{
-      translateY: 2,
+      translateY: -2,
       boxShadow: `0 0rem 1rem rgba(0, 0, 0, 0.25)`,
     }}
     textAlign={textAlign}
