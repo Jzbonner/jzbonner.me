@@ -74,6 +74,7 @@ const StyledBox = styled(motion.div)`
   }
   #mesasge {
     letter-spacing: 0px;
+    font-family: "Khand";
   }
   .form-button {
     font-family: "Barlow Semi Condensed";
