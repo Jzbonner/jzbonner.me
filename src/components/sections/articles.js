@@ -101,7 +101,7 @@ const StyledContentWrapper = styled(ContentWrapper)`
       }
     }
     .card-details {
-      border-left: 3px solid ${({ theme }) => theme.colors.primary};
+      border-left: 0.25rem solid white;
       width: 16.25rem;
       height: 12rem;
       display: flex;
@@ -110,12 +110,12 @@ const StyledContentWrapper = styled(ContentWrapper)`
       padding: 1rem;
       margin: 2rem 1rem;
       box-shadow: 0 7px 15px ${({ theme }) => theme.colors.boxShadow};
-      border-radius: ${({ theme }) => theme.borderRadius};
+      border-radius: 0.5rem;
       background: ${({ theme }) => theme.colors.card};
       transition: box-shadow 0.3s ease-out;
       z-index: 0;
       &:hover {
-        box-shadow: 0 5px 15px ${({ theme }) => theme.colors.boxShadowHover};
+        box-shadow: 0 15px 15px ${({ theme }) => theme.colors.boxShadowHover};
       }
       &:hover ${Underlining} {
         box-shadow: inset 0 -1rem 0 ${({ theme }) => theme.colors.secondary};

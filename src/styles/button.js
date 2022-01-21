@@ -21,14 +21,14 @@ const StyledButton = styled(motion.button)`
   width: 15.625rem;
   height: 3rem;
   /* background-color: ${({ theme }) => theme.colors.primary}; */
-  background-color: rgba(151, 151, 151, 0.4);
+  /* background-color: rgba(151, 151, 151, 0.4); */
+  background-color: rgba(132, 132, 132, 0.7);
   color: ${({ theme }) => theme.colors.backgroundText};
   padding: 0.5rem;
   margin: 0 ${({ center }) => (center ? "auto" : "0")};
   font-size: 0.95rem;
   font-weight: 700;
   font-family: "Barlow Semi Condensed";
-  box-shadow: 0 0 2.5rem rgba(0, 0, 0, 0.17);
   border-radius: 0.85rem;
   text-decoration: none;
   text-align: ${({ textAlign }) => (textAlign ? textAlign : "left")};
@@ -50,7 +50,8 @@ const Button = ({ onClick, textAlign, center, children }) => (
   <StyledButton
     onClick={onClick}
     whileHover={{
-      scale: 1.04,
+      translateY: 2,
+      boxShadow: `0 0rem 1rem rgba(0, 0, 0, 0.25)`,
     }}
     textAlign={textAlign}
     center={center}
