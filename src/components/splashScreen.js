@@ -153,7 +153,7 @@ const SplashScreen = () => {
       setState({ ...state, isIntroDone: true })
     }
     sequence()
-  }, [backgroundControls, setState, state])
+  }, [backgroundControls, decalControls, setState, state])
 
   return (
     <StyledSplashScreen
@@ -173,6 +173,7 @@ const SplashScreen = () => {
         >
           <img
             className="initials bounce-in-top"
+            alt="initials"
             src="https://res.cloudinary.com/dzmc7doja/image/upload/v1640411837/portfolio-site/logo-initials.png"
           />
         </motion.div>

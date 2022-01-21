@@ -44,7 +44,7 @@ const FloatingButton = () => {
   if (!isIntroDone) return null
 
   return (
-    <FormspreeProvider project="{1858830325950446621}">
+    <FormspreeProvider project="1858830325950446621">
       <StyledFloatingButton initial={{ opacity: 0 }} animate={controls}>
         <motion.img
           whileHover={{ scale: 1.1, transition: { duration: 0.5 } }}
