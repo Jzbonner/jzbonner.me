@@ -16,20 +16,21 @@ const StyledHeader = motion(styled.header`
   background: ${({ theme }) => theme.colors.background};
 `)
 
-// const MotionComponent = motion(StyledHeader, {
-//   forwardMotionProps: true
-// })
-
 const StyledContentWrapper = styled(ContentWrapper)`
   && {
-    width: 100%;
-    height: 100%;
+    width: auto;
+    /* border: 1px solid white; */
+    height: auto;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
+    border-radius: 0.5rem;
+    /* background: rgba(146, 146, 146, 0.5); */
     align-items: center;
+    margin-top: 2rem;
   }
   .logo-decal {
-    width: 70%;
+    width: 50%;
+    margin-top: 0.5rem;
   }
 `
 
@@ -137,7 +138,7 @@ const Header = () => {
           <img
             alt="logo-decal"
             className="logo-decal"
-            src="https://res.cloudinary.com/dzmc7doja/image/upload/v1642490196/design-assets/design-icon-assets/logo-branding-dark-final.png"
+            src="https://res.cloudinary.com/dzmc7doja/image/upload/v1643199347/design-assets/design-icon-assets/Logo-Branding-B.png"
           />
         </Link>
         {navigation}

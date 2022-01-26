@@ -1,10 +1,10 @@
 import React, { useContext } from "react"
 import PropTypes from "prop-types"
+import Context from "../context/index"
 import styled, { ThemeProvider } from "styled-components"
 
 import { lightTheme, darkTheme } from "../styles/theme"
 import { useDarkMode } from "../hooks"
-import Context from "../context"
 import GlobalStyle from "../styles/globalStyle"
 import Header from "./header"
 import Footer from "./footer"
@@ -36,6 +36,7 @@ const shortcodes = { Underlining }
 
 const Layout = ({ children }) => {
   const { isIntroDone } = useContext(Context).state
+  console.log(isIntroDone)
   // Enables dark mode if the user's OS has an active dark theme
   const darkModeEnabled = useDarkMode()
   const theme = darkModeEnabled ? darkTheme : lightTheme

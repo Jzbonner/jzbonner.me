@@ -8,7 +8,8 @@ import { motion, useAnimation } from "framer-motion"
 import Context from "../../context/"
 import ContentWrapper from "../../styles/contentWrapper"
 import heroUnderlining from "../../styles/herounderlining"
-import Social from "../social"
+// change compoenent below to professional social
+import ProfessionalSocial from "../professionalsocial"
 
 // import google fonts from webfontloader module
 const WebFont = require("webfontloader")
@@ -25,6 +26,7 @@ WebFont.load({
 })
 
 const StyledSection = styled.section`
+  /* border: 1px solid red; */
   width: 100%;
   height: auto;
   background: ${({ theme }) => theme.colors.background};
@@ -44,7 +46,6 @@ const StyledContentWrapper = styled(ContentWrapper)`
       margin-bottom: 4rem;
     }
     .greetings {
-      // font-family: "Barlow Semi Condensed";
       font-family: "Khand";
       letter-spacing: 0.2rem;
       text-shadow: 4px 4px 0px #d5d5d5, 9px 9px 0px rgba(0, 0, 0, 0.2);
@@ -88,6 +89,16 @@ const StyledContentWrapper = styled(ContentWrapper)`
       font-size: 1.125rem;
       margin-bottom: 2rem;
     }
+    .logo-watermark {
+      /* border: 1px solid blue; */
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 55%;
+      margin-top: 6rem;
+      margin-left: 2rem;
+      z-index: auto;
+    }
   }
 `
 
@@ -99,7 +110,7 @@ const subtitleVariants = {
   initial: {
     opacity: 0.3,
     backgroundColor: "inherit",
-    borderRadius: "inherit",
+    // borderRadius: "inherit",
     boxShadow: "inherit",
     transform: "translateY(0px)",
     transition:
@@ -107,7 +118,7 @@ const subtitleVariants = {
   },
   hover: {
     opacity: 1,
-    boxShadow: "2px 1px 8px 2px rgba(66,66,66, 0.4)",
+    // boxShadow: "2px 1px 8px 2px rgba(66,66,66, 0.4)",
     borderRadius: "1rem",
     backgroundColor: "rgba(193,189,180, 0.45)",
     transform: "translateY(17px)",
@@ -123,6 +134,11 @@ const Hero = ({ content }) => {
   const eControls = useAnimation()
   const sControls = useAnimation()
   const uControls = useAnimation()
+
+  const variants = {
+    initial: { opacity: 0, x: -50 },
+    visible: { opacity: 1, x: 0, transition: { delay: 1 } },
+  }
 
   // start animations after the splashScreen sequence is done
   useEffect(() => {
@@ -154,6 +170,14 @@ const Hero = ({ content }) => {
   return (
     <StyledSection id="hero">
       <StyledContentWrapper>
+        <motion.img
+          alt="logo-watermark"
+          src="https://res.cloudinary.com/dzmc7doja/image/upload/v1643198785/design-assets/design-icon-assets/Logo-Watermark-D.png"
+          className="logo-watermark"
+          variants={variants}
+          initial={variants.initial}
+          animate={variants.visible}
+        />
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={gControls}
@@ -189,9 +213,9 @@ const Hero = ({ content }) => {
           <div className="description">
             <MDXRenderer>{body}</MDXRenderer>
           </div>
-        </motion.div>
-        <motion.div initial={{ opacity: 0, x: 20 }} animate={sControls}>
-          <Social fontSize=".95rem" padding=".3rem 1.25rem" width="auto" />
+          <motion.div initial={{ opacity: 0, x: -20 }} animate={sControls}>
+            <ProfessionalSocial padding=".2rem 1.5rem" width="auto" withIcon />
+          </motion.div>
         </motion.div>
       </StyledContentWrapper>
     </StyledSection>

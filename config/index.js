@@ -79,6 +79,24 @@ module.exports = {
     },
   ],
 
+  proSocialMedia: [
+    {
+      name: "Polywork",
+      description: "work with me",
+      url: "https://www.polywork.com/jzbonner",
+    },
+    {
+      name: "Figma",
+      description: "design with me",
+      url: "https://www.figma.com/@jzbonner",
+    },
+    {
+      name: "Twitter",
+      description: "tweet with me",
+      url: "https://twitter.com/jzb_dev",
+    },
+  ],
+
   //-- NAVIGATION SETTINGS -----
   navLinks: {
     menu: [

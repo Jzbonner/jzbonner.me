@@ -4,7 +4,7 @@ import Helmet from "react-helmet"
 import { motion, useAnimation } from "framer-motion"
 
 import { lightTheme, darkTheme } from "../styles/theme"
-import Context from "../context/"
+import Context from "../context/index"
 
 const StyledSplashScreen = styled(motion.div)`
   position: fixed;
@@ -149,7 +149,7 @@ const SplashScreen = () => {
         opacity: 1,
         transition: { delay: 0.3 },
       })
-      await backgroundControls.start({ opacity: 0, transition: { delay: 1.2 } })
+      await backgroundControls.start({ opacity: 0, transition: { delay: 2 } })
       setState({ ...state, isIntroDone: true })
     }
     sequence()

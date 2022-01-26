@@ -93,7 +93,7 @@ const StyledContentWrapper = styled(ContentWrapper)`
     transition: all 0.2s ease-in-out;
     &:hover {
       box-shadow: 0 0 2.5rem rgba(0, 0, 0, 0.16);
-      background: rgba(128, 125, 123, 0.3);
+      background: rgba(128, 125, 123, 0.1);
     }
     &:hover + img.branding {
       transform: scale(1.1);
