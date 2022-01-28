@@ -138,7 +138,6 @@ const StyledSplashScreen = styled(motion.div)`
 
 const SplashScreen = () => {
   const { state, setState } = useContext(Context)
-
   const backgroundControls = useAnimation()
   const decalControls = useAnimation()
 

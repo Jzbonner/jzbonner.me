@@ -25,6 +25,7 @@ const StyledNav = styled.nav`
     justify-content: space-between;
     align-items: center;
     width: 31.25rem;
+    /* border: 1px solid white; */
     background: ${({ theme }) => theme.colors.background};
     a {
       color: ${({ theme }) => theme.colors.primary};

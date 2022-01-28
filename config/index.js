@@ -74,8 +74,8 @@ module.exports = {
       url: "https://jzb-lib.xyz/",
     },
     {
-      name: "Mail",
-      url: "mailto:jarrett.bonner@gmail.com",
+      name: "Resume",
+      url: "https://drive.google.com/file/d/18nyejRFnGx6lf_VKSaW3mE_Sqm1Yb8s_/view?usp=sharing",
     },
   ],
 

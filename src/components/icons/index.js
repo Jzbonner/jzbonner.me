@@ -8,6 +8,7 @@ import IconGitHub from "./github"
 import IconBehance from "./behance"
 import IconBlog from "./blog"
 import IconMail from "./mail"
+import IconResume from "./resume"
 
 // Utility function to grab Icons by name
 const Icon = ({ name, color }) => {
@@ -26,6 +27,8 @@ const Icon = ({ name, color }) => {
       return <IconBlog color={color} />
     case "mail":
       return <IconMail color={color} />
+    case "resume":
+      return <IconResume color={color} />
     default:
       return null
   }
