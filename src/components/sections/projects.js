@@ -34,8 +34,8 @@ const StyledSection = styled.section`
   margin-top: 6rem;
   margin-bottom: 3rem;
   .cta-btn {
-    display: block;
     text-align: center;
+    display: block;
     margin: 0rem auto;
     @media (min-width: ${({ theme }) => theme.breakpoints.md}) {
       margin: 0 auto;
@@ -57,6 +57,7 @@ const StyledContentWrapper = styled(ContentWrapper)`
     @media (min-width: ${({ theme }) => theme.breakpoints.md}) {
       padding-right: 2.5rem;
       padding-left: 2.5rem;
+      margin-bottom: 2.5rem;
     }
     .section-title {
       padding-right: 2.5rem;
@@ -68,6 +69,12 @@ const StyledContentWrapper = styled(ContentWrapper)`
       }
     }
     .projects {
+      /* background-image: url("https://res.cloudinary.com/dzmc7doja/image/upload/v1643612067/design-assets/background-assets/noita-digital-zcx5ztIjQAM-unsplash.jpg"); */
+      backdrop-filter: invert(0.2);
+      background-attachment: fixed;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
       display: flex;
       flex-direction: row;
       margin-top: -2.5rem;
@@ -75,13 +82,18 @@ const StyledContentWrapper = styled(ContentWrapper)`
       overflow-x: scroll;
       overflow-y: hidden;
       -webkit-overflow-scrolling: touch;
+      border: 0.4rem outset rgba(158, 158, 158, 0.7);
+      border-radius: 9px 40px 9px 40px;
+      box-shadow: 0 15px 15px rgba(0, 0, 0, 0.2);
       &::-webkit-scrollbar {
         display: none;
       }
       @media (min-width: ${({ theme }) => theme.breakpoints.md}) {
         flex-direction: column;
         margin-top: 0;
-        padding: 0;
+        padding-right: 2.5rem;
+        padding-left: 2.5rem;
+        padding-bottom: 0rem;
         overflow: visible;
       }
       /* Show scrollbar if desktop and wrapper width > viewport width */
