@@ -51,10 +51,12 @@ const StyledContentWrapper = styled(ContentWrapper)`
       justify-content: center;
     }
     .text-content {
-      border: 1px solid white;
-      border-radius: 2rem;
+      /* border: 0.3rem outset white; */
+      border: 0.4rem outset rgba(239, 239, 238, 0.8);
+      border-radius: 9px 40px 9px 40px;
       box-shadow: 0 0 2.5rem rgba(0, 0, 0, 0.16);
-      background-color: rgba(202, 202, 202, 0.8);
+      background-color: rgba(202, 202, 202, 0.3);
+      backdrop-filter: blur(2px);
       width: 100%;
       padding: 2rem;
       max-width: 31.25rem;

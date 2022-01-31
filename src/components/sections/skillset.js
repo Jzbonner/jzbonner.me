@@ -202,7 +202,7 @@ const Skillset = ({ content }) => {
               <Button
                 onClick={() => showMoreItems()}
                 type="button"
-                textAlign="left"
+                textAlign="center"
               >
                 🔗 view all
               </Button>

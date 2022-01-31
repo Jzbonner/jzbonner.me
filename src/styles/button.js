@@ -22,8 +22,8 @@ const StyledButton = styled(motion.button)`
   height: 3rem;
   /* background-color: ${({ theme }) => theme.colors.primary}; */
   /* background-color: rgba(151, 151, 151, 0.4); */
-  background-color: rgba(132, 132, 132, 0.7);
-  color: ${({ theme }) => theme.colors.backgroundText};
+  background-color: rgba(239, 239, 238, 0.8);
+  color: ${({ theme }) => theme.colors.primary};
   padding: 0.5rem;
   margin: 0 ${({ center }) => (center ? "auto" : "0")};
   font-size: 0.95rem;

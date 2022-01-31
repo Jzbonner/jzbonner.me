@@ -68,13 +68,16 @@ const StyledContentWrapper = styled(ContentWrapper)`
         padding-left: 0;
       }
     }
+    .projects-decal {
+      position: relative;
+      width: 7rem;
+      top: 4rem;
+      float: right;
+      margin-top: -7rem;
+      z-index: 1;
+    }
     .projects {
-      /* background-image: url("https://res.cloudinary.com/dzmc7doja/image/upload/v1643612067/design-assets/background-assets/noita-digital-zcx5ztIjQAM-unsplash.jpg"); */
       backdrop-filter: invert(0.2);
-      background-attachment: fixed;
-      background-position: center;
-      background-repeat: no-repeat;
-      background-size: cover;
       display: flex;
       flex-direction: row;
       margin-top: -2.5rem;
@@ -82,7 +85,8 @@ const StyledContentWrapper = styled(ContentWrapper)`
       overflow-x: scroll;
       overflow-y: hidden;
       -webkit-overflow-scrolling: touch;
-      border: 0.4rem outset rgba(158, 158, 158, 0.7);
+      /* border: 0.4rem outset rgba(158, 158, 158, 0.7); */
+      border: 0.4rem outset rgba(239, 239, 238, 0.8);
       border-radius: 9px 40px 9px 40px;
       box-shadow: 0 15px 15px rgba(0, 0, 0, 0.2);
       &::-webkit-scrollbar {
@@ -189,7 +193,8 @@ const StyledProject = styled(motion.div)`
     .category {
       border-bottom: 2px solid rgba(178, 173, 168, 0.9);
       border-radius: 1rem;
-      background: rgba(208, 208, 208, 0.2);
+      /* background: rgba(208, 208, 208, 0.2); */
+      background: rgba(226, 228, 227, 0.6);
       box-shadow: 0 0 2.5rem rgba(0, 0, 0, 0.16);
       display: flex;
       justify-content: center;
@@ -199,7 +204,7 @@ const StyledProject = styled(motion.div)`
       font-family: "Khand";
     }
     .category-text {
-      margin-top: 2.5rem;
+      margin-top: 3rem;
       margin-bottom: 3rem;
       margin-left: 0.5rem;
       font-size: 1rem;
@@ -368,6 +373,11 @@ const Projects = ({ content }) => {
           <div className="counter">
             {visibleProject} / {projects.length}
           </div>
+          <img
+            alt="projects-decal"
+            className="projects-decal"
+            src="https://res.cloudinary.com/dzmc7doja/image/upload/v1643652329/design-assets/design-icon-assets/projects-decal.png"
+          />
         </motion.div>
         <div className="projects">
           {projects.map((project, key) => {
