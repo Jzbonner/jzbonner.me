@@ -23,22 +23,22 @@ WebFont.load({
 })
 
 const StyledSocialWrapper = styled.div`
-  display: grid;
-  /* Calculate columns, depending on how many profiles there are */
-  grid-template-columns: repeat(${({ itemCount }) => itemCount + 1}, auto);
-  justify-content: flex-start;
-  /* justify-items: start; */
-
+  display: flex;
+  flex-direction: column;
   margin-left: -2.5rem;
   margin-right: -2.5rem;
   padding-left: 2.5rem;
   padding-right: 3.5rem;
-
   overflow-x: scroll;
   overflow-y: hidden;
   -webkit-overflow-scrolling: touch;
   &::-webkit-scrollbar {
     display: none;
+  }
+  @media (min-width: ${({ theme }) => theme.breakpoints.sm}) {
+    display: grid;
+    justify-content: flex-start;
+    grid-template-columns: repeat(${({ itemCount }) => itemCount + 1}, auto);
   }
   @media (min-width: ${({ theme }) => theme.breakpoints.lg}) {
     overflow: visible;
@@ -89,7 +89,7 @@ const StyledSocialProfile = styled(motion.a)`
   width: 70%;
   height: auto;
   z-index: 1;
-  background: ${({ theme }) => theme.colors.primary};
+  background: ${({ theme }) => theme.colors.secondary};
   background: linear-gradient(
     to right,
     ${({ theme }) => theme.colors.primary} 50%,
@@ -98,19 +98,27 @@ const StyledSocialProfile = styled(motion.a)`
   background-size: 205% 100%;
   background-position: right bottom;
   border-radius: 0.8rem;
-  border: 0.2rem solid rgba(239, 239, 238, 0.8);
-  box-shadow: 0 0 2.5rem rgba(0, 0, 0, 0.6);
+  border: 0.3rem outset rgba(198, 198, 198, 0.8);
   padding: ${({ padding }) => (padding ? padding : ".3rem 1.25rem")};
   transition: all 0.1s ease-in-out;
   font-size: ${({ fontSize }) => (fontSize ? fontSize : "1rem")};
   font-family: "Barlow Semi Condensed";
   font-weight: 600;
+  /* color: rgb(234, 234, 234); */
   color: ${({ theme }) => theme.colors.primary};
+
+  @media (min-width: ${({ theme }) => theme.breakpoints.sm}) {
+    color: rgb(234, 234, 234);
+  }
+  @media (min-width: ${({ theme }) => theme.breakpoints.lg}) {
+    box-shadow: 0 0 2.5rem rgba(0, 0, 0, 0.2);
+    color: ${({ theme }) => theme.colors.primary};
+  }
+
   &:hover {
     background-position: left bottom;
     color: ${({ theme }) => theme.colors.backgroundText};
-    /* transform: translateX(0.25rem); */
-    border: 0.2rem solid rgba(239, 239, 238, 1);
+    border: 0.3rem outset rgba(239, 239, 238, 0.8);
   }
   &:hover svg {
     filter: invert(1);

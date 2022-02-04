@@ -10,6 +10,7 @@ import ContentWrapper from "../../styles/contentWrapper"
 import heroUnderlining from "../../styles/herounderlining"
 // change compoenent below to professional social
 import ProfessionalSocial from "../professionalsocial"
+import { lightTheme, darkTheme } from "../../styles/theme"
 
 // import google fonts from webfontloader module
 const WebFont = require("webfontloader")
@@ -67,7 +68,12 @@ const StyledContentWrapper = styled(ContentWrapper)`
     }
     .title {
       margin-bottom: 1.5rem;
+      margin-top: -2rem;
       @media (min-width: ${({ theme }) => theme.breakpoints.sm}) {
+        margin-bottom: 0;
+      }
+      @media (min-width: ${({ theme }) => theme.breakpoints.lg}) {
+        margin-top: 0rem;
         margin-bottom: 0;
       }
     }
@@ -94,10 +100,13 @@ const StyledContentWrapper = styled(ContentWrapper)`
       position: absolute;
       top: 0;
       left: 0;
-      width: 55%;
+      width: 95%;
       margin-top: 6rem;
-      margin-left: 2rem;
       z-index: auto;
+      @media (min-width: ${({ theme }) => theme.breakpoints.lg}) {
+        margin-left: 2rem;
+        width: 55%;
+      }
     }
   }
 `

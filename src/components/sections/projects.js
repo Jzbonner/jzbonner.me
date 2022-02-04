@@ -81,6 +81,8 @@ const StyledContentWrapper = styled(ContentWrapper)`
       display: flex;
       flex-direction: row;
       margin-top: -2.5rem;
+      margin-left: 0.25rem;
+      margin-right: 0.25rem;
       padding: 2.5rem 2.5rem;
       overflow-x: scroll;
       overflow-y: hidden;
@@ -95,6 +97,8 @@ const StyledContentWrapper = styled(ContentWrapper)`
       @media (min-width: ${({ theme }) => theme.breakpoints.md}) {
         flex-direction: column;
         margin-top: 0;
+        margin-left: 0.25rem;
+        margin-right: 0.25rem;
         padding-right: 2.5rem;
         padding-left: 2.5rem;
         padding-bottom: 0rem;

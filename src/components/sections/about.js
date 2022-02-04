@@ -51,31 +51,41 @@ const StyledContentWrapper = styled(ContentWrapper)`
       justify-content: center;
     }
     .text-content {
-      /* border: 0.3rem outset white; */
       border: 0.4rem outset rgba(239, 239, 238, 0.8);
       border-radius: 9px 40px 9px 40px;
       box-shadow: 0 0 2.5rem rgba(0, 0, 0, 0.16);
       background-color: rgba(202, 202, 202, 0.3);
       backdrop-filter: blur(2px);
       width: 100%;
-      padding: 2rem;
+      padding: 1rem;
       max-width: 31.25rem;
       font-family: "Barlow Semi Condensed";
       font-size: 1.1rem;
+      @media (min-width: ${({ theme }) => theme.breakpoints.sm}) {
+        padding: 2rem;
+      }
     }
     .about-decal {
       position: relative;
-      top: -3rem;
-      left: 24rem;
-      width: 18%;
+      top: -4rem;
+      left: 13rem;
+      width: 27%;
+      @media (min-width: ${({ theme }) => theme.breakpoints.sm}) {
+        width: 23%;
+        left: 18rem;
+      }
+      @media (min-width: ${({ theme }) => theme.breakpoints.lg}) {
+        width: 17%;
+        left: 23rem;
+      }
     }
     .image-content {
       width: 100%;
       max-width: 18rem;
-      margin-top: 6rem;
-      margin-left: 0;
+      margin-left: 1.25rem;
       @media (min-width: ${({ theme }) => theme.breakpoints.sm}) {
         margin-left: 2rem;
+        margin-top: 6rem;
       }
     }
     .about-author {

@@ -19,10 +19,7 @@ const StyledSplashScreen = styled(motion.div)`
   background-color: ${({ theme, darkMode }) =>
     darkMode ? theme.colors.background : theme.colors.primary};
   .decal-wrapper {
-    position: absolute;
-    top: 0;
-    left: 0;
-    overflow: hidden;
+    /* border: 1px solid white; */
   }
   .backdrop {
     position: absolute;
@@ -36,12 +33,8 @@ const StyledSplashScreen = styled(motion.div)`
   }
   .initials {
     display: flex;
-    margin-top: 12rem;
-    margin-left: 34vw;
     height: 8rem;
     @media (min-width: ${({ theme }) => theme.breakpoints.sm}) {
-      margin-top: 20rem;
-      margin-left: 46vw;
       height: 9rem;
     }
   }

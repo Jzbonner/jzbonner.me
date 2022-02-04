@@ -7,11 +7,14 @@ import { FormspreeProvider } from "@formspree/react"
 
 const StyledFloatingButton = motion(styled.div`
   position: fixed;
+  bottom: 3rem;
   right: 0;
-  bottom: 2rem;
   width: 20%;
   margin: 0;
   z-index: 2;
+  @media (min-width: ${({ theme }) => theme.breakpoints.md}) {
+    right: 0;
+  }
   .decal-cta {
     float: right;
     padding: 1rem;
