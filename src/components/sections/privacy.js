@@ -4,6 +4,7 @@ import PropTypes from "prop-types"
 import styled from "styled-components"
 import { MDXRenderer } from "gatsby-plugin-mdx"
 import { motion } from "framer-motion"
+import { lightTheme, darkTheme } from "../../styles/theme"
 
 // import Context from "../../context/"
 import ContentWrapper from "../../styles/contentWrapper"
@@ -62,10 +63,14 @@ const StyledContentWrapper = styled(ContentWrapper)`
   .policy-decal {
     position: relative;
     border-radius: 1rem;
-    top: -4rem;
-    left: 30rem;
+    top: -3rem;
+    left: 17rem;
     z-index: 2;
     width: 15%;
+    @media (min-width: ${({ theme }) => theme.breakpoints.sm}) {
+      top: -4rem;
+      left: 30rem;
+    }
   }
 `
 

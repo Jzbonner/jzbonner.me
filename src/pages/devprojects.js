@@ -30,7 +30,11 @@ const StyledSection = styled(motion.section)`
   width: 100%;
   max-width: 62.5rem;
   margin: 0 auto;
-  height: auto;
+  height: 100vh;
+  margin-bottom: 0rem;
+  @media (min-width: ${({ theme }) => theme.breakpoints.md}) {
+    height: auto;
+  }
   background: ${({ theme }) => theme.colors.background};
   h1 {
     font-size: 1.5rem;
@@ -60,29 +64,51 @@ const StyledContentWrapper = styled(ContentWrapper)`
 
 const StyledRevealerLayout = styled(ContentWrapper)`
   && {
+    /* border: 1px red solid; */
     margin-bottom: 2rem;
     width: 100%;
-    margin-top: -4rem;
-    height: 80rem;
+    margin-top: -3rem;
+    height: 95vh;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     gap: 1rem;
     font-family: "Barlow Semi Condensed";
-    overflow: hidden;
+    overflow-x: hidden;
+    overflow-y: visible;
+    @media (min-width: ${({ theme }) => theme.breakpoints.md}) {
+      height: 100vh;
+      overflow-x: hidden;
+      overflow-y: hidden;
+      margin-top: -4rem;
+      margin-bottom: 2rem;
+    }
+    @media (min-width: ${({ theme }) => theme.breakpoints.lg}) {
+      overflow-x: hidden;
+      height: 120vh;
+    }
   }
 
   .content-container-secondary {
+    position: relative;
+    top: -67rem;
+    left: 0rem;
+    height: auto;
     border: 1px solid white;
     background: rgba(213, 213, 213, 0.9);
     box-shadow: 0 0 2.5rem rgba(0, 0, 0, 0.16);
     border-radius: 1rem;
-    margin-top: -3rem;
-    margin-bottom: 4rem;
+    margin-bottom: -70rem;
+    @media (min-width: ${({ theme }) => theme.breakpoints.sm}) {
+      top: -63rem;
+      margin-bottom: -60rem;
+      height: auto;
+    }
     @media (min-width: ${({ theme }) => theme.breakpoints.md}) {
       position: relative;
       top: -80rem;
       left: 0rem;
+      height: auto;
     }
   }
 
@@ -122,8 +148,16 @@ const StyledRevealerLayout = styled(ContentWrapper)`
   .dev-experience {
     padding: 1rem;
     display: flex;
-    width: 24rem;
+    width: 250%;
+    margin-top: 5rem;
     filter: blur(0.4rem) grayscale(1);
+    @media (min-width: ${({ theme }) => theme.breakpoints.sm}) {
+      margin-top: -5rem;
+      margin-left: -3rem;
+      margin-bottom: -10rem;
+      width: 68rem;
+      padding: 6rem;
+    }
     @media (min-width: ${({ theme }) => theme.breakpoints.md}) {
       margin-top: -5rem;
       margin-left: -3rem;
@@ -134,6 +168,10 @@ const StyledRevealerLayout = styled(ContentWrapper)`
   .text-description {
     padding: 2rem;
     margin-top: -2rem;
+    font-size: 1rem;
+    @media (min-width: ${({ theme }) => theme.breakpoints.md}) {
+      font-size: 1rem;
+    }
   }
 `
 

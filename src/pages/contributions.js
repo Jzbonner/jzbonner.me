@@ -59,6 +59,10 @@ const StyledContentWrapper = styled(ContentWrapper)`
     display: flex;
     flex-direction: column;
     flex-basis: 25rem;
+    @media (min-width: ${({ theme }) => theme.breakpoints.sm}) {
+      flex: 1;
+      margin-bottom: 4rem;
+    }
   }
   .column {
     border-radius: 0.8rem;

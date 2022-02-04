@@ -46,11 +46,13 @@ const StyledContentWrapper = styled(ContentWrapper)`
     align-items: center;
     .footer-links {
       /* Adjust width of links wrapper accordingly */
-      width: 10rem;
+      width: 100%;
       display: flex;
       justify-content: space-evenly;
       @media (min-width: ${({ theme }) => theme.breakpoints.sm}) {
         width: 25rem;
+      }
+      @media (min-width: ${({ theme }) => theme.breakpoints.lg}) {
       }
     }
   }

@@ -37,6 +37,7 @@ const StyledSection = styled.section`
     text-align: center;
     display: block;
     margin: 0rem auto;
+    /* margin-top: -4rem; */
     @media (min-width: ${({ theme }) => theme.breakpoints.md}) {
       margin: 0 auto;
     }
@@ -77,25 +78,32 @@ const StyledContentWrapper = styled(ContentWrapper)`
       z-index: 1;
     }
     .projects {
+      background: url("https://res.cloudinary.com/dzmc7doja/image/upload/v1643652329/design-assets/design-icon-assets/projects-decal.png")
+        bottom center no-repeat;
       backdrop-filter: invert(0.2);
       display: flex;
       flex-direction: row;
       margin-top: -2.5rem;
-      margin-left: 0.25rem;
-      margin-right: 0.25rem;
       padding: 2.5rem 2.5rem;
       overflow-x: scroll;
       overflow-y: hidden;
       -webkit-overflow-scrolling: touch;
-      /* border: 0.4rem outset rgba(158, 158, 158, 0.7); */
-      border: 0.4rem outset rgba(239, 239, 238, 0.8);
-      border-radius: 9px 40px 9px 40px;
-      box-shadow: 0 15px 15px rgba(0, 0, 0, 0.2);
+      border-bottom: 0.4rem outset rgba(239, 239, 239, 0.7);
       &::-webkit-scrollbar {
         display: none;
       }
-      @media (min-width: ${({ theme }) => theme.breakpoints.md}) {
+      @media (min-width: ${({ theme }) => theme.breakpoints.sm}) {
+        border: 0.4rem outset rgba(239, 239, 238, 0.8);
+        border-radius: 9px 40px 9px 40px;
+        box-shadow: 0 15px 15px rgba(0, 0, 0, 0.2);
+        margin-left: 2rem;
+        margin-right: 2rem;
+      }
+      @media (min-width: ${({ theme }) => theme.breakpoints.lg}) {
         flex-direction: column;
+        border: 0.4rem outset rgba(239, 239, 238, 0.8);
+        border-radius: 9px 40px 9px 40px;
+        box-shadow: 0 15px 15px rgba(0, 0, 0, 0.2);
         margin-top: 0;
         margin-left: 0.25rem;
         margin-right: 0.25rem;
@@ -249,7 +257,7 @@ const StyledProject = styled(motion.div)`
       display: flex;
       justify-content: flex-start;
       align-items: center;
-      width: 25%;
+      width: 35%;
       margin-top: 1rem;
       a {
         display: inline-block;
@@ -262,6 +270,12 @@ const StyledProject = styled(motion.div)`
       }
       svg:hover {
         fill: ${({ theme }) => theme.colors.primary};
+      }
+      @media (min-width: ${({ theme }) => theme.breakpoints.sm}) {
+        width: 35%;
+      }
+      @media (min-width: ${({ theme }) => theme.breakpoints.lg}) {
+        width: 25%;
       }
     }
   }
@@ -377,11 +391,11 @@ const Projects = ({ content }) => {
           <div className="counter">
             {visibleProject} / {projects.length}
           </div>
-          <img
-            alt="projects-decal"
-            className="projects-decal"
-            src="https://res.cloudinary.com/dzmc7doja/image/upload/v1643652329/design-assets/design-icon-assets/projects-decal.png"
-          />
+          {/* <img */}
+          {/*   alt="projects-decal" */}
+          {/*   className="projects-decal" */}
+          {/*   src="https://res.cloudinary.com/dzmc7doja/image/upload/v1643652329/design-assets/design-icon-assets/projects-decal.png" */}
+          {/* /> */}
         </motion.div>
         <div className="projects">
           {projects.map((project, key) => {
@@ -484,7 +498,6 @@ const Projects = ({ content }) => {
           })}
         </div>
       </StyledContentWrapper>
-      {/*TODO: need to add hover animation to button element but only cta-btn class is accessible */}
       {sectionDetails.frontmatter.buttonVisible && (
         <motion.a
           ref={bRef}
