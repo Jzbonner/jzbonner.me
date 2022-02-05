@@ -78,8 +78,8 @@ const StyledContentWrapper = styled(ContentWrapper)`
       z-index: 1;
     }
     .projects {
-      background: url("https://res.cloudinary.com/dzmc7doja/image/upload/v1643652329/design-assets/design-icon-assets/projects-decal.png")
-        bottom center no-repeat;
+      /* background: url("https://res.cloudinary.com/dzmc7doja/image/upload/v1643652329/design-assets/design-icon-assets/projects-decal.png") */
+      /*   bottom center no-repeat; */
       backdrop-filter: invert(0.2);
       display: flex;
       flex-direction: row;
@@ -88,7 +88,8 @@ const StyledContentWrapper = styled(ContentWrapper)`
       overflow-x: scroll;
       overflow-y: hidden;
       -webkit-overflow-scrolling: touch;
-      border-bottom: 0.4rem outset rgba(239, 239, 239, 0.7);
+      border-bottom: 0.5rem outset rgba(239, 239, 239, 0.7);
+      border-top: 0.5rem solid rgba(239, 239, 239, 0.7);
       &::-webkit-scrollbar {
         display: none;
       }
@@ -134,6 +135,120 @@ const StyledContentWrapper = styled(ContentWrapper)`
           background-color: ${({ theme }) => theme.colors.background};
           border-radius: 8px;
         }
+      }
+    }
+    .circles {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 250vw;
+      height: 100%;
+      overflow: hidden;
+      @media (min-width: ${({ theme }) => theme.breakpoints.sm}) {
+        width: 150vw;
+      }
+      @media (min-width: ${({ theme }) => theme.breakpoints.md}) {
+        width: 47vw;
+      }
+    }
+
+    .circles li {
+      position: absolute;
+      display: block;
+      list-style: none;
+      width: 20px;
+      height: 20px;
+      background: rgba(255, 255, 255, 0.4);
+      animation: animate 20s linear infinite;
+      bottom: -150px;
+    }
+
+    .circles li:nth-child(1) {
+      left: 25%;
+      width: 80px;
+      height: 80px;
+      animation-delay: 0s;
+    }
+
+    .circles li:nth-child(2) {
+      left: 10%;
+      width: 20px;
+      height: 20px;
+      animation-delay: 2s;
+      animation-duration: 12s;
+    }
+
+    .circles li:nth-child(3) {
+      left: 70%;
+      width: 20px;
+      height: 20px;
+      animation-delay: 4s;
+    }
+
+    .circles li:nth-child(4) {
+      left: 40%;
+      width: 60px;
+      height: 60px;
+      animation-delay: 0s;
+      animation-duration: 18s;
+    }
+
+    .circles li:nth-child(5) {
+      left: 65%;
+      width: 20px;
+      height: 20px;
+      animation-delay: 0s;
+    }
+
+    .circles li:nth-child(6) {
+      left: 75%;
+      width: 110px;
+      height: 110px;
+      animation-delay: 3s;
+    }
+
+    .circles li:nth-child(7) {
+      left: 35%;
+      width: 150px;
+      height: 150px;
+      animation-delay: 7s;
+    }
+
+    .circles li:nth-child(8) {
+      left: 50%;
+      width: 25px;
+      height: 25px;
+      animation-delay: 15s;
+      animation-duration: 45s;
+    }
+
+    .circles li:nth-child(9) {
+      left: 20%;
+      width: 15px;
+      height: 15px;
+      animation-delay: 2s;
+      animation-duration: 35s;
+    }
+
+    .circles li:nth-child(10) {
+      left: 85%;
+      width: 150px;
+      height: 150px;
+      animation-delay: 0s;
+      animation-duration: 11s;
+    }
+
+    @keyframes animate {
+      0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 1;
+        border-radius: 0;
+      }
+
+      100% {
+        transform: translateY(-3000px) rotate(900deg);
+        opacity: 0;
+        border-radius: 90%;
       }
     }
     .counter {
@@ -398,6 +513,18 @@ const Projects = ({ content }) => {
           {/* /> */}
         </motion.div>
         <div className="projects">
+          <ul className="circles">
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+          </ul>
           {projects.map((project, key) => {
             const { body, frontmatter } = project.node
             return (

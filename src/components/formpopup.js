@@ -3,6 +3,7 @@ import styled, { ThemeProvider } from "styled-components"
 import PropTypes from "prop-types"
 import { motion } from "framer-motion"
 import { useForm, ValidationError } from "@formspree/react"
+import { lightTheme, darkTheme } from "../styles/theme"
 
 const WebFont = require("webfontloader")
 
@@ -29,27 +30,41 @@ const StyledPopupBox = styled(motion.section)`
     cursor: pointer;
     position: relative;
     top: 0.85rem;
-    left: 25rem;
+    left: 18rem;
     line-height: 20px;
     text-align: center;
     font-size: 20px;
+    @media (min-width: ${({ theme }) => theme.breakpoints.sm}) {
+      top: 0.85rem;
+      left: 25rem;
+    }
+    @media (min-width: ${({ theme }) => theme.breakpoints.md}) {
+      top: 0.85rem;
+      left: 25rem;
+    }
   }
 `
 
 const StyledBox = styled(motion.div)`
   position: relative;
-  width: 25%;
   margin: 0 auto;
   height: auto;
+  width: 90%;
   max-height: 70vh;
   margin-top: calc(100vh - 85vh - 20px);
   background: rgba(237, 239, 238, 0.98);
   box-shadow: 0 0 2.5rem rgba(0, 0, 0, 0.16);
   border-radius: 1rem;
-  padding: 1rem;
   border: 0.25rem solid white;
+  padding: 1rem;
   z-index: 3;
   overflow: auto;
+  @media (min-width: ${({ theme }) => theme.breakpoints.sm}) {
+    width: 60%;
+  }
+  @media (min-width: ${({ theme }) => theme.breakpoints.md}) {
+    width: 25%;
+  }
   .contact-form {
     border-top: 1px solid white;
     display: flex;
@@ -174,10 +189,10 @@ const FormPopup = (data) => {
           <h3 className="form-header">sign up form</h3>
         </StyledFormHeader>
         <p className="form-description">
-          If you would like to reach me, I can be contacted using the signup
-          form below. I will also be starting a newsletter in the coming weeks
-          and would love to drop helpful tech articles in your inbox. Just
-          indicate indicate below if this is something you are interested in!
+          Please reach out, I am passionately searching for collaborative
+          opportunities! I will also be starting a newsletter in the coming
+          weeks and would love to drop helpful tech articles in your inbox. Just
+          indicate below if this is something you are interested in!
         </p>
 
         <motion.form
