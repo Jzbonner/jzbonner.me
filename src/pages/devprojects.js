@@ -12,20 +12,6 @@ import SEO from "../components/seo"
 import { seoTitleSuffix } from "../../config"
 import SimpleReactLightbox, { SRLWrapper } from "simple-react-lightbox"
 
-// import google fonts from webfontloader module
-// const WebFont = require("webfontloader")
-
-// WebFont.load({
-//   google: {
-//     families: [
-//       "Caveat",
-//       "Khand",
-//       "Roboto Condensed:400",
-//       "Barlow Semi Condensed",
-//     ],
-//   },
-// })
-
 const StyledSection = styled(motion.section)`
   width: 100%;
   max-width: 62.5rem;
@@ -106,9 +92,9 @@ const StyledRevealerLayout = styled(ContentWrapper)`
     }
     @media (min-width: ${({ theme }) => theme.breakpoints.md}) {
       position: relative;
-      top: -80rem;
+      top: -70rem;
       left: 0rem;
-      height: auto;
+      height: 72%;
     }
   }
 
