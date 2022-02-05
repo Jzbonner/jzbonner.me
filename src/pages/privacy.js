@@ -7,20 +7,6 @@ import SEO from "../components/seo"
 import { seoTitleSuffix } from "../../config"
 import Privacy from "../components/sections/privacy"
 
-// import google fonts from webfontloader module
-// const WebFont = require("webfontloader")
-
-// WebFont.load({
-//   google: {
-//     families: [
-//       "Caveat",
-//       "Khand",
-//       "Roboto Condensed:400",
-//       "Barlow Semi Condensed",
-//     ],
-//   },
-// })
-
 const PrivacyPage = ({ data }) => {
   const { frontmatter } = data.privacy.edges[0].node
   const { seoTitle, useSeoTitleSuffix, useSplashScreen } = frontmatter
