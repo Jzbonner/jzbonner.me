@@ -13,18 +13,18 @@ import rssJson from "../../../feed/rss.json"
 import { lightTheme, darkTheme } from "../../styles/theme"
 
 // import google fonts from webfontloader module
-const WebFont = require("webfontloader")
+// const WebFont = require("webfontloader")
 
-WebFont.load({
-  google: {
-    families: [
-      "Caveat",
-      "Khand",
-      "Roboto Condensed:400",
-      "Barlow Semi Condensed",
-    ],
-  },
-})
+// WebFont.load({
+//   google: {
+//     families: [
+//       "Caveat",
+//       "Khand",
+//       "Roboto Condensed:400",
+//       "Barlow Semi Condensed",
+//     ],
+//   },
+// })
 
 const StyledSection = motion(styled.section`
   width: 100%;

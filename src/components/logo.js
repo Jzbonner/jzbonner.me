@@ -4,13 +4,13 @@ import styled from "styled-components"
 import { siteMainTitle } from "../../config/index"
 
 // import google fonts from webfontloader module
-const WebFont = require("webfontloader")
+// const WebFont = require("webfontloader")
 
-WebFont.load({
-  google: {
-    families: ["Caveat", "Khand"],
-  },
-})
+// WebFont.load({
+//   google: {
+//     families: ["Caveat", "Khand"],
+//   },
+// })
 
 const StyledLogo = styled.div`
   position: relative;

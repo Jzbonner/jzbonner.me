@@ -5,18 +5,18 @@ import { motion } from "framer-motion"
 import { useForm, ValidationError } from "@formspree/react"
 import { lightTheme, darkTheme } from "../styles/theme"
 
-const WebFont = require("webfontloader")
+// const WebFont = require("webfontloader")
 
-WebFont.load({
-  google: {
-    families: [
-      "Caveat",
-      "Khand",
-      "Roboto Condensed:400",
-      "Barlow Semi Condensed",
-    ],
-  },
-})
+// WebFont.load({
+//   google: {
+//     families: [
+//       "Caveat",
+//       "Khand",
+//       "Roboto Condensed:400",
+//       "Barlow Semi Condensed",
+//     ],
+//   },
+// })
 
 const StyledPopupBox = styled(motion.section)`
   position: fixed;

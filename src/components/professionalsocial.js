@@ -9,18 +9,18 @@ import { proSocialMedia } from "../../config"
 import { motion } from "framer-motion"
 
 // import google fonts from webfontloader module
-const WebFont = require("webfontloader")
+// const WebFont = require("webfontloader")
 
-WebFont.load({
-  google: {
-    families: [
-      "Caveat",
-      "Khand",
-      "Roboto Condensed:400",
-      "Barlow Semi Condensed",
-    ],
-  },
-})
+// WebFont.load({
+//   google: {
+//     families: [
+//       "Caveat",
+//       "Khand",
+//       "Roboto Condensed:400",
+//       "Barlow Semi Condensed",
+//     ],
+//   },
+// })
 
 const StyledSocialWrapper = styled.div`
   display: flex;

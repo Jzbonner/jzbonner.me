@@ -91,5 +91,18 @@ module.exports = {
         stages: ["develop"],
       },
     },
+    {
+      resolve: "gatsby-plugin-web-font-loader",
+      options: {
+        google: {
+          families: [
+            "Caveat",
+            "Khand",
+            "Roboto Condensed:400",
+            "Barlow Semi Condensed",
+          ],
+        },
+      },
+    },
   ],
 }

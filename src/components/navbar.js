@@ -5,18 +5,18 @@ import { Link } from "gatsby"
 import { navLinks } from "../../config"
 
 // import google fonts from webfontloader module
-const WebFont = require("webfontloader")
+// const WebFont = require("webfontloader")
 
-WebFont.load({
-  google: {
-    families: [
-      "Caveat",
-      "Khand",
-      "Roboto Condensed:400",
-      "Barlow Semi Condensed",
-    ],
-  },
-})
+// WebFont.load({
+//   google: {
+//     families: [
+//       "Caveat",
+//       "Khand",
+//       "Roboto Condensed:400",
+//       "Barlow Semi Condensed",
+//     ],
+//   },
+// })
 
 const StyledNav = styled.nav`
   display: none;
@@ -83,20 +83,6 @@ const Navbar = () => {
           </Link>
         )
       })}
-      {/* {button.useFileName ? ( */}
-      {/*   <a */}
-      {/*     className="cta-btn" */}
-      {/*     href={`/${button.fileName}`} */}
-      {/*     target="_blank" */}
-      {/*     rel="noopener noreferrer" */}
-      {/*   > */}
-      {/*     {button.name} */}
-      {/*   </a> */}
-      {/* ) : ( */}
-      {/*   <Link className="cta-btn" to={button.url}> */}
-      {/*     {button.name} */}
-      {/*   </Link> */}
-      {/* )} */}
     </StyledNav>
   )
 }

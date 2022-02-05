@@ -10,18 +10,18 @@ import Context from "../../context/"
 import ContentWrapper from "../../styles/contentWrapper"
 
 // import google fonts from webfontloader module
-const WebFont = require("webfontloader")
+// const WebFont = require("webfontloader")
 
-WebFont.load({
-  google: {
-    families: [
-      "Caveat",
-      "Khand",
-      "Roboto Condensed:400",
-      "Barlow Semi Condensed",
-    ],
-  },
-})
+// WebFont.load({
+//   google: {
+//     families: [
+//       "Caveat",
+//       "Khand",
+//       "Roboto Condensed:400",
+//       "Barlow Semi Condensed",
+//     ],
+//   },
+// })
 
 const StyledSection = styled.section`
   width: 100%;
