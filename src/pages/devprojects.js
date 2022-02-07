@@ -43,6 +43,7 @@ const StyledContentWrapper = styled(ContentWrapper)`
     height: 10%;
   }
   .section-title {
+    border: 1px solid red;
     font-family: "Khand";
     margin-left: 2rem;
   }
