@@ -12,20 +12,6 @@ import heroUnderlining from "../../styles/herounderlining"
 import ProfessionalSocial from "../professionalsocial"
 import { lightTheme, darkTheme } from "../../styles/theme"
 
-// import google fonts from webfontloader module
-// const WebFont = require("webfontloader")
-
-// WebFont.load({
-//   google: {
-//     families: [
-//       "Caveat",
-//       "Khand",
-//       "Roboto Condensed:400",
-//       "Barlow Semi Condensed",
-//     ],
-//   },
-// })
-
 const StyledSection = styled.section`
   /* border: 1px solid red; */
   width: 100%;

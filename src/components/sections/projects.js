@@ -14,19 +14,6 @@ import Button from "../../styles/button"
 import Icon from "../../components/icons"
 import { lightTheme, darkTheme } from "../../styles/theme"
 
-// const WebFont = require("webfontloader")
-
-// WebFont.load({
-//   google: {
-//     families: [
-//       "Caveat",
-//       "Khand",
-//       "Roboto Condensed:400",
-//       "Barlow Semi Condensed",
-//     ],
-//   },
-// })
-
 const StyledSection = styled.section`
   width: 100%;
   height: auto;

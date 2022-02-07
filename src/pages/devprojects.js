@@ -77,7 +77,7 @@ const StyledRevealerLayout = styled(ContentWrapper)`
 
   .content-container-secondary {
     position: relative;
-    top: -67rem;
+    top: -64rem;
     left: 0rem;
     height: auto;
     border: 1px solid white;

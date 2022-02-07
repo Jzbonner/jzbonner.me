@@ -9,20 +9,6 @@ import { useOnScreen } from "../../hooks"
 import ContentWrapper from "../../styles/contentWrapper"
 import Button from "../../styles/button"
 
-// import google fonts from webfontloader module
-// const WebFont = require("webfontloader")
-
-// WebFont.load({
-//   google: {
-//     families: [
-//       "Caveat",
-//       "Khand",
-//       "Roboto Condensed:400",
-//       "Barlow Semi Condensed",
-//     ],
-//   },
-// })
-
 const StyledSection = styled.section`
   width: 100%;
   height: auto;
@@ -85,29 +71,7 @@ const StyledSkills = styled.div`
     overflow: visible;
     padding: 0;
   }
-  /* Show scrollbar if desktop and wrapper width > viewport width */
-  @media (hover: hover) {
-    scrollbar-color: ${({ theme }) => theme.colors.scrollBar} transparent; // Firefox only
-    &::-webkit-scrollbar {
-      display: block;
-      -webkit-appearance: none;
-    }
 
-    &::-webkit-scrollbar:horizontal {
-      height: 0.8rem;
-    }
-
-    &::-webkit-scrollbar-thumb {
-      border-radius: 8px;
-      border: 0.2rem solid ${({ theme }) => theme.colors.background};
-      background-color: ${({ theme }) => theme.colors.scrollBar};
-    }
-
-    &::-webkit-scrollbar-track {
-      background-color: ${({ theme }) => theme.colors.background};
-      border-radius: 8px;
-    }
-  }
   .skills {
     width: 15.625rem;
     height: 3rem;

@@ -12,20 +12,6 @@ import { rssFeed, mediumRssFeed, shownArticles } from "../../../config"
 import rssJson from "../../../feed/rss.json"
 import { lightTheme, darkTheme } from "../../styles/theme"
 
-// import google fonts from webfontloader module
-// const WebFont = require("webfontloader")
-
-// WebFont.load({
-//   google: {
-//     families: [
-//       "Caveat",
-//       "Khand",
-//       "Roboto Condensed:400",
-//       "Barlow Semi Condensed",
-//     ],
-//   },
-// })
-
 const StyledSection = motion(styled.section`
   width: 100%;
   height: auto;
@@ -64,16 +50,10 @@ const StyledContentWrapper = styled(ContentWrapper)`
       }
       @media (min-width: ${({ theme }) => theme.breakpoints.lg}) {
         padding: 0 1rem;
-      }
-      /* Show scrollbar if desktop and wrapper width > viewport width */
-      @media (hover: hover) {
         scrollbar-color: ${({ theme }) => theme.colors.scrollBar} transparent; // Firefox only
         &::-webkit-scrollbar {
           display: block;
-          -webkit-appearance: none;
-          max-width: 4px;
         }
-
         &::-webkit-scrollbar:horizontal {
           height: 0.8rem;
         }

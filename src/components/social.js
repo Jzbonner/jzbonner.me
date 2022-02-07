@@ -49,30 +49,6 @@ const StyledSocialWrapper = styled.div`
     width: 2.5rem;
   }
 
-  /* Show scrollbar if desktop and wrapper width > viewport width */
-  @media (hover: hover) {
-    scrollbar-color: ${({ theme }) => theme.colors.scrollBar} transparent; //Firefox only
-    &::-webkit-scrollbar {
-      display: block;
-      -webkit-appearance: none;
-    }
-
-    &::-webkit-scrollbar:horizontal {
-      height: 0.8rem;
-    }
-
-    &::-webkit-scrollbar-thumb {
-      border-radius: 8px;
-      border: 0.2rem solid ${({ theme }) => theme.colors.background};
-      background-color: ${({ theme }) => theme.colors.scrollBar};
-    }
-
-    &::-webkit-scrollbar-track {
-      background-color: ${({ theme }) => theme.colors.background};
-      border-radius: 8px;
-    }
-  }
-
   a {
     margin-right: 0.5rem;
     margin-bottom: 0.75rem;
