@@ -11,6 +11,8 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import { seoTitleSuffix } from "../../config"
 import SimpleReactLightbox, { SRLWrapper } from "simple-react-lightbox"
+import ReactTooltip from "react-tooltip"
+import { useIsSmallScreen } from "../utils/index"
 
 const StyledSection = styled(motion.section)`
   width: 100%;
@@ -38,12 +40,12 @@ const StyledContentWrapper = styled(ContentWrapper)`
   && {
     width: 100%;
     max-width: 36rem;
-    margin: 0;
+    margin-left: 0.5rem;
+    margin-bottom: 1rem;
     padding: 0;
     height: 10%;
   }
   .section-title {
-    border: 1px solid red;
     font-family: "Khand";
     margin-left: 2rem;
   }
@@ -51,14 +53,13 @@ const StyledContentWrapper = styled(ContentWrapper)`
 
 const StyledRevealerLayout = styled(ContentWrapper)`
   && {
-    /* border: 1px red solid; */
     margin-bottom: 2rem;
     width: 100%;
     margin-top: -3rem;
     height: 95vh;
     display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
+    flex-direction: column;
+    /* flex-wrap: wrap; */
     gap: 1rem;
     font-family: "Barlow Semi Condensed";
     overflow-x: hidden;
@@ -71,14 +72,14 @@ const StyledRevealerLayout = styled(ContentWrapper)`
       margin-bottom: 2rem;
     }
     @media (min-width: ${({ theme }) => theme.breakpoints.lg}) {
-      overflow-x: hidden;
+      overflow: hidden;
       height: 120vh;
     }
   }
 
   .content-container-secondary {
     position: relative;
-    top: -64rem;
+    top: -63rem;
     left: 0rem;
     height: auto;
     border: 1px solid white;
@@ -99,7 +100,7 @@ const StyledRevealerLayout = styled(ContentWrapper)`
     }
   }
 
-  .toggle-button {
+  .toggle-indicator {
     position: relative;
     top: 1.3rem;
     z-index: 1;
@@ -110,10 +111,17 @@ const StyledRevealerLayout = styled(ContentWrapper)`
     margin-top: 1rem;
     padding: 1rem;
     height: 4rem;
+    width: 4rem;
     transition: all 0.2s ease-in-out;
     &:hover {
-      background: rgba(165, 156, 145);
+      background: rgba(165, 156, 145, 0.8);
     }
+  }
+
+  .toggle-tip {
+    font-family: "Barlow Semi Condensed";
+    font-size: 1rem;
+    padding: 0.5rem;
   }
 
   .content-container {
@@ -167,26 +175,42 @@ const DevProjects = ({ data }) => {
   const { title, seoTitle, useSeoTitleSuffix, useSplashScreen } = frontmatter
   const contentRef = useRef()
   const contentOnScreen = useOnScreen(contentRef)
+  const isSmall = useIsSmallScreen()
 
   const globalState = {
     isIntroDone: useSplashScreen ? false : true,
     darkMode: false,
   }
 
-  const variants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: { opacity: 1, y: 0, transition: { delay: 0.9 } },
-    initial: { x: 0 },
-    exit: { x: 1000, transition: { type: "spring", stiffness: 80 } },
-    blur: {
-      filter: `blur(0.4rem) grayscale(1)`,
-      transition: { type: "spring", stiffness: 100, duration: 0.2 },
-    },
-    unblur: {
-      filter: `blur(0rem) grayscale(0)`,
-      transition: { type: "spring", stiffness: 100, duration: 0.2 },
-    },
-  }
+  const variants = isSmall
+    ? {
+        hidden: { opacity: 0, y: 20 },
+        visible: { opacity: 1, y: 0, transition: { delay: 0.9 } },
+        initial: { y: 0 },
+        exit: { y: 950, transition: { type: "spring", stiffness: 80 } },
+        blur: {
+          filter: `blur(0.4rem) grayscale(1)`,
+          transition: { type: "spring", stiffness: 100, duration: 0.2 },
+        },
+        unblur: {
+          filter: `blur(0rem) grayscale(0)`,
+          transition: { type: "spring", stiffness: 100, duration: 0.2 },
+        },
+      }
+    : {
+        hidden: { opacity: 0, y: 20 },
+        visible: { opacity: 1, y: 0, transition: { delay: 0.9 } },
+        initial: { x: 0 },
+        exit: { x: 940, transition: { type: "spring", stiffness: 80 } },
+        blur: {
+          filter: `blur(0.4rem) grayscale(1)`,
+          transition: { type: "spring", stiffness: 100, duration: 0.2 },
+        },
+        unblur: {
+          filter: `blur(0rem) grayscale(0)`,
+          transition: { type: "spring", stiffness: 100, duration: 0.2 },
+        },
+      }
 
   const [buttonToggle, setButtonToggle] = useState(false)
   const [contentToggle, setContentToggle] = useState(false)
@@ -223,12 +247,22 @@ const DevProjects = ({ data }) => {
               </h1>
             </StyledContentWrapper>
             <StyledRevealerLayout>
-              <motion.img
-                className="toggle-button"
+              <img
+                className="toggle-indicator"
                 whileTap={{ scale: 3 }}
                 onClick={() => revealToggle()}
                 src="https://res.cloudinary.com/dzmc7doja/image/upload/v1639815152/design-assets/design-icon-assets/feather-pen.png"
+                data-tip
+                data-for="toggle-tip"
               />
+              <ReactTooltip
+                className="toggle-tip"
+                id="toggle-tip"
+                place="right"
+                effect="solid"
+              >
+                Click to toggle infographic then click infographic to enlarge
+              </ReactTooltip>
               <div className="content-container">
                 <SRLWrapper>
                   <motion.img
