@@ -5,19 +5,6 @@ import { motion } from "framer-motion"
 import { useForm, ValidationError } from "@formspree/react"
 import { lightTheme, darkTheme } from "../styles/theme"
 
-// const WebFont = require("webfontloader")
-
-// WebFont.load({
-//   google: {
-//     families: [
-//       "Caveat",
-//       "Khand",
-//       "Roboto Condensed:400",
-//       "Barlow Semi Condensed",
-//     ],
-//   },
-// })
-
 const StyledPopupBox = styled(motion.section)`
   position: fixed;
   z-index: 3;
@@ -27,13 +14,25 @@ const StyledPopupBox = styled(motion.section)`
   top: 0;
   left: 0;
   .close-icon {
+    /* border: 2px solid rgb(255, 255, 255); */
+    border-radius: 0.2rem;
+    padding: 0.6rem;
     cursor: pointer;
     position: relative;
-    top: 0.85rem;
-    left: 18rem;
-    line-height: 20px;
+    top: 0.7rem;
+    left: calc(100vw - 7rem);
+    line-height: 15px;
     text-align: center;
-    font-size: 20px;
+    font-size: 1rem;
+    font-weight: bold;
+    color: rgba(53, 50, 50, 0.9);
+    background-color: rgba(164, 164, 163, 0.8);
+    box-shadow: 0 0 2.5rem rgba(0, 0, 0, 0.16);
+    transition: all 0.2s ease-in-out;
+    &:hover {
+      background-color: rgba(164, 164, 163, 0.3);
+      color: rgba(255, 255, 255, 0.9);
+    }
     @media (min-width: ${({ theme }) => theme.breakpoints.sm}) {
       top: 0.85rem;
       left: 25rem;
@@ -131,11 +130,20 @@ const StyledFormHeader = styled(motion.div)`
   .signup-decal {
     padding: 0.2rem;
     margin-top: 1.85rem;
-    width: 8%;
-    height: 8%;
+    width: 11%;
+    height: 11%;
+    @media (min-width: ${({ theme }) => theme.breakpoints.md}) {
+      width: 8%;
+      height: 8%;
+    }
   }
 `
 const StyledSuccessMessage = styled(motion.div)`
+  position: absolute;
+  right: calc(100vw - 25rem);
+  top: 0rem;
+  width: 85vw;
+  padding: 0.25rem;
   font-family: "Khand";
   background: rgba(237, 239, 238, 0.9);
   border-top: 0.25rem solid white;
@@ -144,7 +152,16 @@ const StyledSuccessMessage = styled(motion.div)`
   border-right: 0;
   border-top-left-radius: 1rem;
   border-bottom-left-radius: 1rem;
-  padding: 1rem;
+  @media (min-width: ${({ theme }) => theme.breakpoints.sm}) {
+    right: 0rem;
+    top: 0rem;
+    width: 50vw;
+  }
+  @media (min-width: ${({ theme }) => theme.breakpoints.md}) {
+    right: 0rem;
+    top: 0.9rem;
+    width: 25vw;
+  }
 `
 
 const FormPopup = (data) => {
@@ -177,9 +194,9 @@ const FormPopup = (data) => {
         initial={variants.formInitial}
         animate={variants.formEntry}
       >
-        <span className="close-icon" onClick={data.handleClose}>
-          ❎
-        </span>
+        <motion.span className="close-icon" onClick={data.handleClose}>
+          X
+        </motion.span>
         <StyledFormHeader>
           <img
             alt="signup"
