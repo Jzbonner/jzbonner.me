@@ -8,12 +8,10 @@ import { motion, useAnimation } from "framer-motion"
 import Context from "../../context/"
 import ContentWrapper from "../../styles/contentWrapper"
 import heroUnderlining from "../../styles/herounderlining"
-// change compoenent below to professional social
 import ProfessionalSocial from "../professionalsocial"
 import { lightTheme, darkTheme } from "../../styles/theme"
 
 const StyledSection = styled.section`
-  /* border: 1px solid red; */
   width: 100%;
   height: auto;
   background: ${({ theme }) => theme.colors.background};
@@ -82,7 +80,6 @@ const StyledContentWrapper = styled(ContentWrapper)`
       margin-bottom: 2rem;
     }
     .logo-watermark {
-      /* border: 1px solid blue; */
       position: absolute;
       top: 0;
       left: 0;
@@ -105,7 +102,6 @@ const subtitleVariants = {
   initial: {
     opacity: 0.3,
     backgroundColor: "inherit",
-    // borderRadius: "inherit",
     boxShadow: "inherit",
     transform: "translateY(0px)",
     transition:
@@ -113,7 +109,6 @@ const subtitleVariants = {
   },
   hover: {
     opacity: 1,
-    // boxShadow: "2px 1px 8px 2px rgba(66,66,66, 0.4)",
     borderRadius: "1rem",
     backgroundColor: "rgba(193,189,180, 0.45)",
     transform: "translateY(17px)",
