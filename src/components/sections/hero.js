@@ -1,4 +1,4 @@
-import React, { useEffect, useContext } from "react"
+import React, { useState, useEffect, useContext } from "react"
 import PropTypes from "prop-types"
 import styled from "styled-components"
 import { GatsbyImage } from "gatsby-plugin-image"
@@ -10,6 +10,7 @@ import ContentWrapper from "../../styles/contentWrapper"
 import heroUnderlining from "../../styles/herounderlining"
 import ProfessionalSocial from "../professionalsocial"
 import { lightTheme, darkTheme } from "../../styles/theme"
+import TextTransition, { presets } from "react-text-transition"
 
 const StyledSection = styled.section`
   width: 100%;
@@ -62,15 +63,18 @@ const StyledContentWrapper = styled(ContentWrapper)`
       }
     }
     .subtitle {
-      border-radius: inherit;
+      /* border: 0.25rem solid rgba(237, 239, 238, 0.8); */
+      border-radius: 0.8rem;
+      background-color: rgba(193, 189, 180, 0.6);
       color: ${({ theme }) => theme.colors.subtitleText};
-      margin-top: -1rem;
+      margin: 0 auto;
       padding: 0.4rem !important;
       font-family: "Khand";
       letter-spacing: 1px;
       font-size: 1.5rem;
       font-weight: 600;
       text-align: center;
+      width: 100%;
       @media (min-width: ${({ theme }) => theme.breakpoints.lg}) {
         font-size: 1.75rem;
       }
@@ -118,6 +122,14 @@ const subtitleVariants = {
 const Hero = ({ content }) => {
   const { frontmatter, body } = content[0].node
   const { isIntroDone, darkMode } = useContext(Context).state
+  const [index, setIndex] = useState(0)
+  const texts = [
+    "one web app",
+    "one blog article",
+    "one git commit",
+    "one mobile app",
+    "one tech startup",
+  ]
 
   // controls to orchestrate animations of greetings, emoji, social profiles, underlining using framer-motion module
   const gControls = useAnimation()
@@ -157,6 +169,14 @@ const Hero = ({ content }) => {
     pageLoadSequence()
   }, [isIntroDone, darkMode, eControls, gControls, sControls, uControls])
 
+  useEffect(() => {
+    const intervalId = setInterval(
+      () => setIndex((index) => index + 1),
+      3000 // every 3 seconds
+    )
+    return () => clearTimeout(intervalId)
+  }, [])
+
   return (
     <StyledSection id="hero">
       <StyledContentWrapper>
@@ -190,13 +210,19 @@ const Hero = ({ content }) => {
               </div>
               {frontmatter.title}
             </h1>
-            <motion.div variants={subtitleVariants}>
+            <motion.div>
               <h2 className="subtitle">
                 {frontmatter.subtitlePrefix}{" "}
                 {/**local styled component to handle substring animation of subtitle */}
                 <AnimatedUnderlining animate={uControls}>
-                  <span>{frontmatter.subtitle}</span>
+                  <TextTransition
+                    text={texts[index % texts.length]}
+                    springConfig={presets.gentle}
+                    inline
+                  />
+                  {/* <span>{frontmatter.subtitle}</span> */}
                 </AnimatedUnderlining>
+                {frontmatter.subtitle}
               </h2>
             </motion.div>
           </motion.div>
