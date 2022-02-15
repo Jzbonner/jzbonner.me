@@ -38,8 +38,9 @@ const Layout = ({ children }) => {
   const { defaultParam, isIntroDone, darkMode } = useContext(Context).state
 
   // Enables dark mode if the user's OS has an active dark theme
+  // Disabling darktheme until toggle functionality is embedded in the site
   const darkModeEnabled = useDarkMode()
-  const theme = darkModeEnabled ? darkTheme : lightTheme
+  const theme = darkModeEnabled ? lightTheme : lightTheme
 
   return (
     <StyledLayoutWrapper id="layout-wrapper" data-useCookieBar={useCookieBar}>

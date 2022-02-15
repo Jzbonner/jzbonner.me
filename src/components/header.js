@@ -30,7 +30,7 @@ const StyledContentWrapper = styled(ContentWrapper)`
   }
   .logo-decal {
     width: 50%;
-    margin-top: 0.5rem;
+    margin-top: -0.5rem;
   }
 `
 
@@ -138,7 +138,7 @@ const Header = () => {
           <img
             alt="logo-decal"
             className="logo-decal"
-            src="https://res.cloudinary.com/dzmc7doja/image/upload/v1643199347/design-assets/design-icon-assets/Logo-Branding-B.png"
+            src="https://res.cloudinary.com/dzmc7doja/image/upload/v1644951853/portfolio-site/logo-w-branding-bigger-text.png"
           />
         </Link>
         {navigation}
