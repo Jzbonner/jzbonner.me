@@ -1,4 +1,4 @@
-import React, { useEffect, useContext } from "react"
+import React, { useState, useEffect, useContext } from "react"
 import PropTypes from "prop-types"
 import styled from "styled-components"
 import { GatsbyImage } from "gatsby-plugin-image"
@@ -8,12 +8,11 @@ import { motion, useAnimation } from "framer-motion"
 import Context from "../../context/"
 import ContentWrapper from "../../styles/contentWrapper"
 import heroUnderlining from "../../styles/herounderlining"
-// change compoenent below to professional social
 import ProfessionalSocial from "../professionalsocial"
 import { lightTheme, darkTheme } from "../../styles/theme"
+import TextTransition, { presets } from "react-text-transition"
 
 const StyledSection = styled.section`
-  /* border: 1px solid red; */
   width: 100%;
   height: auto;
   background: ${({ theme }) => theme.colors.background};
@@ -64,15 +63,18 @@ const StyledContentWrapper = styled(ContentWrapper)`
       }
     }
     .subtitle {
-      border-radius: inherit;
+      border-radius: 0.8rem;
+      background-color: rgba(193, 189, 180, 0.6);
       color: ${({ theme }) => theme.colors.subtitleText};
-      margin-top: -1rem;
+      margin: 0 auto;
       padding: 0.4rem !important;
       font-family: "Khand";
       letter-spacing: 1px;
       font-size: 1.5rem;
       font-weight: 600;
       text-align: center;
+      width: 100%;
+      overflow-y: hidden;
       @media (min-width: ${({ theme }) => theme.breakpoints.lg}) {
         font-size: 1.75rem;
       }
@@ -82,7 +84,6 @@ const StyledContentWrapper = styled(ContentWrapper)`
       margin-bottom: 2rem;
     }
     .logo-watermark {
-      /* border: 1px solid blue; */
       position: absolute;
       top: 0;
       left: 0;
@@ -105,7 +106,6 @@ const subtitleVariants = {
   initial: {
     opacity: 0.3,
     backgroundColor: "inherit",
-    // borderRadius: "inherit",
     boxShadow: "inherit",
     transform: "translateY(0px)",
     transition:
@@ -113,7 +113,6 @@ const subtitleVariants = {
   },
   hover: {
     opacity: 1,
-    // boxShadow: "2px 1px 8px 2px rgba(66,66,66, 0.4)",
     borderRadius: "1rem",
     backgroundColor: "rgba(193,189,180, 0.45)",
     transform: "translateY(17px)",
@@ -123,6 +122,14 @@ const subtitleVariants = {
 const Hero = ({ content }) => {
   const { frontmatter, body } = content[0].node
   const { isIntroDone, darkMode } = useContext(Context).state
+  const [index, setIndex] = useState(0)
+  const texts = [
+    "one web app",
+    "one blog post",
+    "one git commit",
+    "one mobile app",
+    "one tech startup",
+  ]
 
   // controls to orchestrate animations of greetings, emoji, social profiles, underlining using framer-motion module
   const gControls = useAnimation()
@@ -162,6 +169,14 @@ const Hero = ({ content }) => {
     pageLoadSequence()
   }, [isIntroDone, darkMode, eControls, gControls, sControls, uControls])
 
+  useEffect(() => {
+    const intervalId = setInterval(
+      () => setIndex((index) => index + 1),
+      3000 // every 3 seconds
+    )
+    return () => clearTimeout(intervalId)
+  }, [])
+
   return (
     <StyledSection id="hero">
       <StyledContentWrapper>
@@ -195,13 +210,20 @@ const Hero = ({ content }) => {
               </div>
               {frontmatter.title}
             </h1>
-            <motion.div variants={subtitleVariants}>
+            <motion.div>
               <h2 className="subtitle">
                 {frontmatter.subtitlePrefix}{" "}
-                {/**local styled component to handle substring animation of subtitle */}
                 <AnimatedUnderlining animate={uControls}>
-                  <span>{frontmatter.subtitle}</span>
+                  {/* replace TextTransition component with text to enable hover animation  */}
+                  <span>
+                    <TextTransition
+                      text={texts[index % texts.length]}
+                      springConfig={presets.gentle}
+                      inline
+                    />
+                  </span>
                 </AnimatedUnderlining>
+                {frontmatter.subtitle}
               </h2>
             </motion.div>
           </motion.div>

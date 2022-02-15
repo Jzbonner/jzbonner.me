@@ -10,11 +10,13 @@ const heroUnderlining = styled.span`
   color: inherit;
   text-decoration: underline 0.15em #f2f2f2;
   transition: --offset 500ms, text-decoration-color 300ms;
-  &:hover,
-  &:focus {
-    --offset: 0.3em;
-    text-decoration-color: #605e5a;
-  }
+
+  /* uncomment the below sections for hover functionality */
+  /* &:hover, */
+  /* &:focus { */
+  /*   --offset: 0.3em; */
+  /*   text-decoration-color: #605e5a; */
+  /* } */
 `
 
 export default heroUnderlining

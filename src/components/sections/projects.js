@@ -60,14 +60,15 @@ const StyledContentWrapper = styled(ContentWrapper)`
       position: relative;
       width: 7rem;
       top: 4rem;
-      float: right;
+      left: calc(100% - 3rem);
       margin-top: -7rem;
       z-index: 1;
+      visibility: hidden;
+      @media (min-width: ${({ theme }) => theme.breakpoints.md}) {
+        visibility: visible;
+      }
     }
     .projects {
-      /* background: url("https://res.cloudinary.com/dzmc7doja/image/upload/v1643652329/design-assets/design-icon-assets/projects-decal.png") */
-      /*   bottom center no-repeat; */
-      backdrop-filter: invert(0.2);
       display: flex;
       flex-direction: row;
       margin-top: -2.5rem;
@@ -83,15 +84,20 @@ const StyledContentWrapper = styled(ContentWrapper)`
       @media (min-width: ${({ theme }) => theme.breakpoints.sm}) {
         border: 0.4rem outset rgba(239, 239, 238, 0.8);
         border-radius: 9px 40px 9px 40px;
-        box-shadow: 0 15px 15px rgba(0, 0, 0, 0.2);
         margin-left: 2rem;
         margin-right: 2rem;
       }
       @media (min-width: ${({ theme }) => theme.breakpoints.lg}) {
         flex-direction: column;
-        border: 0.4rem outset rgba(239, 239, 238, 0.8);
-        border-radius: 9px 40px 9px 40px;
-        box-shadow: 0 15px 15px rgba(0, 0, 0, 0.2);
+        border-radius: 0rem;
+        border-style: outset;
+        border-width: 0 0 0 0.5rem;
+        border-image: linear-gradient(
+            to bottom,
+            rgba(165, 165, 164, 0.9),
+            rgba(0, 0, 0, 0)
+          )
+          1 100%;
         margin-top: 0;
         margin-left: 0.25rem;
         margin-right: 0.25rem;
@@ -122,120 +128,6 @@ const StyledContentWrapper = styled(ContentWrapper)`
           background-color: ${({ theme }) => theme.colors.background};
           border-radius: 8px;
         }
-      }
-    }
-    .circles {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 250vw;
-      height: 100%;
-      overflow: hidden;
-      @media (min-width: ${({ theme }) => theme.breakpoints.sm}) {
-        width: 150vw;
-      }
-      @media (min-width: ${({ theme }) => theme.breakpoints.md}) {
-        width: 47vw;
-      }
-    }
-
-    .circles li {
-      position: absolute;
-      display: block;
-      list-style: none;
-      width: 20px;
-      height: 20px;
-      background: rgba(255, 255, 255, 0.4);
-      animation: animate 20s linear infinite;
-      bottom: -150px;
-    }
-
-    .circles li:nth-child(1) {
-      left: 25%;
-      width: 80px;
-      height: 80px;
-      animation-delay: 0s;
-    }
-
-    .circles li:nth-child(2) {
-      left: 10%;
-      width: 20px;
-      height: 20px;
-      animation-delay: 2s;
-      animation-duration: 12s;
-    }
-
-    .circles li:nth-child(3) {
-      left: 70%;
-      width: 20px;
-      height: 20px;
-      animation-delay: 4s;
-    }
-
-    .circles li:nth-child(4) {
-      left: 40%;
-      width: 60px;
-      height: 60px;
-      animation-delay: 0s;
-      animation-duration: 18s;
-    }
-
-    .circles li:nth-child(5) {
-      left: 65%;
-      width: 20px;
-      height: 20px;
-      animation-delay: 0s;
-    }
-
-    .circles li:nth-child(6) {
-      left: 75%;
-      width: 110px;
-      height: 110px;
-      animation-delay: 3s;
-    }
-
-    .circles li:nth-child(7) {
-      left: 35%;
-      width: 150px;
-      height: 150px;
-      animation-delay: 7s;
-    }
-
-    .circles li:nth-child(8) {
-      left: 50%;
-      width: 25px;
-      height: 25px;
-      animation-delay: 15s;
-      animation-duration: 45s;
-    }
-
-    .circles li:nth-child(9) {
-      left: 20%;
-      width: 15px;
-      height: 15px;
-      animation-delay: 2s;
-      animation-duration: 35s;
-    }
-
-    .circles li:nth-child(10) {
-      left: 85%;
-      width: 150px;
-      height: 150px;
-      animation-delay: 0s;
-      animation-duration: 11s;
-    }
-
-    @keyframes animate {
-      0% {
-        transform: translateY(0) rotate(0deg);
-        opacity: 1;
-        border-radius: 0;
-      }
-
-      100% {
-        transform: translateY(-3000px) rotate(900deg);
-        opacity: 0;
-        border-radius: 90%;
       }
     }
     .counter {
@@ -282,10 +174,10 @@ const StyledProject = styled(motion.div)`
       position % 2 !== 0 ? "row" : "row-reverse"};
   }
   .details {
-    border-top: 9px solid rgba(225, 227, 226, 0.8);
+    border-top: 9px solid rgba(254, 254, 254, 0.8);
     border-bottom-right-radius: 1rem;
     border-bottom-left-radius: 1rem;
-    background: rgba(225, 227, 226, 0.5);
+    background: rgba(225, 227, 226, 0.8);
     box-shadow: 0 0 2.5rem rgba(0, 0, 0, 0.16);
     width: 100%;
     max-width: 25rem;
@@ -293,8 +185,12 @@ const StyledProject = styled(motion.div)`
     flex-direction: column;
     margin-top: 3rem;
     padding: 1rem;
+    transition: all 0.2s ease-in-out;
     @media (min-width: ${({ theme }) => theme.breakpoints.md}) {
       margin-top: 0;
+    }
+    &:hover {
+      box-shadow: 0 15px 15px ${({ theme }) => theme.colors.boxShadowHover};
     }
     .decal {
       width: 3rem;
@@ -354,7 +250,7 @@ const StyledProject = styled(motion.div)`
     }
     .links {
       border-radius: 1rem;
-      background: rgba(226, 228, 227, 1);
+      background: rgba(254, 254, 254, 1);
       padding: 0.4rem;
       display: flex;
       justify-content: flex-start;
@@ -382,7 +278,6 @@ const StyledProject = styled(motion.div)`
     }
   }
   .screenshot-container {
-    /* border: 1px solid red; */
     width: 100%;
     padding: 0px;
     max-width: 25rem;
@@ -398,13 +293,8 @@ const StyledProject = styled(motion.div)`
     }
   }
   .screenshot {
-    /* width: 17rem; */
-    /* height: 17rem; */
-    /* margin-left: 0.25rem; */
-    /* margin-top: 1rem; */
     border: 0.2rem solid #858484;
     border-radius: 0.5rem;
-    /* border-radius: 1rem;  */
     transition: all 0.3s ease-out;
     @media (min-width: ${({ theme }) => theme.breakpoints.md}) {
       /* margin-top: -0.8rem;  */
@@ -500,18 +390,6 @@ const Projects = ({ content }) => {
           {/* /> */}
         </motion.div>
         <div className="projects">
-          <ul className="circles">
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-          </ul>
           {projects.map((project, key) => {
             const { body, frontmatter } = project.node
             return (
