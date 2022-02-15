@@ -63,7 +63,6 @@ const StyledContentWrapper = styled(ContentWrapper)`
       }
     }
     .subtitle {
-      /* border: 0.25rem solid rgba(237, 239, 238, 0.8); */
       border-radius: 0.8rem;
       background-color: rgba(193, 189, 180, 0.6);
       color: ${({ theme }) => theme.colors.subtitleText};
@@ -75,6 +74,7 @@ const StyledContentWrapper = styled(ContentWrapper)`
       font-weight: 600;
       text-align: center;
       width: 100%;
+      overflow-y: hidden;
       @media (min-width: ${({ theme }) => theme.breakpoints.lg}) {
         font-size: 1.75rem;
       }
@@ -125,7 +125,7 @@ const Hero = ({ content }) => {
   const [index, setIndex] = useState(0)
   const texts = [
     "one web app",
-    "one blog article",
+    "one blog post",
     "one git commit",
     "one mobile app",
     "one tech startup",
@@ -213,14 +213,15 @@ const Hero = ({ content }) => {
             <motion.div>
               <h2 className="subtitle">
                 {frontmatter.subtitlePrefix}{" "}
-                {/**local styled component to handle substring animation of subtitle */}
                 <AnimatedUnderlining animate={uControls}>
-                  <TextTransition
-                    text={texts[index % texts.length]}
-                    springConfig={presets.gentle}
-                    inline
-                  />
-                  {/* <span>{frontmatter.subtitle}</span> */}
+                  {/* replace TextTransition component with text to enable hover animation  */}
+                  <span>
+                    <TextTransition
+                      text={texts[index % texts.length]}
+                      springConfig={presets.gentle}
+                      inline
+                    />
+                  </span>
                 </AnimatedUnderlining>
                 {frontmatter.subtitle}
               </h2>
