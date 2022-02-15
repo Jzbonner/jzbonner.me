@@ -89,9 +89,6 @@ const StyledContentWrapper = styled(ContentWrapper)`
       }
       @media (min-width: ${({ theme }) => theme.breakpoints.lg}) {
         flex-direction: column;
-        border-top: none;
-        border-bottom: none;
-        border-left: none;
         border-radius: 0rem;
         border-style: outset;
         border-width: 0 0 0 0.5rem;
