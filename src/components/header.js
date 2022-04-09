@@ -138,7 +138,7 @@ const Header = () => {
           <img
             alt="logo-decal"
             className="logo-decal"
-            src="https://res.cloudinary.com/dzmc7doja/image/upload/v1644951853/portfolio-site/logo-w-branding-bigger-text.png"
+            src="https://bit.ly/3NUML0N"
           />
         </Link>
         {navigation}

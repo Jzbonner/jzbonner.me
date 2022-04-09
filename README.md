@@ -1,6 +1,6 @@
 # Jzbonner.me 
 
-[![Website](https://img.shields.io/badge/jzbonner.me-up-green)](https://jzbonner.me/)
+[![Website](https://img.shields.io/badge/jzbonner.me-up-green)](https://jzbonner.me/) [![Netlify Status](https://api.netlify.com/api/v1/badges/5a97d8e2-0b17-49ae-ab00-300324a3acd0/deploy-status)](https://app.netlify.com/sites/jzbonner-portfolio/deploys)
 
 This site was built with Gatsby, MDX, GraphQL and Framer Motion. Click through to learn more about me, my skillset and my aspirations. This portfolio will be optimized for cloned builds soon. 
 
